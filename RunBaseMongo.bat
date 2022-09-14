@@ -1,0 +1,1 @@
+mongod --port 27018 --dbpath C:\projetoIntegrador\mongo --auth

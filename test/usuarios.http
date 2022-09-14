@@ -1,0 +1,50 @@
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de usuários
+GET http://localhost:3000/api/usuarios
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir novo usuário
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "usuario_nome": "Teste", 
+    "usuario_cpf": "000",
+    "usuario_dataNascimento": "12/05/2002",
+    "usuario_email": "admin@teste",
+    "usuario_senha": "admin",
+    "tipo_id": "63212093c2b1b3898784eb0d"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar usuário
+PUT http://localhost:3000/api/usuarios
+Content-Type: application/json
+
+{
+    "_id": "63212437f08359d5ee3fd464",
+    "usuario_nome": "Teste mudado", 
+    "usuario_cpf": "000",
+    "usuario_dataNascimento": "12/05/2002",
+    "usuario_email": "admin@teste",
+    "usuario_senha": "admin",
+    "tipo_id": "63212093c2b1b3898784eb0d"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir um usuário
+DELETE http://localhost:3000/api/usuarios/63212437f08359d5ee3fd464
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id de usuário
+GET http://localhost:3000/api/usuarios/632123425bb4446421a71604
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter usuários filtrando
+GET http://localhost:3000/api/usuarios/filtro/monteiro
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////

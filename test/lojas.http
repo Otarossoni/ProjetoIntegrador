@@ -1,0 +1,42 @@
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de lojas
+GET http://localhost:3000/api/lojas
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir nova loja
+POST http://localhost:3000/api/lojas
+Content-Type: application/json
+
+{
+    "loja_nomeFantasia": "Amazon", 
+    "loja_url": "https://www.amazon.com.br/"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar loja
+PUT http://localhost:3000/api/lojas
+Content-Type: application/json
+
+{
+    "_id": "6321272e1e92c95848c88af9",
+    "loja_nomeFantasia": "Amazon Brasil", 
+    "loja_url": "https://www.amazon.com.br/"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir um usuário
+DELETE http://localhost:3000/api/lojas/6321272e1e92c95848c88af9
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id da loja
+GET http://localhost:3000/api/lojas/6321272e1e92c95848c88af9
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter lojas filtrando
+GET http://localhost:3000/api/lojas/filtro/amazon
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
