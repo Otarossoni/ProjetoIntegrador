@@ -21,4 +21,7 @@ routes.use("/api", promocaoRout);
 const comentarioRout = require("./ComentarioRout");
 routes.use("/api", comentarioRout);
 
+const denunciaRout = require("./DenunciaRout");
+routes.use("/api", denunciaRout);
+
 module.exports = routes;

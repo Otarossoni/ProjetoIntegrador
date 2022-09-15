@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de denuncias
+GET http://localhost:3000/api/denuncias
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir nova denuncia
+POST http://localhost:3000/api/denuncias
+Content-Type: application/json
+
+{
+    "denuncia_titulo": "Golpe", 
+    "denuncia_descricao": "Golpe na Amazon",
+    "usuario_id": "632123425bb4446421a71604"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar denuncia
+PUT http://localhost:3000/api/denuncias
+Content-Type: application/json
+
+{
+    "_id": "632397cb37e899f77bb439e1",
+     "denuncia_titulo": "Golpe", 
+    "denuncia_descricao": "Golpe na Amazon, valor indevido!",
+    "usuario_id": "632123425bb4446421a71604"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir uma denuncia
+DELETE http://localhost:3000/api/denuncias/632397cb37e899f77bb439e1
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id da denuncia
+GET http://localhost:3000/api/denuncias/6323980637e899f77bb439ed
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter denuncias filtrando
+GET http://localhost:3000/api/denuncias/filtro/gol
+
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
