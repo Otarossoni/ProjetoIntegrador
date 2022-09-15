@@ -15,4 +15,10 @@ routes.use("/api", tpUsuarioRout);
 const lojaRout = require("./LojaRout");
 routes.use("/api", lojaRout);
 
+const promocaoRout = require("./PromocaoRout");
+routes.use("/api", promocaoRout);
+
+const comentarioRout = require("./ComentarioRout");
+routes.use("/api", comentarioRout);
+
 module.exports = routes;

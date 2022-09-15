@@ -1,0 +1,45 @@
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de comentários
+GET http://localhost:3000/api/comentarios
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir novo comentário
+POST http://localhost:3000/api/comentarios
+Content-Type: application/json
+
+{
+    "comentario_titulo": "Celular Bom demais", 
+    "comentario_descricao": "Bom custo benfício",
+    "promocao_id": "63225bbda8569db3f0a74b2a"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar comentário
+PUT http://localhost:3000/api/comentarios
+Content-Type: application/json
+
+{
+    "_id": "6322763e00c485a74207e3ac",
+    "comentario_titulo": "Celular Bom demais! Gostei da tela!", 
+    "comentario_descricao": "Bom custo benfício",
+    "promocao_id": "63225bbda8569db3f0a74b2a"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir um comentário
+DELETE http://localhost:3000/api/comentarios/632275b0b7ccf7ba280aca9e
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id do comentário
+GET http://localhost:3000/api/comentarios/6322763e00c485a74207e3ac
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter comentários filtrando
+GET http://localhost:3000/api/comentarios/filtro/demais
+
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////

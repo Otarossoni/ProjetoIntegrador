@@ -1,0 +1,58 @@
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de promoções
+GET http://localhost:3000/api/promocaos
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir nova promoção
+POST http://localhost:3000/api/promocaos
+Content-Type: application/json
+
+{
+    "promocao_titulo": "Redmi Note 9", 
+    "promocao_descricao": "Cuporm imperdível!",
+    "promocao_preco": "1.100",
+    "promocao_url": "https://www.amazon.com.br/redmi-note-9",
+    "promocao_cupom": "200ZON",
+    "loja_id": "632127851e92c95848c88b03",
+    "usuario_id": "632123425bb4446421a71604"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar promoção
+PUT http://localhost:3000/api/promocaos
+Content-Type: application/json
+
+{
+    "_id": "63225bbda8569db3f0a74b2a",
+    "promocao_titulo": "Redmi Note 9", 
+    "promocao_descricao": "Cupom imperdível! Para todos!",
+    "promocao_preco": "1.100",
+    "promocao_url": "https://www.amazon.com.br/redmi-note-9",
+    "promocao_cupom": "200ZON",
+    "loja_id": "632127851e92c95848c88b03",
+    "usuario_id": "632123425bb4446421a71604"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir uma promoção
+DELETE http://localhost:3000/api/promocaos/63225e7dad706b6ea45ab21f
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id da promoção
+GET http://localhost:3000/api/promocaos/63225bbda8569db3f0a74b2a
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando
+GET http://localhost:3000/api/promocaos/filtro/Red
+
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando pela Loja
+GET http://localhost:3000/api/promocaos/loja/Ama
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////

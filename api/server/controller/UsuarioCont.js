@@ -3,7 +3,7 @@ module.exports = {
     listar: async (req, res) => {
         Usuario.find((err, objetos) => {
             (err ? res.status(400).send(err) : res.status(200).json(objetos));
-        }).sort({ nome: 1 }); // -1 decrescente 1 crescente
+        }).populate('tipo_id').sort({ nome: 1 }); // -1 decrescente 1 crescente
     },
 
     incluir: async (req, res) => {
@@ -29,7 +29,7 @@ module.exports = {
     obterPeloId: (req, res) => {
         Usuario.findOne({ _id: req.params.id }, function (err, obj) {
           err ? res.status(400).send(err) : res.status(200).json(obj);
-        });
+        }).populate('tipo_id');
     },
 
     filtrar: (req, res) => {
@@ -44,6 +44,6 @@ module.exports = {
           function (err, obj) {
             err ? res.status(400).send(err) : res.status(200).json(obj);
           }
-        ).sort({ nome: -1 }); // -1 decrescente 1 crescente
+        ).populate('tipo_id').sort({ nome: -1 }); // -1 decrescente 1 crescente
     },
 };
