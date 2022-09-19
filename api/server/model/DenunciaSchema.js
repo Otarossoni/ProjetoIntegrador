@@ -8,6 +8,11 @@ const DenunciaSchema = new mongoose.Schema({
         ref: "Usuario",
         require: true,
     },
+    promocao_id: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Promocao",
+        require: true,
+    },
 });
 
 module.exports = mongoose.model("Denuncia", DenunciaSchema);

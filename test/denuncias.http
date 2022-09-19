@@ -11,7 +11,8 @@ Content-Type: application/json
 {
     "denuncia_titulo": "Golpe", 
     "denuncia_descricao": "Golpe na Amazon",
-    "usuario_id": "632123425bb4446421a71604"
+    "usuario_id": "632123425bb4446421a71604",
+    "promocao_id": "63225bbda8569db3f0a74b2a"
 }
 ###
 //////////////////////////////////////////////////////////////////////
@@ -28,7 +29,7 @@ Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir uma denuncia
-DELETE http://localhost:3000/api/denuncias/632397cb37e899f77bb439e1
+DELETE http://localhost:3000/api/denuncias/6327c39d77314968a2e7ce9b
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////

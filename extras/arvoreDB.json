@@ -1,0 +1,91 @@
+{
+	"base": {
+		"tpUsuario": {
+			"_id": "63212085c2b1b3898784eb07",
+			"tipo_descricao": "Teste Mudado"
+		},
+		"usuario": {
+			"_id": "632123425bb4446421a71604",
+			"usuario_nome": "Otávio Monteiro Rossoni",
+			"usuario_cpf": "0000",
+			"usuario_dataNascimento": "2002-12-05T02:00:00.000Z",
+			"usuario_email": "admin@admin",
+			"usuario_senha": "admin",
+			"tipo_id": {
+			  "_id": "63212093c2b1b3898784eb0d",
+			  "tipo_descricao": "Administrador"
+			},
+			"dataHoraCriado": "2022-09-14T00:41:38.254Z"
+		},
+		"loja": {
+			"_id": "632127851e92c95848c88b03",
+			"loja_nomeFantasia": "Amazon",
+			"loja_url": "https://www.amazon.com.br/",
+			"dataHoraCriado": "2022-09-14T00:59:49.327Z"
+		},
+		"promocao": {
+			"_id": "63225bbda8569db3f0a74b2a",
+			"promocao_titulo": "Redmi Note 9",
+			"promocao_descricao": "Cupom imperdível! Para todos!",
+			"promocao_preco": "1.100",
+			"promocao_url": "https://www.amazon.com.br/redmi-note-9",
+			"promocao_cupom": "200ZON",
+			"loja_id": {
+			  "_id": "632127851e92c95848c88b03",
+			  "loja_nomeFantasia": "Amazon",
+			  "loja_url": "https://www.amazon.com.br/",
+			  "dataHoraCriado": "2022-09-14T00:59:49.327Z"
+			},
+			"usuario_id": {
+			  "_id": "632123425bb4446421a71604",
+			  "usuario_nome": "Otávio Monteiro Rossoni",
+			  "usuario_cpf": "0000",
+			  "usuario_dataNascimento": "2002-12-05T02:00:00.000Z",
+			  "usuario_email": "admin@admin",
+			  "usuario_senha": "admin",
+			  "tipo_id": "63212093c2b1b3898784eb0d",
+			  "dataHoraCriado": "2022-09-14T00:41:38.254Z"
+			}
+		},
+		"comentario": {
+			"_id": "6322763e00c485a74207e3ac",
+			"comentario_titulo": "Celular Bom demais! Gostei da tela!",
+			"comentario_descricao": "Bom custo benfício",
+			"promocao_id": {
+			  "_id": "63225bbda8569db3f0a74b2a",
+			  "promocao_titulo": "Redmi Note 9",
+			  "promocao_descricao": "Cupom imperdível! Para todos!",
+			  "promocao_preco": "1.100",
+			  "promocao_url": "https://www.amazon.com.br/redmi-note-9",
+			  "promocao_cupom": "200ZON",
+			  "loja_id": "632127851e92c95848c88b03",
+			  "usuario_id": "632123425bb4446421a71604"
+			}
+		},
+		"denuncia": {
+			"_id": "6327c464681b8d974775d85a",
+			"denuncia_titulo": "Golpe",
+			"denuncia_descricao": "Golpe na Amazon",
+			"usuario_id": {
+			  "_id": "632123425bb4446421a71604",
+			  "usuario_nome": "Otávio Monteiro Rossoni",
+			  "usuario_cpf": "0000",
+			  "usuario_dataNascimento": "2002-12-05T02:00:00.000Z",
+			  "usuario_email": "admin@admin",
+			  "usuario_senha": "admin",
+			  "tipo_id": "63212093c2b1b3898784eb0d",
+			  "dataHoraCriado": "2022-09-14T00:41:38.254Z"
+			},
+			"promocao_id": {
+			  "_id": "63225bbda8569db3f0a74b2a",
+			  "promocao_titulo": "Redmi Note 9",
+			  "promocao_descricao": "Cupom imperdível! Para todos!",
+			  "promocao_preco": "1.100",
+			  "promocao_url": "https://www.amazon.com.br/redmi-note-9",
+			  "promocao_cupom": "200ZON",
+			  "loja_id": "632127851e92c95848c88b03",
+			  "usuario_id": "632123425bb4446421a71604"
+			}
+		}
+	}
+}

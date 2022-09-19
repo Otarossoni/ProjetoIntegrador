@@ -10,7 +10,7 @@ Content-Type: application/json
 
 {
     "promocao_titulo": "Redmi Note 9", 
-    "promocao_descricao": "Cuporm imperdível!",
+    "promocao_descricao": "Cupom imperdível!",
     "promocao_preco": "1.100",
     "promocao_url": "https://www.amazon.com.br/redmi-note-9",
     "promocao_cupom": "200ZON",
