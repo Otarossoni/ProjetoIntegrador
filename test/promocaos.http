@@ -52,7 +52,7 @@ Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter promoções filtrando pela Loja
-GET http://localhost:3000/api/promocaos/loja/Ama
+GET http://localhost:3000/api/promocaos/loja/632127851e92c95848c88b03
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////

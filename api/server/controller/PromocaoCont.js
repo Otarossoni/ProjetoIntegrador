@@ -48,9 +48,7 @@ module.exports = {
     filtrarLoja: (req, res) => {
         Promocao.find(
           {
-            $or: [
-              { loja_id: { $regex: req.params.filtro, $options: "i" } }
-            ],
+            loja_id:  req.params.filtro          
           },
           function (err, obj) {
             err ? res.status(400).send(err) : res.status(200).json(obj);
