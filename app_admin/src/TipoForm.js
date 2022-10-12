@@ -12,14 +12,14 @@ const TipoForm = (props) => {
         <input
           class="form-control"
           type="text"
-          name="descricao"
+          name="tipo_descricao"
           defaultValue={props.tipo.tipo_descricao}
           onChange={handleInputChange}
         />
       </div>
       <div class="form-group">
         <button
-          type="button"
+          type="submit"
           onClick={props.salvar}
           className="btn btn-primary btn-sm"
         >

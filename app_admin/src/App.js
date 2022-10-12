@@ -9,22 +9,18 @@ import "primereact/resources/themes/lara-light-indigo/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
+import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 function App() {
   //Para o list
   const [tipos, setTipos] = useState([]);
 
   //Para o form
-  const initialState = { id: null, descricao: "" };
+  const initialState = { id: null, tipo_descricao: "" };
   const [tipo, setTipo] = useState(initialState);
   const [editando, setEditando] = useState(false);
 
   const toastRef = useRef();
-
-  // let tiposList = [
-  //   { id: 1, descricao: "Comum" },
-  //   { id: 2, descricao: "Adminstrador" },
-  // ];
 
   useEffect(() => {
     onClickAtualizar(); // ao inicializar executa o método para atualizar
@@ -56,8 +52,8 @@ function App() {
   };
 
   const salvar = () => {
+    //inclusão
     if (tipo._id == null) {
-      // inclussão
       TipoSrv.incluir(tipo)
         .then((response) => {
           setEditando(false);
@@ -104,11 +100,11 @@ function App() {
 
   //Funções para edição e deleção
   const editar = (id) => {
-    setTipo(tipos.filter((tipo) => tipo.id === id)[0]);
+    setTipo(tipos.filter((tipo) => tipo._id === id)[0]);
     setEditando(true);
   };
 
-  const excluir = (_id) => {
+  const excluirConfirm = (_id) => {
     TipoSrv.excluir(_id)
       .then((response) => {
         onClickAtualizar();
@@ -127,9 +123,22 @@ function App() {
       });
   };
 
+  const excluir = (_id) => {
+    confirmDialog({
+      message: "Confirma a exclusão?",
+      header: "Confirmação",
+      icon: "pi pi-question",
+      acceptLabel: "Sim",
+      rejectLabel: "Não",
+      acceptClassName: "p-button-danger",
+      accept: () => excluirConfirm(_id),
+    });
+  };
+
   if (!editando) {
     return (
       <div className="App">
+        <ConfirmDialog />
         <TipoList
           tipos={tipos}
           onClickAtualizar={onClickAtualizar}
