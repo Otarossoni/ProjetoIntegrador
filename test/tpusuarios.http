@@ -9,7 +9,7 @@ POST http://localhost:3000/api/tpusuarios
 Content-Type: application/json
 
 {
-    "tipo_descricao": "Comum"
+    "tipo_descricao": "Comum4"
 }
 ###
 //////////////////////////////////////////////////////////////////////
@@ -24,7 +24,7 @@ Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir um tipo de usuário
-DELETE http://localhost:3000/api/tpusuarios/63080cd911d13f676b03c5d3
+DELETE http://localhost:3000/api/tpusuarios/63462e07a247914e20dacc0e
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
