@@ -1,2 +1,2 @@
-cd app_administrator
+cd app_admin
 npm start
