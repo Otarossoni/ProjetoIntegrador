@@ -9,9 +9,10 @@ POST http://localhost:3000/api/comentarios
 Content-Type: application/json
 
 {
-    "comentario_titulo": "Celular Bom demais", 
-    "comentario_descricao": "Bom custo benfício",
-    "promocao_id": "63225bbda8569db3f0a74b2a"
+    "titulo": "Celular Bom demais", 
+    "descricao": "Bom custo benfício",
+    "promocao_id": "6347544395606fff46b1f871",
+    "usuario_id": "63474bd2936c605afd965db2"
 }
 ###
 //////////////////////////////////////////////////////////////////////
@@ -20,25 +21,26 @@ PUT http://localhost:3000/api/comentarios
 Content-Type: application/json
 
 {
-    "_id": "6322763e00c485a74207e3ac",
-    "comentario_titulo": "Celular Bom demais! Gostei da tela!", 
-    "comentario_descricao": "Bom custo benfício",
-    "promocao_id": "63225bbda8569db3f0a74b2a"
+    "_id": "634759165635cf91ebd6b64c",
+    "titulo": "Celular Bom demais, gostei!", 
+    "descricao": "Bom custo benfício",
+    "promocao_id": "6347544395606fff46b1f871",
+    "usuario_id": "63474bd2936c605afd965db2"
 }
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir um comentário
-DELETE http://localhost:3000/api/comentarios/632275b0b7ccf7ba280aca9e
+DELETE http://localhost:3000/api/comentarios/634759375635cf91ebd6b65c
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter pelo id do comentário
-GET http://localhost:3000/api/comentarios/6322763e00c485a74207e3ac
+GET http://localhost:3000/api/comentarios/634759165635cf91ebd6b64c
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter comentários filtrando
-GET http://localhost:3000/api/comentarios/filtro/demais
+GET http://localhost:3000/api/comentarios/filtro/gostei
 
 Content-Type: application/json
 ###

@@ -9,10 +9,10 @@ POST http://localhost:3000/api/denuncias
 Content-Type: application/json
 
 {
-    "denuncia_titulo": "Golpe", 
-    "denuncia_descricao": "Golpe na Amazon",
-    "usuario_id": "632123425bb4446421a71604",
-    "promocao_id": "63225bbda8569db3f0a74b2a"
+    "titulo": "Golpe", 
+    "descricao": "Golpe na Amazon",
+    "usuario_id": "63474bd2936c605afd965db2",
+    "promocao_id": "6347544395606fff46b1f871"
 }
 ###
 //////////////////////////////////////////////////////////////////////
@@ -21,20 +21,21 @@ PUT http://localhost:3000/api/denuncias
 Content-Type: application/json
 
 {
-    "_id": "632397cb37e899f77bb439e1",
-     "denuncia_titulo": "Golpe", 
-    "denuncia_descricao": "Golpe na Amazon, valor indevido!",
-    "usuario_id": "632123425bb4446421a71604"
+    "_id": "63475733ae3451b27836bbdf",
+    "titulo": "Golpe", 
+    "descricao": "Golpe na Amazon. O vendedor é um golpista",
+    "usuario_id": "63474bd2936c605afd965db2",
+    "promocao_id": "6347544395606fff46b1f871"
 }
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir uma denuncia
-DELETE http://localhost:3000/api/denuncias/6327c39d77314968a2e7ce9b
+DELETE http://localhost:3000/api/denuncias/63475733ae3451b27836bbdf
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter pelo id da denuncia
-GET http://localhost:3000/api/denuncias/6323980637e899f77bb439ed
+GET http://localhost:3000/api/denuncias/63475759ae3451b27836bbe8
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////

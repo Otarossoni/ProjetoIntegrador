@@ -9,13 +9,13 @@ POST http://localhost:3000/api/promocaos
 Content-Type: application/json
 
 {
-    "promocao_titulo": "Redmi Note 9", 
-    "promocao_descricao": "Cupom imperdível!",
-    "promocao_preco": "1.100",
-    "promocao_url": "https://www.amazon.com.br/redmi-note-9",
-    "promocao_cupom": "200ZON",
-    "loja_id": "632127851e92c95848c88b03",
-    "usuario_id": "632123425bb4446421a71604"
+    "titulo": "Redmi Note 9", 
+    "descricao": "Cupom imperdível!",
+    "preco": "1.100",
+    "url": "https://www.amazon.com.br/redmi-note-9",
+    "cupom": "200ZON",
+    "loja_id": "63474c38936c605afd965db9",
+    "usuario_id": "63474bd2936c605afd965db2"
 }
 ###
 //////////////////////////////////////////////////////////////////////
@@ -24,24 +24,24 @@ PUT http://localhost:3000/api/promocaos
 Content-Type: application/json
 
 {
-    "_id": "63225bbda8569db3f0a74b2a",
-    "promocao_titulo": "Redmi Note 9", 
-    "promocao_descricao": "Cupom imperdível! Para todos!",
-    "promocao_preco": "1.100",
-    "promocao_url": "https://www.amazon.com.br/redmi-note-9",
-    "promocao_cupom": "200ZON",
-    "loja_id": "632127851e92c95848c88b03",
-    "usuario_id": "632123425bb4446421a71604"
+    "_id": "6347544395606fff46b1f871",
+    "titulo": "Redmi Note 9", 
+    "descricao": "Cupom imperdível! Para todos!",
+    "preco": "1.100",
+    "url": "https://www.amazon.com.br/redmi-note-9",
+    "cupom": "200ZON",
+    "loja_id": "63474c38936c605afd965db9",
+    "usuario_id": "63474bd2936c605afd965db2"
 }
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir uma promoção
-DELETE http://localhost:3000/api/promocaos/63225e7dad706b6ea45ab21f
+DELETE http://localhost:3000/api/promocaos/634754c995606fff46b1f880
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter pelo id da promoção
-GET http://localhost:3000/api/promocaos/63225bbda8569db3f0a74b2a
+GET http://localhost:3000/api/promocaos/6347544395606fff46b1f871
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
@@ -52,7 +52,7 @@ Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter promoções filtrando pela Loja
-GET http://localhost:3000/api/promocaos/loja/632127851e92c95848c88b03
+GET http://localhost:3000/api/promocaos/loja/63474c38936c605afd965db9
 Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////

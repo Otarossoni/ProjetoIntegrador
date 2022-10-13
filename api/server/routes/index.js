@@ -9,9 +9,6 @@ routes.use(cors({ origin: "*" }));
 const usuarioRout = require("./UsuarioRout");
 routes.use("/api", usuarioRout);
 
-const tpUsuarioRout = require("./TpUsuarioRout");
-routes.use("/api", tpUsuarioRout);
-
 const lojaRout = require("./LojaRout");
 routes.use("/api", lojaRout);
 
