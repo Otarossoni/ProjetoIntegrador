@@ -1,16 +1,19 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjU2OTEwMTUsImV4cCI6MTY2NTY5NDYxNX0.ORLsoiZ44GIQi3AjD-9gcrmPxt8XbWQ_pnbK4N9ENQc
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de usuários
 GET http://localhost:3000/api/usuarios
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Inserir novo usuário
 POST http://localhost:3000/api/usuarios
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
-    "nome": "Admin", 
-    "cpf": "00000000000",
+    "nome": "admin", 
+    "cpf": "000000",
     "dataNascimento": "12/05/2002",
     "email": "admin@admin",
     "senha": "admin"
@@ -20,6 +23,7 @@ Content-Type: application/json
 # Alterar usuário
 PUT http://localhost:3000/api/usuarios
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
     "_id": "63474acabf2d6fa6e50b08b0",
@@ -32,17 +36,30 @@ Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir um usuário
-DELETE http://localhost:3000/api/usuarios/63474acabf2d6fa6e50b08b0
+DELETE http://localhost:3000/api/usuarios/63474bd2936c605afd965db2
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter pelo id de usuário
 GET http://localhost:3000/api/usuarios/63474acabf2d6fa6e50b08b0
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter usuários filtrando
 GET http://localhost:3000/api/usuarios/filtro/admin
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
+
+# Autenticação de usuário
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+ "email": "admin@admin",
+ "senha": "admin"
+}
+###
