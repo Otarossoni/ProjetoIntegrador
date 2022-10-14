@@ -1,12 +1,15 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjU2OTY4NTcsImV4cCI6MTY2NTcwMDQ1N30.IFWJzZt8L9g0U6EwlZDn1mZAYKflZJGLnDhn8Z7zRXs
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de lojas
 GET http://localhost:3000/api/lojas
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Inserir nova loja
 POST http://localhost:3000/api/lojas
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
     "nomeFantasia": "Magasdsazine Luiza", 
@@ -17,6 +20,7 @@ Content-Type: application/json
 # Alterar loja
 PUT http://localhost:3000/api/lojas
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
     "_id": "63474c47936c605afd965dbf",
@@ -28,15 +32,18 @@ Content-Type: application/json
 # Excluir um usuário
 DELETE http://localhost:3000/api/lojas/6347531e936c605afd965dd2
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter pelo id da loja
 GET http://localhost:3000/api/lojas/6347531e936c605afd965dd2
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter lojas filtrando
 GET http://localhost:3000/api/lojas/filtro/amazon
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////

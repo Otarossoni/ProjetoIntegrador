@@ -1,18 +1,23 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import React, { useState, useEffect, useRef } from "react";
-import { Toast } from "primereact/toast";
-import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 import UsuarioList from "./UsuarioList";
 import UsuarioForm from "./UsuarioForm";
 import UsuarioSrv from "./UsuarioSrv";
-
-import "bootstrap/dist/css/bootstrap.min.css";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import { Toast } from "primereact/toast";
+import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 function UsuarioCon() {
   const [usuarios, setUsuarios] = useState([]);
-  const initialState = { id: null, nome: "", email: "", senha: "" };
+  const initialState = {
+    id: null,
+    nome: "",
+    email: "",
+    senha: "",
+    dataNascimento: "",
+  };
   const [usuario, setUsuario] = useState(initialState);
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();
@@ -54,7 +59,7 @@ function UsuarioCon() {
           onClickAtualizar();
           toastRef.current.show({
             severity: "success",
-            summary: "Salvou",
+            summary: "Salvou!",
             life: 2000,
           });
         })
@@ -73,7 +78,7 @@ function UsuarioCon() {
           onClickAtualizar();
           toastRef.current.show({
             severity: "success",
-            summary: "Salvou",
+            summary: "Alterado!",
             life: 2000,
           });
         })
@@ -114,7 +119,7 @@ function UsuarioCon() {
         onClickAtualizar();
         toastRef.current.show({
           severity: "success",
-          summary: "Excluído",
+          summary: "Excluído!",
           life: 2000,
         });
       })
@@ -156,4 +161,4 @@ function UsuarioCon() {
   }
 }
 
-export { UsuarioCon };
+export default UsuarioCon;

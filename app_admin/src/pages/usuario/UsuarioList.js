@@ -2,47 +2,45 @@ import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
-import { Link } from "react-router-dom";
-
 const UsuarioList = (props) => {
   const paginatorLeft = (
-    <Link to={"/"} activeClassName="current">
-      <Button type="button" icon="pi pi-home" className="p-button-text" />
-    </Link>
+    <Button type="button" icon="pi pi-refresh" className="p-button-text" />
   );
   const paginatorRight = (
-    <a
-      href="https://github.com/Otarossoni/topicos1"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <Button type="button" icon="pi pi-github" className="p-button-text" />
-    </a>
+    <Button type="button" icon="pi pi-cloud" className="p-button-text" />
   );
 
+  const dateBodyTemplate1 = (rowData) => {
+    return new Intl.DateTimeFormat("pt-BR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(new Date(rowData.dataNascimento));
+  };
+  const dateBodyTemplate2 = (rowData) => {
+    return new Intl.DateTimeFormat("pt-BR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    }).format(new Date(rowData.dataCadastro));
+  };
+
   return (
-    <div className="App" style={{ paddingTop: "10px" }}>
+    <div className="App">
       <h4>Listagem de Usuários</h4>
-      <div
-        style={{
-          margin: "1%",
-          textAlign: "left",
-          paddingRight: 20,
-          paddingLeft: 20,
-        }}
-      >
+      <div style={{ margin: "10px" }}>
         <Button
-          onClick={props.onClickAtualizar}
-          className="p-button-rounded p-button-text"
-          label="Atualizar"
+          type="button"
           icon="pi pi-refresh"
+          className="p-button-rounded p-button-info"
+          onClick={props.onClickAtualizar}
         ></Button>
         <span> </span>
         <Button
-          className="p-button-rounded p-button-text"
-          onClick={props.inserir}
-          label="Adicionar"
+          type="button"
           icon="pi pi-plus-circle"
+          className="p-button-rounded p-button-info"
+          onClick={props.inserir}
         ></Button>
       </div>
 
@@ -62,19 +60,18 @@ const UsuarioList = (props) => {
           onSelectionChange={(e) => props.setUsuario(e.value)}
         >
           <Column field="nome" header="Nome" sortable filter></Column>
-          <Column field="cpf" header="CPF" sortable filter></Column>
+          <Column field="email" header="E-mail" sortable filter></Column>
           <Column
             field="dataNascimento"
             header="Data de Nascimento"
+            body={dateBodyTemplate1}
             sortable
-            filter
           ></Column>
-          <Column field="email" header="E-mail" sortable filter></Column>
           <Column
-            field="dataHoraCriado"
-            header="Data Cadastro"
+            field="dataCadastro"
+            header="Data de Cadastro"
+            body={dateBodyTemplate2}
             sortable
-            filter
           ></Column>
           <Column
             header="Operações"
@@ -82,18 +79,18 @@ const UsuarioList = (props) => {
               return (
                 <>
                   <Button
+                    type="button"
+                    icon="pi pi-pencil"
+                    className="p-button-rounded p-button-info"
                     onClick={() => props.editar(row._id)}
-                    className="p-button-rounded p-button-text"
-                  >
-                    <i class="pi pi-pencil"></i>
-                  </Button>
+                  ></Button>
                   <span> </span>
                   <Button
+                    type="button"
+                    icon="pi pi-trash"
+                    className="p-button-rounded p-button-info"
                     onClick={() => props.excluir(row._id)}
-                    className="p-button-rounded p-button-text"
-                  >
-                    <i class="pi pi-trash"></i>
-                  </Button>
+                  ></Button>
                 </>
               );
             }}
@@ -103,5 +100,4 @@ const UsuarioList = (props) => {
     </div>
   );
 };
-
 export default UsuarioList;

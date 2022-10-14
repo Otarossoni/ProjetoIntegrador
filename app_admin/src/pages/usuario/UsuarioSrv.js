@@ -1,5 +1,4 @@
 import axios from "../../services/axios-common";
-
 class UsuarioSrv {
   url = "/usuarios";
   async listar() {
@@ -33,5 +32,4 @@ class UsuarioSrv {
     });
   }
 }
-
 export default new UsuarioSrv();

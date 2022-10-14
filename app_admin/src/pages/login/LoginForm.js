@@ -64,8 +64,14 @@ const LoginForm = (props) => {
               id="email"
               className="p-inputtext-sm block mb-2"
               {...register("email", {
-                required: { value: true, message: "email é obrigatória" },
-                minLength: { value: 2, message: "Tamanho mínimo é 2" },
+                required: {
+                  value: true,
+                  message: "email é obrigatória",
+                },
+                minLength: {
+                  value: 2,
+                  message: "Tamanho mínimo é 2",
+                },
               })}
               defaultValue={credenciais.email}
               onKeyUp={handleInputChange}
@@ -85,8 +91,14 @@ const LoginForm = (props) => {
               id="senha"
               className="p-inputtext-sm block mb-2"
               {...register("senha", {
-                required: { value: true, message: "Senha é obrigatória" },
-                minLength: { value: 2, message: "Tamanho mínimo é 2" },
+                required: {
+                  value: true,
+                  message: "Senha é obrigatória",
+                },
+                minLength: {
+                  value: 2,
+                  message: "Tamanho mínimo é 2",
+                },
               })}
               defaultValue={credenciais.senha}
               onKeyUp={handleInputChange}
@@ -106,4 +118,4 @@ const LoginForm = (props) => {
     </form>
   );
 };
-export { LoginForm };
+export default LoginForm;
