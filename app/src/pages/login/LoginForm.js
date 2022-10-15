@@ -4,7 +4,7 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import LoginSrv from "./LoginSrv";
-import logo from "./logo_733AC8.svg";
+import logo from "./logo_733AC8_v2.svg";
 import "../../css/form.css";
 import "primeicons/primeicons.css";
 
