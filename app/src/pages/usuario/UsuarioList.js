@@ -22,7 +22,7 @@ const UsuarioList = (props) => {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
-    }).format(new Date(rowData.dataCadastro));
+    }).format(new Date(rowData.dataHoraCriado));
   };
 
   return (
@@ -61,6 +61,7 @@ const UsuarioList = (props) => {
         >
           <Column field="nome" header="Nome" sortable filter></Column>
           <Column field="email" header="E-mail" sortable filter></Column>
+          <Column field="cpf" header="CPF" sortable filter></Column>
           <Column
             field="dataNascimento"
             header="Data de Nascimento"
@@ -68,7 +69,7 @@ const UsuarioList = (props) => {
             sortable
           ></Column>
           <Column
-            field="dataCadastro"
+            field="dataHoraCriado"
             header="Data de Cadastro"
             body={dateBodyTemplate2}
             sortable

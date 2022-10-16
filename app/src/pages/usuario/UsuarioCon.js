@@ -11,7 +11,15 @@ import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
 
 function UsuarioCon() {
   const [usuarios, setUsuarios] = useState([]);
-  const initialState = { id: null, nome: "", email: "", senha: "", dataNascimento: "" };
+  const initialState = {
+    id: null,
+    nome: "",
+    cpf: "",
+    dataNascimento: "",
+    email: "",
+    senha: "",
+    dataHoraCriado: null,
+  };
   const [usuario, setUsuario] = useState(initialState);
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();
@@ -91,9 +99,7 @@ function UsuarioCon() {
   };
 
   const editar = (id) => {
-    setUsuario(
-      usuarios.filter((usuario) => usuario._id === id)[0]
-    );
+    setUsuario(usuarios.filter((usuario) => usuario._id === id)[0]);
     setEditando(true);
   };
 

@@ -27,6 +27,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/usuarios" element={<UsuarioCon />} />
+          {/* <Route path="/usuarios" element={<LojaCon />} /> */}
         </Routes>
       </Suspense>
     </BrowserRouter>
@@ -52,6 +53,13 @@ function Menu() {
           icon: "pi pi-fw pi-user",
           command: () => {
             navigate("/usuarios");
+          },
+        },
+        {
+          label: "Lojas",
+          icon: "pi pi-fw pi-shopping-bag",
+          command: () => {
+            navigate("/lojas");
           },
         },
       ],

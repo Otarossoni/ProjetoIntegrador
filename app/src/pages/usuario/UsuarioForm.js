@@ -98,6 +98,33 @@ const UsuarioForm = (props) => {
           <br />
           <div className="p-fluid grid formgrid">
             <div className="field col-4 md:col-4">
+              <InputText
+                name="cpf"
+                placeholder="XXX.XXX.XXX-XX"
+                {...register("cpf", {
+                  required: { value: true, message: "O cpf é obrigatório!" },
+                  maxLength: {
+                    value: 20,
+                    message: "O cpf pode ter no máximo 11 caracteres!",
+                  },
+                  minLength: {
+                    value: 11,
+                    message: "O email deve ter no mínimo 11 caracteres!",
+                  },
+                })}
+                defaultValue={props.usuario.cpf}
+                onChange={handleInputChange}
+              />
+              {errors.cpf && (
+                <span style={{ color: "red", fontStyle: "italic" }}>
+                  {errors.cpf.message}
+                </span>
+              )}
+            </div>
+          </div>
+          <br />
+          <div className="p-fluid grid formgrid">
+            <div className="field col-4 md:col-4">
               <Password
                 name="senha"
                 placeholder="Senha..."
