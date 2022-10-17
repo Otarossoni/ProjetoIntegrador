@@ -31,7 +31,7 @@ function LojaCon() {
         setLojas(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Lojas Atualizados!",
+          summary: "Lojas atualizadas!",
           life: 3000,
         });
       })

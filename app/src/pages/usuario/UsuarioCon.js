@@ -34,7 +34,7 @@ function UsuarioCon() {
         setUsuarios(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Usuários Atualizados!",
+          summary: "Usuários atualizados!",
           life: 3000,
         });
       })

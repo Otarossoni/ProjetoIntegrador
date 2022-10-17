@@ -6,8 +6,8 @@ import "../../css/body.css";
 import { Link } from "react-router-dom";
 const LojaList = (props) => {
   const paginatorLeft = (
-    <Link to={"/"} activeClassName="current">
-      <Button type="button" icon="pi pi-home" className="p-button-text" />
+    <Link to={"/usuarios"} activeClassName="current">
+      <Button type="button" icon="pi pi-users" className="p-button-text" />
     </Link>
   );
   const paginatorRight = (
