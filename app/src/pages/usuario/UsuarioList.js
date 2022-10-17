@@ -2,12 +2,22 @@ import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
+import "../../css/body.css";
+import { Link } from "react-router-dom";
 const UsuarioList = (props) => {
   const paginatorLeft = (
-    <Button type="button" icon="pi pi-refresh" className="p-button-text" />
+    <Link to={"/"} activeClassName="current">
+      <Button type="button" icon="pi pi-home" className="p-button-text" />
+    </Link>
   );
   const paginatorRight = (
-    <Button type="button" icon="pi pi-cloud" className="p-button-text" />
+    <Link to={"/lojas"} activeClassName="current">
+      <Button
+        type="button"
+        icon="pi pi-shopping-bag"
+        className="p-button-text"
+      />
+    </Link>
   );
 
   const dateBodyTemplate1 = (rowData) => {
@@ -27,24 +37,31 @@ const UsuarioList = (props) => {
 
   return (
     <div className="App">
-      <h4>Listagem de Usuários</h4>
+      <br></br>
+      <h2 className="title">Listagem de Usuários</h2>
       <div style={{ margin: "10px" }}>
         <Button
           type="button"
           icon="pi pi-refresh"
-          className="p-button-rounded p-button-info"
+          className="p-button-rounded p-button-help"
           onClick={props.onClickAtualizar}
+          label="Atualizar"
         ></Button>
         <span> </span>
         <Button
           type="button"
           icon="pi pi-plus-circle"
-          className="p-button-rounded p-button-info"
+          className="p-button-rounded p-button-success"
           onClick={props.inserir}
+          label="Novo"
         ></Button>
       </div>
-
-      <div className="card">
+      <div
+        className="card datatable-style"
+        style={{
+          margin: "1%",
+        }}
+      >
         <DataTable
           value={props.usuarios}
           paginator
@@ -75,21 +92,21 @@ const UsuarioList = (props) => {
             sortable
           ></Column>
           <Column
-            header="Operações"
+            header="Ações"
             body={(row) => {
               return (
                 <>
                   <Button
                     type="button"
                     icon="pi pi-pencil"
-                    className="p-button-rounded p-button-info"
+                    className="p-button-rounded p-button-warning"
                     onClick={() => props.editar(row._id)}
                   ></Button>
                   <span> </span>
                   <Button
                     type="button"
                     icon="pi pi-trash"
-                    className="p-button-rounded p-button-info"
+                    className="p-button-rounded p-button-danger"
                     onClick={() => props.excluir(row._id)}
                   ></Button>
                 </>

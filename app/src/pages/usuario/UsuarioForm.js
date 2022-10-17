@@ -4,6 +4,7 @@ import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import { Password } from "primereact/password";
 import { Calendar } from "primereact/calendar";
+import "../../css/body.css";
 
 const UsuarioForm = (props) => {
   const handleInputChange = (event) => {
@@ -36,31 +37,40 @@ const UsuarioForm = (props) => {
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: 15 }}>
         <div>
-          <h5 style={{ textAlign: "center" }}>Cadastro de Usuários</h5>
-          <div className="p-fluid grid formgrid">
-            <div className="field col-4 md:col-4">
-              <InputText
-                name="nome"
-                placeholder="Nome..."
-                {...register("nome", {
-                  required: { value: true, message: "O nome é obrigatório!" },
-                  maxLength: {
-                    value: 50,
-                    message: "O nome pode ter no máximo 50 caracteres!",
-                  },
-                  minLength: {
-                    value: 2,
-                    message: "O nome pode ter no mínimo 2 caracteres!",
-                  },
-                })}
-                defaultValue={props.usuario.nome}
-                onChange={handleInputChange}
-              />
+          <h2 className="title" style={{ textAlign: "center" }}>
+            Cadastro de Usuários
+          </h2>
+          <br />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
+              <span className="p-float-label">
+                <InputText
+                  name="nome"
+                  {...register("nome", {
+                    required: {
+                      value: true,
+                      message: "O campo nome é obrigatório!",
+                    },
+                    maxLength: {
+                      value: 50,
+                      message: "O nome pode ter no máximo 50 caracteres!",
+                    },
+                    minLength: {
+                      value: 6,
+                      message: "O nome deve possuir no mínimo 6 caracteres!",
+                    },
+                  })}
+                  defaultValue={props.usuario.nome}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="nome">Nome</label>
+              </span>
               {errors.nome && (
                 <span
                   style={{
                     color: "red",
                     fontStyle: "italic",
+                    fontSize: "small",
                   }}
                 >
                   {errors.nome.message}
@@ -69,62 +79,84 @@ const UsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
-            <div className="field col-4 md:col-4">
-              <InputText
-                name="email"
-                placeholder="E-mail..."
-                {...register("email", {
-                  required: { value: true, message: "O email é obrigatório!" },
-                  maxLength: {
-                    value: 100,
-                    message: "O email pode ter no máximo 100 caracteres!",
-                  },
-                  minLength: {
-                    value: 10,
-                    message: "O email deve ter no mínimo 10 caracteres!",
-                  },
-                })}
-                defaultValue={props.usuario.email}
-                onChange={handleInputChange}
-              />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
+              <span className="p-float-label">
+                <InputText
+                  name="email"
+                  {...register("email", {
+                    required: {
+                      value: true,
+                      message: "O campo e-mail é obrigatório!",
+                    },
+                    maxLength: {
+                      value: 50,
+                      message: "O e-mail pode ter no máximo 50 caracteres!",
+                    },
+                    minLength: {
+                      value: 6,
+                      message: "O e-mail deve possuir no mínimo 6 caracteres!",
+                    },
+                  })}
+                  defaultValue={props.usuario.email}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="email">E-mail</label>
+              </span>
               {errors.email && (
-                <span style={{ color: "red", fontStyle: "italic" }}>
+                <span
+                  style={{
+                    color: "red",
+                    fontStyle: "italic",
+                    fontSize: "small",
+                  }}
+                >
                   {errors.email.message}
                 </span>
               )}
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
-            <div className="field col-4 md:col-4">
-              <InputText
-                name="cpf"
-                placeholder="XXX.XXX.XXX-XX"
-                {...register("cpf", {
-                  required: { value: true, message: "O cpf é obrigatório!" },
-                  maxLength: {
-                    value: 20,
-                    message: "O cpf pode ter no máximo 11 caracteres!",
-                  },
-                  minLength: {
-                    value: 11,
-                    message: "O email deve ter no mínimo 11 caracteres!",
-                  },
-                })}
-                defaultValue={props.usuario.cpf}
-                onChange={handleInputChange}
-              />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
+              <span className="p-float-label">
+                <InputText
+                  name="cpf"
+                  {...register("cpf", {
+                    required: {
+                      value: true,
+                      message: "O campo cpf é obrigatório!",
+                    },
+                    maxLength: {
+                      value: 50,
+                      message: "O cpf pode ter no máximo 50 caracteres!",
+                    },
+                    minLength: {
+                      value: 6,
+                      message: "O cpf deve possuir no mínimo 6 caracteres!",
+                    },
+                  })}
+                  defaultValue={props.usuario.cpf}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="cpf">CPF</label>
+              </span>
               {errors.cpf && (
-                <span style={{ color: "red", fontStyle: "italic" }}>
+                <span
+                  style={{
+                    color: "red",
+                    fontStyle: "italic",
+                    fontSize: "small",
+                  }}
+                >
                   {errors.cpf.message}
                 </span>
               )}
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
-            <div className="field col-4 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <Password
                 name="senha"
                 placeholder="Senha..."
@@ -138,8 +170,8 @@ const UsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="p-fluid grid formgrid">
-            <div className="field col-4 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <Password
                 name="contraSenha"
                 placeholder="Repita a Senha..."
@@ -150,28 +182,31 @@ const UsuarioForm = (props) => {
             </div>
           </div>
           <br />
-          <div className="field col-12 md:col-4">
-            <Calendar
-              name="dataNascimento"
-              placeholder="Data de Nascimento..."
-              value={props.usuario.dataNascimento}
-              onChange={handleInputChange}
-              dateFormat="dd-mm-yy"
-              showIcon
-            />
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
+              <Calendar
+                name="dataNascimento"
+                placeholder="Data de Nascimento..."
+                value={props.usuario.dataNascimento}
+                onChange={handleInputChange}
+                dateFormat="dd-mm-yy"
+                showIcon
+              />
+            </div>
           </div>
+          <br />
           <div style={{ textAlign: "center" }}>
             <Button
               type="submit"
               icon="pi pi-save"
-              className="p-button-rounded p-button-info"
+              className="p-button-rounded p-button-success"
               label="Salvar"
             ></Button>
             <span> </span>
             <Button
               type="button"
               icon="pi pi-undo"
-              className="p-button-rounded p-button-info"
+              className="p-button-rounded p-button-danger"
               label="Cancelar"
               onClick={props.cancelar}
             ></Button>

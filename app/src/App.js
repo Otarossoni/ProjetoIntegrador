@@ -11,6 +11,7 @@ import "./css/body.css";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const UsuarioCon = lazy(() => import("./pages/usuario/UsuarioCon"));
+const LojaCon = lazy(() => import("./pages/loja/LojaCon"));
 
 function App() {
   const [token, setToken] = useState([]);
@@ -27,7 +28,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/usuarios" element={<UsuarioCon />} />
-          {/* <Route path="/usuarios" element={<LojaCon />} /> */}
+          <Route path="/lojas" element={<LojaCon />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
@@ -74,7 +75,7 @@ function Menu() {
     },
   ];
 
-  return <Menubar model={items} />;
+  return <Menubar model={items} className="ui-menubar" />;
 }
 
 export default App;

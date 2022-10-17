@@ -76,10 +76,7 @@ const LoginForm = (props) => {
             borderRadius: "50px",
           }}
         >
-          <h1 style={{ fontFamily: "sans-serif" }} className="genericText">
-            LOGIN
-          </h1>{" "}
-          <br />
+          <h1 className="genericText">LOGIN</h1> <br />
           <div className="p-fluid grid formgrid">
             <div className="field col-12 md:col-4">
               <label htmlFor="email" className="genericText">

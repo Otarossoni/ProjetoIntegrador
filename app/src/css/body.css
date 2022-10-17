@@ -1,3 +1,23 @@
 body {
-  background-color: #202124;
+  background-color: #121212;
+}
+
+.title {
+  color: white;
+  font-family: "Helvetica";
+}
+
+.center {
+  text-align: center;
+}
+
+.ui-menubar {
+  background-color: #1e1e1e;
+  border-top: #1e1e1e;
+  border-left: #1e1e1e;
+  border-right: #1e1e1e;
+}
+
+.datatable-style {
+  background-color: #1e1e1e !important;
 }
