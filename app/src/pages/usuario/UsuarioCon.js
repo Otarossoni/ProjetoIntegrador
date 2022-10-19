@@ -18,7 +18,6 @@ function UsuarioCon() {
     dataNascimento: "",
     email: "",
     senha: "",
-    dataHoraCriado: null,
   };
   const [usuario, setUsuario] = useState(initialState);
   const [editando, setEditando] = useState(false);

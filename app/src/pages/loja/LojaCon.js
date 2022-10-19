@@ -15,7 +15,6 @@ function LojaCon() {
     id: null,
     nome: "",
     url: "",
-    dataHoraCriado: null,
   };
   const [loja, setLoja] = useState(initialState);
   const [editando, setEditando] = useState(false);
@@ -65,7 +64,7 @@ function LojaCon() {
         .catch((e) => {
           toastRef.current.show({
             severity: "error",
-            summary: e.message,
+            summary: "Erro! Registro já existe!",
             life: 4000,
           });
         });

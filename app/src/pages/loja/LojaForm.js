@@ -35,17 +35,17 @@ const LojaForm = (props) => {
                   {...register("nomeFantasia", {
                     required: {
                       value: true,
-                      message: "O campo nome fantasia é obrigatório!",
+                      message: "O Nome Fantasia é obrigatório!",
                     },
                     maxLength: {
                       value: 50,
                       message:
-                        "O nome fantasia pode ter no máximo 50 caracteres!",
+                        "O Nome Fantasia pode ter no máximo 50 caracteres!",
                     },
                     minLength: {
                       value: 6,
                       message:
-                        "O nome fantasia deve possuir no mínimo 6 caracteres!",
+                        "O Nome Fantasia deve possuir no mínimo 6 caracteres!",
                     },
                   })}
                   defaultValue={props.loja.nomeFantasia}
@@ -56,7 +56,7 @@ const LojaForm = (props) => {
               {errors.nomeFantasia && (
                 <span
                   style={{
-                    color: "red",
+                    color: "#733AC8",
                     fontStyle: "italic",
                     fontSize: "small",
                   }}
@@ -94,7 +94,7 @@ const LojaForm = (props) => {
               {errors.url && (
                 <span
                   style={{
-                    color: "red",
+                    color: "#733AC8",
                     fontStyle: "italic",
                     fontSize: "small",
                   }}
