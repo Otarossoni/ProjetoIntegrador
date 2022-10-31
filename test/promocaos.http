@@ -1,12 +1,15 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjcxNzg2NTEsImV4cCI6MTY2NzE4MjI1MX0.gl-0snBhfB1LowLsHYUabZ62E1WGthA2m8WyChFRzD0
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de promoções
 GET http://localhost:3000/api/promocaos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Inserir nova promoção
 POST http://localhost:3000/api/promocaos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
     "titulo": "Redmi Note 9", 
@@ -14,14 +17,15 @@ Content-Type: application/json
     "preco": "1.100",
     "url": "https://www.amazon.com.br/redmi-note-9",
     "cupom": "200ZON",
-    "loja_id": "63474c38936c605afd965db9",
-    "usuario_id": "63474bd2936c605afd965db2"
+    "loja_id": "6351d974dbecfd316398054d",
+    "usuario_id": "63495a5680812c8c22d7f22f"
 }
 ###
 //////////////////////////////////////////////////////////////////////
 # Alterar promoção
 PUT http://localhost:3000/api/promocaos
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
     "_id": "6347544395606fff46b1f871",
@@ -30,29 +34,32 @@ Content-Type: application/json
     "preco": "1.100",
     "url": "https://www.amazon.com.br/redmi-note-9",
     "cupom": "200ZON",
-    "loja_id": "63474c38936c605afd965db9",
-    "usuario_id": "63474bd2936c605afd965db2"
+    "loja_id": "6351d974dbecfd316398054d",
+    "usuario_id": "63495a5680812c8c22d7f22f"
 }
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir uma promoção
-DELETE http://localhost:3000/api/promocaos/634754c995606fff46b1f880
+DELETE http://localhost:3000/api/promocaos/635f2475e168dc0f26554b4c
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter pelo id da promoção
 GET http://localhost:3000/api/promocaos/6347544395606fff46b1f871
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter promoções filtrando
 GET http://localhost:3000/api/promocaos/filtro/Red
-
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter promoções filtrando pela Loja
 GET http://localhost:3000/api/promocaos/loja/63474c38936c605afd965db9
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////

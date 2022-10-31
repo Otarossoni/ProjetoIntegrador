@@ -11,12 +11,8 @@ const LojaList = (props) => {
     </Link>
   );
   const paginatorRight = (
-    <Link to={"/lojas"} activeClassName="current">
-      <Button
-        type="button"
-        icon="pi pi-shopping-bag"
-        className="p-button-text"
-      />
+    <Link to={"/promocaos"} activeClassName="current">
+      <Button type="button" icon="pi pi-wallet" className="p-button-text" />
     </Link>
   );
 

@@ -12,6 +12,7 @@ import "./css/body.css";
 const Home = lazy(() => import("./pages/home/Home"));
 const UsuarioCon = lazy(() => import("./pages/usuario/UsuarioCon"));
 const LojaCon = lazy(() => import("./pages/loja/LojaCon"));
+const PromocaoCon = lazy(() => import("./pages/promocao/PromocaoCon"));
 
 function App() {
   const [token, setToken] = useState([]);
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/" element={<Home />} />
           <Route path="/usuarios" element={<UsuarioCon />} />
           <Route path="/lojas" element={<LojaCon />} />
+          <Route path="/promocaos" element={<PromocaoCon />} />
         </Routes>
       </Suspense>
     </BrowserRouter>
@@ -61,6 +63,13 @@ function Menu() {
           icon: "pi pi-fw pi-shopping-bag",
           command: () => {
             navigate("/lojas");
+          },
+        },
+        {
+          label: "Promoções",
+          icon: "pi pi-fw pi-wallet",
+          command: () => {
+            navigate("/promocaos");
           },
         },
       ],

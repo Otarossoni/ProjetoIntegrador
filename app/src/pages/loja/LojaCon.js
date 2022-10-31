@@ -64,7 +64,7 @@ function LojaCon() {
         .catch((e) => {
           toastRef.current.show({
             severity: "error",
-            summary: "Erro! Registro já existe!",
+            summary: e.message,
             life: 4000,
           });
         });

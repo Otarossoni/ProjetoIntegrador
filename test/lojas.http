@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjU2OTY4NTcsImV4cCI6MTY2NTcwMDQ1N30.IFWJzZt8L9g0U6EwlZDn1mZAYKflZJGLnDhn8Z7zRXs
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjcxNzg2NTEsImV4cCI6MTY2NzE4MjI1MX0.gl-0snBhfB1LowLsHYUabZ62E1WGthA2m8WyChFRzD0
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de lojas
 GET http://localhost:3000/api/lojas
