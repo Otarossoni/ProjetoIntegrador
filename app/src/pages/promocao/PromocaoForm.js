@@ -48,19 +48,14 @@ const PromocaoForm = (props) => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <div
-        style={{
-          paddingRight: 470,
-          paddingLeft: 470,
-          paddingTop: 20,
-          textAlign: "center",
-        }}
-      >
-        <div className="card" style={{ border: "none" }}>
-          <h5>Cadastro de Promoções</h5>
+      <div style={{ padding: 15 }}>
+        <div>
+          <h2 className="title" style={{ textAlign: "center" }}>
+            Cadastro de Promoções
+          </h2>
           <p />
-          <div className="p-fluid grid formgrid" style={{ position: "center" }}>
-            <div className="field col-12 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <InputText
                   name="titulo"
@@ -86,7 +81,7 @@ const PromocaoForm = (props) => {
               {errors.titulo && (
                 <span
                   style={{
-                    color: "red",
+                    color: "#733AC8",
                     fontStyle: "italic",
                     fontSize: "small",
                   }}
@@ -98,8 +93,8 @@ const PromocaoForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid">
-            <div className="field col-12 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <InputText
                   name="descricao"
@@ -112,11 +107,6 @@ const PromocaoForm = (props) => {
                       value: 200,
                       message: "A descrição pode ter no máximo 200 caracteres!",
                     },
-                    minLength: {
-                      value: 20,
-                      message:
-                        "A descrição deve possuir no mínimo 20 caracteres!",
-                    },
                   })}
                   defaultValue={props.promocao.descricao}
                   onChange={handleInputChange}
@@ -126,7 +116,7 @@ const PromocaoForm = (props) => {
               {errors.descricao && (
                 <span
                   style={{
-                    color: "red",
+                    color: "#733AC8",
                     fontStyle: "italic",
                     fontSize: "small",
                   }}
@@ -138,8 +128,8 @@ const PromocaoForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid">
-            <div className="field col-12 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <InputText
                   name="preco"
@@ -157,7 +147,7 @@ const PromocaoForm = (props) => {
               {errors.preco && (
                 <span
                   style={{
-                    color: "red",
+                    color: "#733AC8",
                     fontStyle: "italic",
                     fontSize: "small",
                   }}
@@ -169,8 +159,8 @@ const PromocaoForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid">
-            <div className="field col-12 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <InputText
                   name="url"
@@ -188,7 +178,7 @@ const PromocaoForm = (props) => {
               {errors.url && (
                 <span
                   style={{
-                    color: "red",
+                    color: "#733AC8",
                     fontStyle: "italic",
                     fontSize: "small",
                   }}
@@ -200,8 +190,8 @@ const PromocaoForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid">
-            <div className="field col-12 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <InputText
                   name="cupom"
@@ -213,7 +203,7 @@ const PromocaoForm = (props) => {
               {errors.cupom && (
                 <span
                   style={{
-                    color: "red",
+                    color: "#733AC8",
                     fontStyle: "italic",
                     fontSize: "small",
                   }}
@@ -225,12 +215,12 @@ const PromocaoForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid" style={{ position: "center" }}>
-            <div className="col-12 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="col-6 md:col-6">
               <span className="p-float-label">
                 <Dropdown
-                  name="loja"
-                  defaultValue={props.promocao.loja_id}
+                  name="loja_id"
+                  value={props.promocao.loja_id}
                   onChange={handleInputChange}
                   options={lojas}
                   optionLabel="nomeFantasia"
@@ -243,12 +233,13 @@ const PromocaoForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid" style={{ position: "center" }}>
-            <div className="field col-12 md:col-4">
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <Dropdown
-                  name="usuario"
-                  defaultValue={props.promocao.usuario_id}
+                  name="usuario_id"
+                  readOnly={true}
+                  value={props.promocao.usuario_id}
                   onChange={handleInputChange}
                   options={usuarios}
                   optionLabel="nome"
@@ -265,13 +256,14 @@ const PromocaoForm = (props) => {
             <Button
               type="submit"
               icon="pi pi-save"
-              className="p-button-rounded p-button-text "
+              className="p-button-rounded p-button-success"
               label="Salvar"
             ></Button>
+            <span> </span>
             <Button
               type="button"
               icon="pi pi-undo"
-              className="p-button-rounded p-button-text"
+              className="p-button-rounded p-button-danger"
               label="Cancelar"
               onClick={props.cancelar}
             ></Button>

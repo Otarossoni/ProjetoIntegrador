@@ -2,51 +2,51 @@ import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
+import "../../css/body.css";
 import { Link } from "react-router-dom";
-
-const PromocaoList = (props) => {
+const LojaList = (props) => {
   const paginatorLeft = (
-    <Link to={"/"} activeClassName="current">
-      <Button type="button" icon="pi pi-home" className="p-button-text" />
+    <Link to={"/lojas"} activeClassName="current">
+      <Button
+        type="button"
+        icon="pi pi-shopping-bag"
+        className="p-button-text"
+      />
     </Link>
   );
   const paginatorRight = (
-    <a
-      href="https://github.com/Otarossoni/topicos1"
-      target="_blank"
-      rel="noreferrer"
-    >
-      <Button type="button" icon="pi pi-github" className="p-button-text" />
-    </a>
+    <Link to={"/promocaos"} activeClassName="current">
+      <Button type="button" icon="pi pi-wallet" className="p-button-text" />
+    </Link>
   );
 
   return (
-    <div className="App" style={{ paddingTop: "10px" }}>
-      <h4>Listagem de Promoções</h4>
-      <div
-        style={{
-          margin: "1%",
-          textAlign: "left",
-          paddingRight: 20,
-          paddingLeft: 20,
-        }}
-      >
+    <div className="App">
+      <br></br>
+      <h2 className="title">Listagem de Promoções</h2>
+      <div style={{ margin: "10px" }}>
         <Button
-          onClick={props.onClickAtualizar}
-          className="p-button-rounded p-button-text"
-          label="Atualizar"
+          type="button"
           icon="pi pi-refresh"
+          className="p-button-rounded p-button-help"
+          onClick={props.onClickAtualizar}
+          label="Atualizar"
         ></Button>
         <span> </span>
         <Button
-          className="p-button-rounded p-button-text"
-          onClick={props.inserir}
-          label="Adicionar"
+          type="button"
           icon="pi pi-plus-circle"
+          className="p-button-rounded p-button-success"
+          onClick={props.inserir}
+          label="Novo"
         ></Button>
       </div>
-
-      <div className="card">
+      <div
+        className="card"
+        style={{
+          margin: "1%",
+        }}
+      >
         <DataTable
           value={props.promocaos}
           paginator
@@ -72,27 +72,38 @@ const PromocaoList = (props) => {
             body={dateBodyTemplate}
             sortable
           ></Column> */}
-          <Column field="loja_id.nomeFantasia" header="Loja" sortable></Column>
-          <Column field="usuario_id.nome" header="Usuário" sortable></Column>
+          <Column
+            field="loja_id.nomeFantasia"
+            header="Loja"
+            sortable
+            filter
+          ></Column>
+          <Column
+            reorderable
+            field="usuario_id.nome"
+            header="Usuário"
+            sortable
+            filter
+          ></Column>
 
           <Column
-            header="Operações"
+            header="Ações"
             body={(row) => {
               return (
                 <>
                   <Button
+                    type="button"
+                    icon="pi pi-pencil"
+                    className="p-button-rounded p-button-warning"
                     onClick={() => props.editar(row._id)}
-                    className="p-button-rounded p-button-text"
-                  >
-                    <i className="pi pi-pencil"></i>
-                  </Button>
+                  ></Button>
                   <span> </span>
                   <Button
+                    type="button"
+                    icon="pi pi-trash"
+                    className="p-button-rounded p-button-danger"
                     onClick={() => props.excluir(row._id)}
-                    className="p-button-rounded p-button-text"
-                  >
-                    <i className="pi pi-trash"></i>
-                  </Button>
+                  ></Button>
                 </>
               );
             }}
@@ -102,5 +113,4 @@ const PromocaoList = (props) => {
     </div>
   );
 };
-
-export default PromocaoList;
+export default LojaList;

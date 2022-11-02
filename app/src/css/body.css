@@ -21,3 +21,8 @@ body {
 .datatable-style {
   background-color: #1e1e1e !important;
 }
+
+.p-datatable .p-datatable-tbody > tr {
+  background: #3b3b3b;
+  color: white;
+}

@@ -101,12 +101,17 @@ function LojaCon() {
 
   const excluir = (_id) => {
     confirmDialog({
-      message: "Confirma a exclusão?",
-      header: "Confirmação",
-      icon: "pi pi-question",
-      acceptLabel: "Sim",
-      rejectLabel: "Não",
+      className: "p-confirm-dialog",
+      message: "Confirma a exclusão do usuário?",
+      header: "Excluir?",
+      icon: "pi pi-spin pi-spinner",
+      acceptLabel: "Sim, excluir!",
+      rejectLabel: "Não, voltar!",
       acceptClassName: "p-button-danger",
+      rejectClassName: "p-button-primary",
+      acceptIcon: "pi pi-check",
+      rejectIcon: "pi pi-times",
+      style: { width: "35vw" },
       accept: () => excluirConfirm(_id),
     });
   };
