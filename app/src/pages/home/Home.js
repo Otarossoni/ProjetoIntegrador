@@ -24,7 +24,7 @@ function Home() {
           width: "50%",
           height: "85%",
           textAlign: "center",
-          marginTop: "5%",
+          marginTop: "2%",
           marginRight: "5%",
           marginLeft: "5%",
           paddingTop: "9%",
@@ -33,16 +33,17 @@ function Home() {
           fontSize: "1.5rem",
         }}
       >
+        <h2 style={{ fontSize: "40pxs" }}>Bem-vindo(a) ao PromoCão!</h2>
         <p>
-          Bem-vindo(a) ao PromoCão. É aqui é onde você poderá administrar todos
-          os cadastros da plataforma PromoCão, desde a criação de novos usuários
-          até a criação de novas lojas.
+          É aqui é onde você poderá administrar todos os cadastros da plataforma
+          PromoCão, desde a criação de novos usuários até a criação de novas
+          lojas.
         </p>
-        <Link to={"/usuarios"} style={{ color: "#8c239e" }}>
+        <Link to={"/sobre"} style={{ color: "#9c27b0" }}>
           <Button
             type="button"
             className="p-button-rounded p-button-help"
-            label="Saiba mais"
+            label="Leia mais"
           ></Button>
         </Link>
       </div>

@@ -6,12 +6,12 @@ import "../../css/body.css";
 import { Link } from "react-router-dom";
 const LojaList = (props) => {
   const paginatorLeft = (
-    <Link to={"/usuarios"} activeClassName="current">
+    <Link to={"/usuarios"} activeClassName="current" className="mainColor">
       <Button type="button" icon="pi pi-users" className="p-button-text" />
     </Link>
   );
   const paginatorRight = (
-    <Link to={"/promocaos"} activeClassName="current">
+    <Link to={"/promocaos"} activeClassName="current" className="mainColor">
       <Button type="button" icon="pi pi-wallet" className="p-button-text" />
     </Link>
   );

@@ -2,6 +2,17 @@ body {
   background-color: #1b1e1f;
 }
 
+.img_404 {
+  width: 40%;
+  height: 40%;
+  display: flex;
+  padding-left: 50%;
+}
+
+.mainColor {
+  color: #9c27b0;
+}
+
 .title {
   color: white;
   font-family: "Helvetica";
@@ -18,11 +29,59 @@ body {
   border-right: #1e1e1e;
 }
 
-.datatable-style {
-  background-color: #1e1e1e !important;
+.ui-menubar .ui-menuitem-link {
+  color: #1e1e1e;
 }
 
-.p-datatable .p-datatable-tbody > tr {
-  background: #3b3b3b;
-  color: white;
+.p-datatable .p-datatable-tbody > tr > td {
+  background: #3b3b3b !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: #272727 !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #3b3b3b !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator {
+  background: #272727 !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-dropdown {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-dropdown .p-dropdown-label {
+  color: white !important;
+}
+
+.p-datatable .p-paginator .p-paginator-current {
+  color: white !important;
+}
+
+.p-datatable .p-paginator .p-paginator-prev {
+  background: #3b3b3b !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-button.p-button-icon-only {
+  background: #3b3b3b !important;
+  color: #9c27b0 !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: white !important;
 }

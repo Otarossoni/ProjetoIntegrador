@@ -7,6 +7,7 @@ import "primeicons/primeicons.css";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
 import LoginForm from "./pages/login/LoginForm";
+import Erro404 from "./pages/erro/Erro404";
 import "./css/body.css";
 
 const Home = lazy(() => import("./pages/home/Home"));
@@ -31,6 +32,8 @@ function App() {
           <Route path="/usuarios" element={<UsuarioCon />} />
           <Route path="/lojas" element={<LojaCon />} />
           <Route path="/promocaos" element={<PromocaoCon />} />
+          <Route path="/sobre" element={<h1>Sobre</h1>} />
+          <Route path="*" element={<Erro404 />} />
         </Routes>
       </Suspense>
     </BrowserRouter>

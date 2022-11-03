@@ -107,7 +107,7 @@ function PromocaoCon() {
   const excluir = (_id) => {
     confirmDialog({
       className: "p-confirm-dialog",
-      message: "Confirma a exclusão do usuário?",
+      message: "Confirma a exclusão da promoção?",
       header: "Excluir?",
       icon: "pi pi-spin pi-spinner",
       acceptLabel: "Sim, excluir!",
