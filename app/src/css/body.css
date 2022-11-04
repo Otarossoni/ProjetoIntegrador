@@ -3,10 +3,9 @@ body {
 }
 
 .img_404 {
-  width: 40%;
-  height: 40%;
-  display: flex;
-  padding-left: 50%;
+  margin-top: 2%;
+  margin-left: 30%;
+  margin-right: 30%;
 }
 
 .mainColor {
@@ -31,6 +30,38 @@ body {
 
 .ui-menubar .ui-menuitem-link {
   color: #1e1e1e;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text {
+  color: white;
+}
+
+.pi-home:before {
+  color: gray;
+}
+
+.pi-file:before {
+  color: gray;
+}
+
+.pi-question-circle:before {
+  color: gray;
+}
+
+.pi-power-off:before {
+  color: gray;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text {
+  color: white;
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
@@ -77,9 +108,8 @@ body {
 }
 
 .p-datatable .p-paginator .p-button.p-button-icon-only {
-  background: #3b3b3b !important;
   color: #9c27b0 !important;
-  border: 1px solid #3b3b3b !important;
+  border: 1px solid #9c27b0 !important;
 }
 
 .p-datatable .p-sortable-column .p-sortable-column-icon {

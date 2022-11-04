@@ -78,6 +78,13 @@ function Menu() {
       ],
     },
     {
+      label: "Sobre",
+      icon: "pi pi-fw pi-question-circle",
+      command: () => {
+        navigate("/sobre");
+      },
+    },
+    {
       label: "Sair",
       icon: "pi pi-fw pi-power-off",
       command: () => {

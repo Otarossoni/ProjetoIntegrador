@@ -1,4 +1,4 @@
-import erro404 from "../../images/erro_404.svg";
+import erro404 from "./erro_404.svg";
 import "../../css/body.css";
 
 const Erro404 = () => {
