@@ -41,7 +41,7 @@ body {
 }
 
 .pi-home:before {
-  color: gray;
+  color: #9c27b0;
 }
 
 .pi-file:before {
@@ -54,14 +54,6 @@ body {
 
 .pi-power-off:before {
   color: gray;
-}
-
-.p-menubar
-  .p-menubar-root-list
-  > .p-menuitem
-  > .p-menuitem-link
-  .p-menuitem-text {
-  color: white;
 }
 
 .p-datatable .p-datatable-tbody > tr > td {
@@ -114,4 +106,78 @@ body {
 
 .p-datatable .p-sortable-column .p-sortable-column-icon {
   color: white !important;
+}
+
+.p-autocomplete-dd .p-autocomplete-dropdown {
+  background: #9c27b0 !important;
+  color: white !important;
+}
+
+.p-calendar-w-btn-right .p-datepicker-trigger {
+  background: #9c27b0 !important;
+  color: white !important;
+}
+
+.p-fluid .p-inputtext {
+  color: white;
+  background-color: #3e4045;
+}
+
+.p-autocomplete-panel .p-autocomplete-items {
+  background: #3b3b3b !important;
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  color: white !important;
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:hover {
+  color: black !important;
+}
+
+/* Filtros */
+.p-column-filter-overlay-menu .p-column-filter-operator {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-constraint:last-child {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-add-rule {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-buttonbar {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-buttonbar .p-button:not(.p-button-icon-only) {
+  background: #3b3b3b !important;
+  border: 1px solid #9c27b0 !important;
+  color: white;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-constraint {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-buttonbar .p-button:not(.p-button-icon-only):hover {
+  background: #9c27b0 !important;
+  border: 1px solid #9c27b0 !important;
+  color: white;
+}
+
+.p-column-filter-add-button .p-button-label,
+.p-column-filter-remove-button .p-button-label {
+  color: white;
+}
+
+.pi-plus:before {
+  color: #9c27b0;
 }

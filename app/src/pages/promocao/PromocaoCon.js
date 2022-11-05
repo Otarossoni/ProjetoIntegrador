@@ -8,6 +8,7 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
+import LojaSrv from "../loja/LojaSrv";
 
 function PromocaoCon() {
   const [promocaos, setPromocaos] = useState([]);
@@ -25,8 +26,16 @@ function PromocaoCon() {
   const [editando, setEditando] = useState(false);
   const toastRef = useRef();
 
+  const [lojas, setLojas] = useState([]);
+
   useEffect(() => {
     onClickAtualizar(); // ao inicializar executa o método para atualizar
+
+    LojaSrv.listar()
+      .then((response) => {
+        setLojas(response.data);
+      })
+      .catch((e) => {});
   }, []);
 
   const onClickAtualizar = () => {
@@ -158,6 +167,7 @@ function PromocaoCon() {
     return (
       <div>
         <PromocaoForm
+          lojas={lojas}
           promocao={promocao}
           setPromocao={setPromocao}
           salvar={salvar}

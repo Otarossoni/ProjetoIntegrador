@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Dropdown } from "primereact/dropdown";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import LojaSrv from "../loja/LojaSrv";
 import UsuarioSrv from "../usuario/UsuarioSrv";
+import { AutoComplete } from "primereact/autocomplete";
 
 const PromocaoForm = (props) => {
   const [lojas, setLojas] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
+  const [lojasFiltradas, setLojasFiltradas] = useState(null);
+  const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -44,6 +46,40 @@ const PromocaoForm = (props) => {
 
   const onSubmit = (data) => {
     props.salvar();
+  };
+
+  const buscarLoja = (event) => {
+    setTimeout(() => {
+      let _lojasFiltradas;
+      if (!event.query.trim().length) {
+        _lojasFiltradas = [...lojas];
+      } else {
+        _lojasFiltradas = lojas.filter((country) => {
+          return country.nomeFantasia
+            .toLowerCase()
+            .startsWith(event.query.toLowerCase());
+        });
+      }
+
+      setLojasFiltradas(_lojasFiltradas);
+    }, 250);
+  };
+
+  const buscarUsuario = (event) => {
+    setTimeout(() => {
+      let _usuariosFiltrados;
+      if (!event.query.trim().length) {
+        _usuariosFiltrados = [...usuarios];
+      } else {
+        _usuariosFiltrados = usuarios.filter((country) => {
+          return country.nomeFantasia
+            .toLowerCase()
+            .startsWith(event.query.toLowerCase());
+        });
+      }
+
+      setUsuariosFiltrados(_usuariosFiltrados);
+    }, 250);
   };
 
   return (
@@ -218,14 +254,14 @@ const PromocaoForm = (props) => {
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="col-6 md:col-6">
               <span className="p-float-label">
-                <Dropdown
+                <AutoComplete
                   name="loja_id"
+                  dropdown
                   value={props.promocao.loja_id}
+                  suggestions={lojasFiltradas}
+                  completeMethod={buscarLoja}
+                  field="nomeFantasia"
                   onChange={handleInputChange}
-                  options={lojas}
-                  optionLabel="nomeFantasia"
-                  optionValue="_id"
-                  editable
                 />
                 <label htmlFor="loja">Loja</label>
               </span>
@@ -236,15 +272,15 @@ const PromocaoForm = (props) => {
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="field col-6 md:col-6">
               <span className="p-float-label">
-                <Dropdown
+                <AutoComplete
                   name="usuario_id"
-                  readOnly={true}
+                  dropdown
                   value={props.promocao.usuario_id}
+                  suggestions={usuariosFiltrados}
+                  completeMethod={buscarUsuario}
+                  field="nome"
                   onChange={handleInputChange}
-                  options={usuarios}
-                  optionLabel="nome"
-                  optionValue="_id"
-                  editable
+                  disabled
                 />
                 <label htmlFor="usuario">Usuário</label>
               </span>
