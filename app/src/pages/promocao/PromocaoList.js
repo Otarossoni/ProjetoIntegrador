@@ -4,7 +4,7 @@ import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 import "../../css/body.css";
 import { Link } from "react-router-dom";
-const LojaList = (props) => {
+const PromocaoList = (props) => {
   const paginatorLeft = (
     <Link to={"/lojas"} activeClassName="current" className="mainColor">
       <Button
@@ -23,7 +23,7 @@ const LojaList = (props) => {
   return (
     <div className="App">
       <br></br>
-      <h2 className="title">Listagem de Promoções</h2>
+      <h2 className="title">Listagem de Promoções - Todas</h2>
       <div style={{ margin: "10px" }}>
         <Button
           type="button"
@@ -66,6 +66,7 @@ const LojaList = (props) => {
           <Column field="preco" header="Preço" sortable filter></Column>
           <Column field="url" header="URL" sortable filter></Column>
           <Column field="cupom" header="Cupom" sortable filter></Column>
+          <Column field="status" header="Status" sortable filter></Column>
           {/* <Column
             field="dataHoraCriado"
             header="Data de Criação"
@@ -78,13 +79,13 @@ const LojaList = (props) => {
             sortable
             filter
           ></Column>
-          <Column
+          {/* <Column
             reorderable
             field="usuario_id.nome"
             header="Usuário"
             sortable
             filter
-          ></Column>
+          ></Column> */}
 
           <Column
             header="Ações"
@@ -113,4 +114,4 @@ const LojaList = (props) => {
     </div>
   );
 };
-export default LojaList;
+export default PromocaoList;

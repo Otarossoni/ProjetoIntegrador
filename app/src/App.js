@@ -8,12 +8,16 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
 import LoginForm from "./pages/login/LoginForm";
 import Erro404 from "./pages/erro/Erro404";
+import Sobre from "./pages/sobre/Sobre";
 import "./css/body.css";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const UsuarioCon = lazy(() => import("./pages/usuario/UsuarioCon"));
 const LojaCon = lazy(() => import("./pages/loja/LojaCon"));
 const PromocaoCon = lazy(() => import("./pages/promocao/PromocaoCon"));
+const PromocaoAprovacaoCon = lazy(() =>
+  import("./pages/promocaoAprovacao/PromocaoAprovacaoCon")
+);
 
 function App() {
   const [token, setToken] = useState([]);
@@ -32,7 +36,11 @@ function App() {
           <Route path="/usuarios" element={<UsuarioCon />} />
           <Route path="/lojas" element={<LojaCon />} />
           <Route path="/promocaos" element={<PromocaoCon />} />
-          <Route path="/sobre" element={<h1>Sobre</h1>} />
+          <Route path="/sobre" element={<Sobre />} />
+          <Route
+            path="/promocaos/status/Aguardando"
+            element={<PromocaoAprovacaoCon />}
+          />
           <Route path="*" element={<Erro404 />} />
         </Routes>
       </Suspense>
@@ -73,6 +81,19 @@ function Menu() {
           icon: "pi pi-fw pi-wallet",
           command: () => {
             navigate("/promocaos");
+          },
+        },
+      ],
+    },
+    {
+      label: "Aprovações",
+      icon: "pi pi-fw pi-thumbs-up",
+      items: [
+        {
+          label: "Promoções",
+          icon: "pi pi-fw pi-wallet",
+          command: () => {
+            navigate("/promocaos/status/Aguardando");
           },
         },
       ],

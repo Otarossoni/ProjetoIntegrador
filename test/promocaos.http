@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjcxNzg2NTEsImV4cCI6MTY2NzE4MjI1MX0.gl-0snBhfB1LowLsHYUabZ62E1WGthA2m8WyChFRzD0
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njc3MDI4NjEsImV4cCI6MTY2NzcwNjQ2MX0.LPr-6kWY2zNdVDTHq0MhEHkFjQ9ZiiGMj8F3xCa38_M
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de promoções
 GET http://localhost:3000/api/promocaos
@@ -63,3 +63,8 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando pelo status Aguardando
+GET http://localhost:3000/api/promocaos/status/Aguardando
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

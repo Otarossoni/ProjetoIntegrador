@@ -67,4 +67,18 @@ module.exports = {
       .populate("usuario_id")
       .sort({ nome: -1 }); // -1 decrescente 1 crescente
   },
+
+  filtrarStatus: (req, res) => {
+    Promocao.find(
+      {
+        $or: [{ status: { $regex: req.params.filtro, $options: "i" } }],
+      },
+      function (err, obj) {
+        err ? res.status(400).send(err) : res.status(200).json(obj);
+      }
+    )
+      .populate("loja_id")
+      .populate("usuario_id")
+      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+  },
 };

@@ -5,12 +5,14 @@ import { useForm } from "react-hook-form";
 import LojaSrv from "../loja/LojaSrv";
 import UsuarioSrv from "../usuario/UsuarioSrv";
 import { AutoComplete } from "primereact/autocomplete";
+import { Dropdown } from "primereact/dropdown";
 
 const PromocaoForm = (props) => {
   const [lojas, setLojas] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [lojasFiltradas, setLojasFiltradas] = useState(null);
   const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
+  const statusOptions = ["Aguardando", "Ativa", "Expirada", "Rejeitada"];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -252,6 +254,21 @@ const PromocaoForm = (props) => {
           <br />
 
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
+              <span className="p-float-label">
+                <Dropdown
+                  name="status"
+                  value={props.promocao.status}
+                  options={statusOptions}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="status">Status</label>
+              </span>
+            </div>
+          </div>
+          <br />
+
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="col-6 md:col-6">
               <span className="p-float-label">
                 <AutoComplete
@@ -280,7 +297,6 @@ const PromocaoForm = (props) => {
                   completeMethod={buscarUsuario}
                   field="nome"
                   onChange={handleInputChange}
-                  disabled
                 />
                 <label htmlFor="usuario">Usuário</label>
               </span>

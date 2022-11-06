@@ -8,7 +8,6 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
-import LojaSrv from "../loja/LojaSrv";
 
 function PromocaoCon() {
   const [promocaos, setPromocaos] = useState([]);
@@ -31,7 +30,7 @@ function PromocaoCon() {
   useEffect(() => {
     onClickAtualizar(); // ao inicializar executa o método para atualizar
 
-    LojaSrv.listar()
+    PromocaoSrv.listar()
       .then((response) => {
         setLojas(response.data);
       })
