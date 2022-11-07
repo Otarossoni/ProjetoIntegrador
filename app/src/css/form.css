@@ -3,6 +3,11 @@
   font-family: "sans-serif";
 }
 
+.menuBarTitle {
+  margin-top: 5%;
+  color: white;
+}
+
 .genericFormImput {
   color: white;
   background-color: #3e4045;

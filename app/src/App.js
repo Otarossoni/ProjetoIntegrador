@@ -15,6 +15,8 @@ const Home = lazy(() => import("./pages/home/Home"));
 const UsuarioCon = lazy(() => import("./pages/usuario/UsuarioCon"));
 const LojaCon = lazy(() => import("./pages/loja/LojaCon"));
 const PromocaoCon = lazy(() => import("./pages/promocao/PromocaoCon"));
+const DenunciaCon = lazy(() => import("./pages/denuncia/DenunciaCon"));
+const ComentarioCon = lazy(() => import("./pages/comentario/ComentarioCon"));
 const PromocaoAprovacaoCon = lazy(() =>
   import("./pages/promocaoAprovacao/PromocaoAprovacaoCon")
 );
@@ -36,6 +38,8 @@ function App() {
           <Route path="/usuarios" element={<UsuarioCon />} />
           <Route path="/lojas" element={<LojaCon />} />
           <Route path="/promocaos" element={<PromocaoCon />} />
+          <Route path="/denuncias" element={<DenunciaCon />} />
+          <Route path="/comentarios" element={<ComentarioCon />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route
             path="/promocaos/status/Aguardando"
@@ -83,6 +87,20 @@ function Menu() {
             navigate("/promocaos");
           },
         },
+        {
+          label: "Denúncias",
+          icon: "pi pi-fw pi-exclamation-triangle",
+          command: () => {
+            navigate("/denuncias");
+          },
+        },
+        {
+          label: "Comentários",
+          icon: "pi pi-fw pi-comments",
+          command: () => {
+            navigate("/comentarios");
+          },
+        },
       ],
     },
     {
@@ -92,6 +110,33 @@ function Menu() {
         {
           label: "Promoções",
           icon: "pi pi-fw pi-wallet",
+          command: () => {
+            navigate("/promocaos/status/Aguardando");
+          },
+        },
+      ],
+    },
+    {
+      label: "Manutenção de Promoções",
+      icon: "pi pi-fw pi-sliders-h",
+      items: [
+        {
+          label: "Ativas",
+          icon: "pi pi-fw pi-check",
+          command: () => {
+            navigate("/promocaos/status/Aguardando");
+          },
+        },
+        {
+          label: "Rejeitadas",
+          icon: "pi pi-fw pi-ban",
+          command: () => {
+            navigate("/promocaos/status/Aguardando");
+          },
+        },
+        {
+          label: "Expiradas",
+          icon: "pi pi-fw pi-clock",
           command: () => {
             navigate("/promocaos/status/Aguardando");
           },
@@ -115,7 +160,9 @@ function Menu() {
     },
   ];
 
-  return <Menubar model={items} className="ui-menubar" />;
+  const end = <h4 className="menuBarTitle">Administração</h4>;
+
+  return <Menubar model={items} className="ui-menubar" end={end} />;
 }
 
 export default App;

@@ -33,7 +33,7 @@ function Home() {
           fontSize: "1.5rem",
         }}
       >
-        <h2 style={{ fontSize: "40pxs" }}>Bem-vindo(a) ao PromoCão!</h2>
+        <h2 style={{ fontSize: "40px" }}>Bem-vindo(a) ao PromoCão!</h2>
         <p>
           É aqui é onde você poderá administrar todos os cadastros da plataforma
           PromoCão, desde a criação de novos usuários até a criação de novas

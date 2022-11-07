@@ -15,8 +15,12 @@ const PromocaoList = (props) => {
     </Link>
   );
   const paginatorRight = (
-    <Link to={"/promocaos"} activeClassName="current" className="mainColor">
-      <Button type="button" icon="pi pi-wallet" className="p-button-text" />
+    <Link to={"/denuncias"} activeClassName="current" className="mainColor">
+      <Button
+        type="button"
+        icon="pi pi-exclamation-triangle"
+        className="p-button-text"
+      />
     </Link>
   );
 
@@ -88,6 +92,7 @@ const PromocaoList = (props) => {
           ></Column> */}
 
           <Column
+            style={{ width: "120px" }}
             header="Ações"
             body={(row) => {
               return (

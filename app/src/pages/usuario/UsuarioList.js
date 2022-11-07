@@ -92,6 +92,7 @@ const UsuarioList = (props) => {
             sortable
           ></Column>
           <Column
+            style={{ width: "120px" }}
             header="Ações"
             body={(row) => {
               return (
