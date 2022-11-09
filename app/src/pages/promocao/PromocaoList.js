@@ -64,6 +64,7 @@ const PromocaoList = (props) => {
           selectionMode="single"
           selection={props.promocao}
           onSelectionChange={(e) => props.setPromocao(e.value)}
+          emptyMessage="Nenhum registro encontrado!"
         >
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="descricao" header="Descrição" sortable filter></Column>

@@ -64,6 +64,7 @@ const LojaList = (props) => {
           selectionMode="single"
           selection={props.loja}
           onSelectionChange={(e) => props.setLoja(e.value)}
+          emptyMessage="Nenhum registro encontrado!"
         >
           <Column
             field="nomeFantasia"

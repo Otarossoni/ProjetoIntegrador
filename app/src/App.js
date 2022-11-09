@@ -20,6 +20,15 @@ const ComentarioCon = lazy(() => import("./pages/comentario/ComentarioCon"));
 const PromocaoAprovacaoCon = lazy(() =>
   import("./pages/promocaoAprovacao/PromocaoAprovacaoCon")
 );
+const PromocaoAtivaCon = lazy(() =>
+  import("./pages/promocaoAtiva/PromocaoAtivaCon")
+);
+const PromocaoExpiradaCon = lazy(() =>
+  import("./pages/promocaoExpirada/PromocaoExpiradaCon")
+);
+const PromocaoRejeitadaCon = lazy(() =>
+  import("./pages/promocaoRejeitada/PromocaoRejeitadaCon")
+);
 
 function App() {
   const [token, setToken] = useState([]);
@@ -45,6 +54,18 @@ function App() {
             path="/promocaos/status/Aguardando"
             element={<PromocaoAprovacaoCon />}
           />
+          <Route
+            path="/promocaos/status/Ativa"
+            element={<PromocaoAtivaCon />}
+          />
+          <Route
+            path="/promocaos/status/Expirada"
+            element={<PromocaoExpiradaCon />}
+          />
+          <Route
+            path="/promocaos/status/Rejeitada"
+            element={<PromocaoRejeitadaCon />}
+          />
           <Route path="*" element={<Erro404 />} />
         </Routes>
       </Suspense>
@@ -64,7 +85,7 @@ function Menu() {
     },
     {
       label: "Cadastros",
-      icon: "pi pi-fw pi-file",
+      icon: "pi pi-fw pi-inbox",
       items: [
         {
           label: "Usuários",
@@ -124,21 +145,21 @@ function Menu() {
           label: "Ativas",
           icon: "pi pi-fw pi-check",
           command: () => {
-            navigate("/promocaos/status/Aguardando");
-          },
-        },
-        {
-          label: "Rejeitadas",
-          icon: "pi pi-fw pi-ban",
-          command: () => {
-            navigate("/promocaos/status/Aguardando");
+            navigate("/promocaos/status/Ativa");
           },
         },
         {
           label: "Expiradas",
           icon: "pi pi-fw pi-clock",
           command: () => {
-            navigate("/promocaos/status/Aguardando");
+            navigate("/promocaos/status/Expirada");
+          },
+        },
+        {
+          label: "Rejeitadas",
+          icon: "pi pi-fw pi-ban",
+          command: () => {
+            navigate("/promocaos/status/Rejeitada");
           },
         },
       ],

@@ -66,6 +66,7 @@ const ComentarioList = (props) => {
           selectionMode="single"
           selection={props.comentario}
           onSelectionChange={(e) => props.setComentario(e.value)}
+          emptyMessage="Nenhum registro encontrado!"
         >
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="descricao" header="Descrição" sortable filter></Column>

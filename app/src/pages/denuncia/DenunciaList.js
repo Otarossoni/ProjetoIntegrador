@@ -66,6 +66,7 @@ const DenunciaList = (props) => {
           selectionMode="single"
           selection={props.denuncia}
           onSelectionChange={(e) => props.setDenuncia(e.value)}
+          emptyMessage="Nenhum registro encontrado!"
         >
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="descricao" header="Descrição" sortable filter></Column>
