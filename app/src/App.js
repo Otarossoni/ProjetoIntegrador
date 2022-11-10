@@ -16,6 +16,9 @@ const UsuarioCon = lazy(() => import("./pages/usuario/UsuarioCon"));
 const LojaCon = lazy(() => import("./pages/loja/LojaCon"));
 const PromocaoCon = lazy(() => import("./pages/promocao/PromocaoCon"));
 const DenunciaCon = lazy(() => import("./pages/denuncia/DenunciaCon"));
+const DenunciaAprovacaoCon = lazy(() =>
+  import("./pages/denunciaAprovacao/DenunciaAprovacaoCon")
+);
 const ComentarioCon = lazy(() => import("./pages/comentario/ComentarioCon"));
 const PromocaoAprovacaoCon = lazy(() =>
   import("./pages/promocaoAprovacao/PromocaoAprovacaoCon")
@@ -48,6 +51,10 @@ function App() {
           <Route path="/lojas" element={<LojaCon />} />
           <Route path="/promocaos" element={<PromocaoCon />} />
           <Route path="/denuncias" element={<DenunciaCon />} />
+          <Route
+            path="/denuncias/status/Aguardando"
+            element={<DenunciaAprovacaoCon />}
+          />
           <Route path="/comentarios" element={<ComentarioCon />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route
@@ -133,6 +140,13 @@ function Menu() {
           icon: "pi pi-fw pi-wallet",
           command: () => {
             navigate("/promocaos/status/Aguardando");
+          },
+        },
+        {
+          label: "Denúncias",
+          icon: "pi pi-fw pi-exclamation-triangle",
+          command: () => {
+            navigate("/denuncias/status/Aguardando");
           },
         },
       ],

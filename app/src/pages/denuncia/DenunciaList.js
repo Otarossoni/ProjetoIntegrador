@@ -29,7 +29,7 @@ const DenunciaList = (props) => {
   return (
     <div className="App">
       <br></br>
-      <h2 className="title">Listagem de Denúncias</h2>
+      <h2 className="title">Listagem de Denúncias - Todas</h2>
       <div style={{ margin: "10px" }}>
         <Button
           type="button"
@@ -71,11 +71,13 @@ const DenunciaList = (props) => {
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="descricao" header="Descrição" sortable filter></Column>
           <Column
+            style={{ width: "180px" }}
             field="dataHoraCriado"
             header="Data de Criação"
             body={dateBodyTemplate}
             sortable
           ></Column>
+          <Column field="status" header="Status" sortable></Column>
           <Column
             field="promocao_id.titulo"
             header="Promoção"

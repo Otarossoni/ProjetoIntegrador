@@ -4,14 +4,15 @@ import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import UsuarioSrv from "../usuario/UsuarioSrv";
 import { AutoComplete } from "primereact/autocomplete";
-// import { Dropdown } from "primereact/dropdown";
 import PromocaoSrv from "../promocao/PromocaoSrv";
+import { Dropdown } from "primereact/dropdown";
 
 const DenunciaForm = (props) => {
   const [promocaos, setPromocaos] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [promocaosFiltradas, setPromocaosFiltradas] = useState(null);
   const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
+  const statusOptions = ["Aguardando", "Avaliada", "Desconsiderada"];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -165,12 +166,12 @@ const DenunciaForm = (props) => {
           </div>
           <br />
 
-          {/* <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <Dropdown
                   name="status"
-                  value={props.promocao.status}
+                  value={props.denuncia.status}
                   options={statusOptions}
                   onChange={handleInputChange}
                 />
@@ -178,7 +179,7 @@ const DenunciaForm = (props) => {
               </span>
             </div>
           </div>
-          <br /> */}
+          <br />
 
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="col-6 md:col-6">

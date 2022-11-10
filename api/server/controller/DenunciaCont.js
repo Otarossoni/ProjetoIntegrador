@@ -50,4 +50,18 @@ module.exports = {
       .populate("promocao_id")
       .sort({ nome: -1 }); // -1 decrescente 1 crescente
   },
+
+  filtrarStatus: (req, res) => {
+    Denuncia.find(
+      {
+        $or: [{ status: { $regex: req.params.filtro, $options: "i" } }],
+      },
+      function (err, obj) {
+        err ? res.status(400).send(err) : res.status(200).json(obj);
+      }
+    )
+      .populate("usuario_id")
+      .populate("promocao_id")
+      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+  },
 };

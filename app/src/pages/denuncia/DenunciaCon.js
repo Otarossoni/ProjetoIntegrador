@@ -40,7 +40,7 @@ function DenunciaCon() {
         setDenuncias(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Denuncias atualizadas!",
+          summary: "Denúncias atualizadas!",
           life: 3000,
         });
       })
