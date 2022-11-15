@@ -37,7 +37,7 @@ function Home() {
         <p>
           É aqui é onde você poderá administrar todos os cadastros da plataforma
           PromoCão, desde a criação de novos usuários até a criação de novas
-          lojas.
+          lojas e administração de promoções e denúncias.
         </p>
         <Link to={"/sobre"} style={{ color: "#9c27b0" }}>
           <Button

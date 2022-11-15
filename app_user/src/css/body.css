@@ -1,0 +1,262 @@
+body {
+  background-color: #1b1e1f;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Oculta a scrollbar */
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+.img_404 {
+  margin-top: 2%;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.mainColor {
+  color: #9c27b0;
+}
+
+.title {
+  color: white;
+  font-family: "Helvetica";
+}
+
+.center {
+  text-align: center;
+}
+
+.ui-menubar {
+  background-color: #1e1e1e;
+  border-top: #1e1e1e;
+  border-left: #1e1e1e;
+  border-right: #1e1e1e;
+}
+
+.ui-menubar .ui-menuitem-link {
+  color: #1e1e1e;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link
+  .p-menuitem-text {
+  color: white;
+}
+
+.pi-home:before {
+  color: #9c27b0;
+}
+
+.pi-file:before {
+  color: gray;
+}
+
+.pi-question-circle:before {
+  color: gray;
+}
+
+.pi-power-off:before {
+  color: gray;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  background: #3b3b3b !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  background: #272727 !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-paginator-pages .p-paginator-page.p-highlight {
+  background: #3b3b3b !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator {
+  background: #272727 !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-dropdown {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-dropdown .p-dropdown-label {
+  color: white !important;
+}
+
+.p-datatable .p-paginator .p-paginator-current {
+  color: white !important;
+}
+
+.p-datatable .p-paginator .p-paginator-prev {
+  background: #3b3b3b !important;
+  color: white !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-datatable .p-paginator .p-button.p-button-icon-only {
+  color: #9c27b0 !important;
+  border: 1px solid #9c27b0 !important;
+}
+
+.p-datatable .p-sortable-column .p-sortable-column-icon {
+  color: white !important;
+}
+
+.p-datatable .p-paginator .p-dropdown .p-dropdown-label {
+  background: #9c27b0 !important;
+}
+
+.p-autocomplete-dd .p-autocomplete-dropdown {
+  background: #9c27b0 !important;
+  color: white !important;
+}
+
+.p-calendar-w-btn-right .p-datepicker-trigger {
+  background: #9c27b0 !important;
+  color: white !important;
+}
+
+.p-fluid .p-inputtext {
+  color: white;
+  background-color: #3e4045;
+}
+
+/* Dropdown */
+.p-dropdown .p-dropdown-trigger {
+  background: #9c27b0 !important;
+  color: white !important;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+  background-color: #3b3b3b;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  color: white !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item:hover {
+  color: black !important;
+}
+
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  background: #55585f !important;
+  color: white !important;
+}
+
+.p-fluid .p-dropdown {
+  color: white;
+  background-color: #3e4045;
+}
+
+/* Autocomplete */
+.p-autocomplete-panel .p-autocomplete-items {
+  background: #3b3b3b !important;
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item {
+  color: white !important;
+}
+
+.p-autocomplete-panel .p-autocomplete-items .p-autocomplete-item:hover {
+  color: black !important;
+}
+
+/* Filtros */
+.p-column-filter-overlay-menu .p-column-filter-operator {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-constraint:last-child {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-add-rule {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-buttonbar {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-buttonbar .p-button:not(.p-button-icon-only) {
+  background: #3b3b3b !important;
+  border: 1px solid #9c27b0 !important;
+  color: white;
+}
+
+.p-column-filter-overlay-menu .p-column-filter-constraint {
+  background: #3b3b3b !important;
+  border: 1px solid #3b3b3b !important;
+}
+
+.p-column-filter-buttonbar .p-button:not(.p-button-icon-only):hover {
+  background: #9c27b0 !important;
+  border: 1px solid #9c27b0 !important;
+  color: white;
+}
+
+.p-column-filter-add-button .p-button-label,
+.p-column-filter-remove-button .p-button-label {
+  color: white;
+}
+
+.pi-plus:before {
+  color: #9c27b0;
+}
+
+/* Excluir Dialog */
+.p-dialog-draggable .p-dialog-header {
+  background: #3b3b3b !important;
+  color: white !important;
+}
+
+.p-confirm-dialog .p-dialog-content {
+  background: #3b3b3b !important;
+  color: white !important;
+}
+
+.p-dialog .p-dialog-footer {
+  background: #3b3b3b !important;
+  color: white !important;
+}
+
+/* Data picker */
+
+.p-datepicker:not(.p-datepicker-inline) {
+  background: #3b3b3b !important;
+  color: white !important;
+}
+
+.p-datepicker:not(.p-datepicker-inline) .p-datepicker-header {
+  background: #3b3b3b !important;
+  color: white !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+  color: white !important;
+}
+
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
+.p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
+  color: white !important;
+}
