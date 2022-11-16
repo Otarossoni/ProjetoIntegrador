@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njc3MDI4NjEsImV4cCI6MTY2NzcwNjQ2MX0.LPr-6kWY2zNdVDTHq0MhEHkFjQ9ZiiGMj8F3xCa38_M
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg1MjY0MDIsImV4cCI6MTY2ODUzMDAwMn0.SlP_HtE_aGVh2qaztxTnSfP2ftIM0-iyKQygtWfMIoA
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de promoções
 GET http://localhost:3000/api/promocaos
@@ -65,6 +65,12 @@ x-auth-token: {{authToken}}
 //////////////////////////////////////////////////////////////////////
 # Obter promoções filtrando pelo status Aguardando
 GET http://localhost:3000/api/promocaos/status/Aguardando
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando pelo status Aguardando
+GET http://localhost:3000/api/promocaos/categoria/Eletrônicos
 Content-Type: application/json
 x-auth-token: {{authToken}}
 ###

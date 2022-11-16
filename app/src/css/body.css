@@ -6,6 +6,17 @@ a {
   text-decoration: none;
 }
 
+/* Corrigir cores do autocomplete do navegador */
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #3e4045 inset !important;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+} */
+
 /* Oculta a scrollbar */
 ::-webkit-scrollbar {
   width: 0px;
@@ -259,4 +270,13 @@ a {
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
   color: white !important;
+}
+
+.p-password-panel {
+  background: #3b3b3b !important;
+  color: white !important;
+}
+
+.p-password-meter {
+  background: #545760 !important;
 }

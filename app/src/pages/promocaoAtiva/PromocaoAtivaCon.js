@@ -18,6 +18,8 @@ function PromocaoCon() {
     preco: "",
     url: "",
     cupom: "",
+    status: "",
+    categoria: "",
     loja_id: "",
     usuario_id: "",
   };

@@ -13,6 +13,18 @@ const PromocaoForm = (props) => {
   const [lojasFiltradas, setLojasFiltradas] = useState(null);
   const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
   const statusOptions = ["Aguardando", "Ativa", "Expirada", "Rejeitada"];
+  const categoriasOptions = [
+    "Destaques",
+    "Eletrônicos",
+    "Casa",
+    "Moda",
+    "Cosméticos",
+    "Supermercado",
+    "Mídias",
+    "Esportes",
+    "Infantil",
+    "Automotivo",
+  ];
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -263,6 +275,21 @@ const PromocaoForm = (props) => {
                   onChange={handleInputChange}
                 />
                 <label htmlFor="status">Status</label>
+              </span>
+            </div>
+          </div>
+          <br />
+
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
+              <span className="p-float-label">
+                <Dropdown
+                  name="categoria"
+                  value={props.promocao.categoria}
+                  options={categoriasOptions}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="categoria">Categoria</label>
               </span>
             </div>
           </div>

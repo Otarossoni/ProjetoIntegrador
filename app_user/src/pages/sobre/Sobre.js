@@ -94,7 +94,7 @@ const Sobre = () => {
             ></Button>
           </Link>
           <a
-            href="http://localhost:3001/"
+            href="https://github.com/Otarossoni/ProjetoIntegrador"
             target="_blank"
             rel="noreferrer"
             style={{ margin: "2%" }}
@@ -102,7 +102,7 @@ const Sobre = () => {
             <Button
               type="button"
               className="p-button-rounded p-button-help"
-              label="Em frente!"
+              label="Para o GitHub"
             ></Button>
           </a>
         </div>

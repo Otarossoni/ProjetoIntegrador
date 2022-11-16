@@ -16,11 +16,13 @@ const LojaList = (props) => {
     </Link>
   );
 
-  const dateBodyTemplate2 = (rowData) => {
+  const dateBodyTemplate = (rowData) => {
     return new Intl.DateTimeFormat("pt-BR", {
       year: "numeric",
       month: "2-digit",
       day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
     }).format(new Date(rowData.dataHoraCriado));
   };
 
@@ -76,7 +78,7 @@ const LojaList = (props) => {
           <Column
             field="dataHoraCriado"
             header="Data de Cadastro"
-            body={dateBodyTemplate2}
+            body={dateBodyTemplate}
             sortable
           ></Column>
           <Column

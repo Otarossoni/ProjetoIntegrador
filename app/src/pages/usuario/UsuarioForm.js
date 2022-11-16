@@ -4,9 +4,71 @@ import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import { Password } from "primereact/password";
 import { Calendar } from "primereact/calendar";
+import { addLocale } from "primereact/api";
 import "../../css/body.css";
 
 const UsuarioForm = (props) => {
+  addLocale("pt_BR", {
+    closeText: "Fechar",
+    prevText: "Anterior",
+    nextText: "Próximo",
+    currentText: "Começo",
+    monthNames: [
+      "Janeiro",
+      "Fevereiro",
+      "Março",
+      "Abril",
+      "Maio",
+      "Junho",
+      "Julho",
+      "Agosto",
+      "Setembro",
+      "Outubro",
+      "Novembro",
+      "Dezembro",
+    ],
+    monthNamesShort: [
+      "Jan",
+      "Fev",
+      "Mar",
+      "Abr",
+      "Mai",
+      "Jun",
+      "Jul",
+      "Ago",
+      "Set",
+      "Out",
+      "Nov",
+      "Dez",
+    ],
+    dayNames: [
+      "Domingo",
+      "Segunda",
+      "Terça",
+      "Quarta",
+      "Quinta",
+      "Sexta",
+      "Sábado",
+    ],
+    dayNamesShort: ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"],
+    dayNamesMin: ["D", "S", "T", "Q", "Q", "S", "S"],
+    weekHeader: "Semana",
+    firstDay: 1,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: "",
+    timeOnlyTitle: "Só Horas",
+    timeText: "Tempo",
+    hourText: "Hora",
+    minuteText: "Minuto",
+    secondText: "Segundo",
+    ampm: false,
+    month: "Mês",
+    week: "Semana",
+    day: "Dia",
+    allDayText: "Todo Dia",
+  });
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     props.setUsuario({ ...props.usuario, [name]: value });
@@ -66,15 +128,7 @@ const UsuarioForm = (props) => {
                 <label htmlFor="nome">Nome</label>
               </span>
               {errors.nome && (
-                <span
-                  style={{
-                    color: "red",
-                    fontStyle: "italic",
-                    fontSize: "small",
-                  }}
-                >
-                  {errors.nome.message}
-                </span>
+                <span style={{ color: "#733AC8" }}>{errors.nome.message}</span>
               )}
             </div>
           </div>
@@ -104,15 +158,7 @@ const UsuarioForm = (props) => {
                 <label htmlFor="email">E-mail</label>
               </span>
               {errors.email && (
-                <span
-                  style={{
-                    color: "red",
-                    fontStyle: "italic",
-                    fontSize: "small",
-                  }}
-                >
-                  {errors.email.message}
-                </span>
+                <span style={{ color: "#733AC8" }}>{errors.email.message}</span>
               )}
             </div>
           </div>
@@ -142,15 +188,7 @@ const UsuarioForm = (props) => {
                 <label htmlFor="cpf">CPF</label>
               </span>
               {errors.cpf && (
-                <span
-                  style={{
-                    color: "red",
-                    fontStyle: "italic",
-                    fontSize: "small",
-                  }}
-                >
-                  {errors.cpf.message}
-                </span>
+                <span style={{ color: "#733AC8" }}>{errors.cpf.message}</span>
               )}
             </div>
           </div>
@@ -163,6 +201,10 @@ const UsuarioForm = (props) => {
                 {...register("senha", {})}
                 onChange={handleInputChange}
                 toggleMask
+                promptLabel="Digite a senha"
+                weakLabel="Senha fraca"
+                mediumLabel="Senha média"
+                strongLabel="Senha forte"
               />
               {errors.senha && (
                 <span style={{ color: "red" }}>{errors.senha.message}</span>
@@ -178,6 +220,10 @@ const UsuarioForm = (props) => {
                 defaultValue={contraSenha}
                 onChange={(e) => setContraSenha(e.target.value)}
                 toggleMask
+                promptLabel="Digite a senha"
+                weakLabel="Senha fraca"
+                mediumLabel="Senha média"
+                strongLabel="Senha forte"
               />
             </div>
           </div>
@@ -191,6 +237,7 @@ const UsuarioForm = (props) => {
                 onChange={handleInputChange}
                 dateFormat="dd-mm-yy"
                 showIcon
+                locale="pt_BR"
               />
             </div>
           </div>

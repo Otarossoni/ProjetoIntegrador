@@ -32,6 +32,38 @@ const PromocaoExpiradaCon = lazy(() =>
 const PromocaoRejeitadaCon = lazy(() =>
   import("./pages/promocaoRejeitada/PromocaoRejeitadaCon")
 );
+const PromocaoDestaquesCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoDestaques/PromocaoDestaquesCon")
+);
+const PromocaoEletronicosCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoEletronicos/PromocaoEletronicosCon")
+);
+const PromocaoCasaCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoCasa/PromocaoCasaCon")
+);
+const PromocaoModaCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoModa/PromocaoModaCon")
+);
+const PromocaoCosmeticosCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoCosmeticos/PromocaoCosmeticosCon")
+);
+const PromocaoSupermercadoCon = lazy(() =>
+  import(
+    "./pages/promocaoCategoria/promocaoSupermercado/PromocaoSupermercadoCon"
+  )
+);
+const PromocaoMidiasCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoMidias/PromocaoMidiasCon")
+);
+const PromocaoEsportesCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoEsportes/PromocaoEsportesCon")
+);
+const PromocaoInfantilCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoInfantil/PromocaoInfantilCon")
+);
+const PromocaoAutomotivoCon = lazy(() =>
+  import("./pages/promocaoCategoria/promocaoAutomotivo/PromocaoAutomotivoCon")
+);
 
 function App() {
   const [token, setToken] = useState([]);
@@ -72,6 +104,46 @@ function App() {
           <Route
             path="/promocaos/status/Rejeitada"
             element={<PromocaoRejeitadaCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Destaques"
+            element={<PromocaoDestaquesCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Eletronicos"
+            element={<PromocaoEletronicosCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Casa"
+            element={<PromocaoCasaCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Moda"
+            element={<PromocaoModaCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Cosmeticos"
+            element={<PromocaoCosmeticosCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Supermercado"
+            element={<PromocaoSupermercadoCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Midias"
+            element={<PromocaoMidiasCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Esportes"
+            element={<PromocaoEsportesCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Infantil"
+            element={<PromocaoInfantilCon />}
+          />
+          <Route
+            path="/promocaos/categoria/Automotivo"
+            element={<PromocaoAutomotivoCon />}
           />
           <Route path="*" element={<Erro404 />} />
         </Routes>
@@ -174,6 +246,82 @@ function Menu() {
           icon: "pi pi-fw pi-ban",
           command: () => {
             navigate("/promocaos/status/Rejeitada");
+          },
+        },
+      ],
+    },
+    {
+      label: "Categorias",
+      icon: "pi pi-fw pi-list",
+      items: [
+        {
+          label: "Destaques",
+          icon: "pi pi-fw pi-star",
+          command: () => {
+            navigate("/promocaos/categoria/Destaques");
+          },
+        },
+        {
+          label: "Eletrônicos",
+          icon: "pi pi-fw pi-bolt",
+          command: () => {
+            navigate("/promocaos/categoria/Eletronicos");
+          },
+        },
+        {
+          label: "Casa",
+          icon: "pi pi-fw pi-building",
+          command: () => {
+            navigate("/promocaos/categoria/Casa");
+          },
+        },
+        {
+          label: "Moda",
+          icon: "pi pi-fw pi-tags",
+          command: () => {
+            navigate("/promocaos/categoria/Moda");
+          },
+        },
+        {
+          label: "Cosméticos",
+          icon: "pi pi-fw pi-ticket",
+          command: () => {
+            navigate("/promocaos/categoria/Cosmeticos");
+          },
+        },
+        {
+          label: "Supermercado",
+          icon: "pi pi-fw pi-shopping-cart",
+          command: () => {
+            navigate("/promocaos/categoria/Supermercado");
+          },
+        },
+        {
+          label: "Mídias",
+          icon: "pi pi-fw pi-book",
+          command: () => {
+            navigate("/promocaos/categoria/Midias");
+          },
+        },
+        {
+          label: "Esportes",
+          icon: "pi pi-fw pi-ticket",
+          command: () => {
+            navigate("/promocaos/categoria/Esportes");
+          },
+        },
+        {
+          label: "Infantil",
+          icon: "pi pi-fw pi-shield",
+          command: () => {
+            navigate("/promocaos/categoria/Infantil");
+          },
+        },
+        {
+          label: "Automotivo",
+          icon: "pi pi-fw pi-car",
+          command: () => {
+            navigate("/promocaos/categoria/Automotivo");
           },
         },
       ],

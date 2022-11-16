@@ -24,6 +24,23 @@ const PromocaoList = (props) => {
     </Link>
   );
 
+  const semCupomBodyTemplate = (rowData) => {
+    const cupom = rowData.cupom;
+    if (!cupom) {
+      return (
+        <>
+          <div>Sem Cupom</div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div>{cupom}</div>
+        </>
+      );
+    }
+  };
+
   return (
     <div className="App">
       <br></br>
@@ -70,8 +87,15 @@ const PromocaoList = (props) => {
           <Column field="descricao" header="Descrição" sortable filter></Column>
           <Column field="preco" header="Preço" sortable filter></Column>
           <Column field="url" header="URL" sortable filter></Column>
-          <Column field="cupom" header="Cupom" sortable filter></Column>
+          <Column
+            field="cupom"
+            header="Cupom"
+            sortable
+            filter
+            body={semCupomBodyTemplate}
+          ></Column>
           <Column field="status" header="Status" sortable filter></Column>
+          <Column field="categoria" header="Categoria" sortable filter></Column>
           {/* <Column
             field="dataHoraCriado"
             header="Data de Criação"
