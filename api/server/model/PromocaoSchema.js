@@ -17,7 +17,7 @@ const PromocaoSchema = new mongoose.Schema({
   usuario_id: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario",
-    require: true,
+    required: false,
   },
 });
 

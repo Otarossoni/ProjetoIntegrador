@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg1MjY0MDIsImV4cCI6MTY2ODUzMDAwMn0.SlP_HtE_aGVh2qaztxTnSfP2ftIM0-iyKQygtWfMIoA
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg4MDQ5NTksImV4cCI6MTY2ODgwODU1OX0.91gTEMGcIBWWaz7gpt9rCcUBVeQ4nB1hjrd2uXfsVYA
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de promoções
 GET http://localhost:3000/api/promocaos

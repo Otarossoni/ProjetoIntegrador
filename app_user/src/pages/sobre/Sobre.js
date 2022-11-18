@@ -47,12 +47,9 @@ const Sobre = () => {
           >
             <Button
               type="button"
-              className="p-button-rounded"
+              className="p-button-rounded p-button-help"
               label="Para o Pelando!"
-              style={{
-                backgroundColor: "#733AC8",
-                borderColor: "#733AC8",
-              }}
+              style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
             ></Button>
           </a>
           <a
@@ -63,12 +60,9 @@ const Sobre = () => {
           >
             <Button
               type="button"
-              className="p-button-rounded"
+              className="p-button-rounded p-button-help"
               label="Para o Promobit!"
-              style={{
-                backgroundColor: "#733AC8",
-                borderColor: "#733AC8",
-              }}
+              style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
             ></Button>
           </a>
         </div>
@@ -89,36 +83,30 @@ const Sobre = () => {
         >
           <h2 style={{ fontSize: "40px" }}>Como funciona?</h2>
           <p>
-            Essa plataforma possui o objetivo de reunir as melhores promoções de
-            diversas partes da internet, onde os usuários são responsáveis por
-            alimentar a plataforma com promoções para que outros usuários também
-            possam aproveitar!
+            Ele possui duas frentes, essa que você está acessando, que é a área
+            de administração, e no botão abaixo, você pode acessar a área de
+            usuários, onde você pode ver as promoções cadastradas para o
+            cliente.
           </p>
           <Link to={"/"} style={{ color: "#9c27b0" }}>
             <Button
               type="button"
-              className="p-button-rounded"
+              className="p-button-rounded p-button-help"
               label="De volta para casa!"
-              style={{
-                backgroundColor: "#733AC8",
-                borderColor: "#733AC8",
-              }}
+              style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
             ></Button>
           </Link>
           <a
-            href="https://github.com/Otarossoni/ProjetoIntegrador"
+            href="http://localhost:3002/"
             target="_blank"
             rel="noreferrer"
             style={{ margin: "2%" }}
           >
             <Button
               type="button"
-              className="p-button-rounded"
-              label="Para o GitHub"
-              style={{
-                backgroundColor: "#733AC8",
-                borderColor: "#733AC8",
-              }}
+              className="p-button-rounded p-button-help"
+              label="Em frente!"
+              style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
             ></Button>
           </a>
         </div>

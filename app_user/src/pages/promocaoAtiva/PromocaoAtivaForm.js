@@ -6,13 +6,13 @@ import LojaSrv from "../loja/LojaSrv";
 import UsuarioSrv from "../usuario/UsuarioSrv";
 import { AutoComplete } from "primereact/autocomplete";
 import { Dropdown } from "primereact/dropdown";
-import { InputTextarea } from "primereact/inputtextarea";
 
 const PromocaoForm = (props) => {
   const [lojas, setLojas] = useState([]);
   const [usuarios, setUsuarios] = useState([]);
   const [lojasFiltradas, setLojasFiltradas] = useState(null);
   const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
+  const statusOptions = ["Aguardando", "Ativa", "Expirada", "Rejeitada"];
   const categoriasOptions = [
     "Destaques",
     "Eletrônicos",
@@ -101,7 +101,7 @@ const PromocaoForm = (props) => {
       <div style={{ padding: 15 }}>
         <div>
           <h2 className="title" style={{ textAlign: "center" }}>
-            Sugestão de Promoção
+            Cadastro de Promoções
           </h2>
           <p />
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
@@ -146,10 +146,7 @@ const PromocaoForm = (props) => {
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="field col-6 md:col-6">
               <span className="p-float-label">
-                <InputTextarea
-                  rows={5}
-                  cols={30}
-                  autoResize
+                <InputText
                   name="descricao"
                   {...register("descricao", {
                     required: {
@@ -264,6 +261,21 @@ const PromocaoForm = (props) => {
                   {errors.cupom.message}
                 </span>
               )}
+            </div>
+          </div>
+          <br />
+
+          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+            <div className="field col-6 md:col-6">
+              <span className="p-float-label">
+                <Dropdown
+                  name="status"
+                  value={props.promocao.status}
+                  options={statusOptions}
+                  onChange={handleInputChange}
+                />
+                <label htmlFor="status">Status</label>
+              </span>
             </div>
           </div>
           <br />

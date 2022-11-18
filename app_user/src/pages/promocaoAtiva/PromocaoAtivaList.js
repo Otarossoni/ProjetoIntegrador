@@ -2,7 +2,6 @@ import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
-import "../../css/body.css";
 const PromocaoAtivaList = (props) => {
   const semCupomBodyTemplate = (rowData) => {
     const cupom = rowData.cupom;
@@ -23,18 +22,15 @@ const PromocaoAtivaList = (props) => {
   return (
     <div className="App">
       <br></br>
-      <h2 className="title">Promoções farejas pelo PromoCão</h2>
+      <h2 className="title">Promoções farejadas pelo PromoCão</h2>
       <div style={{ margin: "10px" }}>
         <Button
           type="button"
           icon="pi pi-refresh"
-          className="p-button-rounded p-button-help"
+          className="p-button-rounded"
           onClick={props.onClickAtualizar}
           label="Denunciar Promoção"
-          style={{
-            backgroundColor: "#733AC8",
-            borderColor: "#733AC8",
-          }}
+          style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
         ></Button>
         <span> </span>
         <Button
@@ -76,25 +72,12 @@ const PromocaoAtivaList = (props) => {
             body={semCupomBodyTemplate}
           ></Column>
           <Column field="categoria" header="Categoria" sortable filter></Column>
-          {/* <Column
-            field="dataHoraCriado"
-            header="Data de Criação"
-            body={dateBodyTemplate}
-            sortable
-          ></Column> */}
           <Column
             field="loja_id.nomeFantasia"
             header="Loja"
             sortable
             filter
           ></Column>
-          {/* <Column
-            reorderable
-            field="usuario_id.nome"
-            header="Usuário"
-            sortable
-            filter
-          ></Column> */}
         </DataTable>
       </div>
     </div>

@@ -72,7 +72,7 @@ const LoginForm = (props) => {
             paddingTop: "9%",
             paddingInline: "8%",
             borderStyle: "solid",
-            borderColor: "#3d3d3d",
+            borderColor: "white",
             borderRadius: "50px",
           }}
         >

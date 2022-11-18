@@ -37,13 +37,14 @@ function Home() {
         <p>
           É aqui é onde você poderá administrar todos os cadastros da plataforma
           PromoCão, desde a criação de novos usuários até a criação de novas
-          lojas.
+          lojas e administração de promoções e denúncias.
         </p>
         <Link to={"/sobre"} style={{ color: "#9c27b0" }}>
           <Button
             type="button"
             className="p-button-rounded p-button-help"
             label="Leia mais"
+            style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
           ></Button>
         </Link>
       </div>

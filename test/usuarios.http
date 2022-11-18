@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjcxNzk3MDksImV4cCI6MTY2NzE4MzMwOX0.6lQhs873PB0MDNUfQCZfdp3sDwkGy5SLhKafGxeIrIA
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg4MDQ5NTksImV4cCI6MTY2ODgwODU1OX0.91gTEMGcIBWWaz7gpt9rCcUBVeQ4nB1hjrd2uXfsVYA
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de usuários
 GET http://localhost:3000/api/usuarios
