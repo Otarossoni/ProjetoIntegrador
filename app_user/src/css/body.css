@@ -6,6 +6,17 @@ a {
   text-decoration: none;
 }
 
+/* Corrigir cores do autocomplete do navegador */
+/* input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  box-shadow: 0 0 0 30px #3e4045 inset !important;
+}
+input:-webkit-autofill {
+  -webkit-text-fill-color: white !important;
+} */
+
 /* Oculta a scrollbar */
 ::-webkit-scrollbar {
   width: 0px;
@@ -18,7 +29,7 @@ a {
 }
 
 .mainColor {
-  color: #9c27b0;
+  color: #733ac8;
 }
 
 .title {
@@ -50,20 +61,92 @@ a {
 }
 
 .pi-home:before {
-  color: #9c27b0;
+  color: #733ac8;
 }
 
-.pi-file:before {
-  color: gray;
+/* .pi-file:before {
+  color: #733ac8;
 }
 
 .pi-question-circle:before {
-  color: gray;
+  color: #733ac8;
 }
 
 .pi-power-off:before {
-  color: gray;
+  color: #733ac8;
 }
+
+.pi-star:before {
+  color: #733ac8 !important;
+}
+
+.pi-inbox:before {
+  color: #733ac8 !important;
+}
+
+.pi-check:before {
+  color: #733ac8 !important;
+}
+
+.pi-user:before {
+  color: #733ac8 !important;
+}
+
+.pi-shopping-bag:before {
+  color: #733ac8 !important;
+}
+
+.pi-wallet:before {
+  color: #733ac8 !important;
+}
+
+.pi-exclamation-triangle:before {
+  color: #733ac8 !important;
+}
+
+.pi-comments:before {
+  color: #733ac8 !important;
+}
+
+.pi-clock:before {
+  color: #733ac8 !important;
+}
+
+.pi-ban:before {
+  color: #733ac8 !important;
+}
+
+.pi-bolt:before {
+  color: #733ac8 !important;
+}
+
+.pi-building:before {
+  color: #733ac8 !important;
+}
+
+.pi-tags:before {
+  color: #733ac8 !important;
+}
+
+.pi-ticket:before {
+  color: #733ac8 !important;
+}
+
+.pi-book:before {
+  color: #733ac8 !important;
+}
+
+.pi-shopping-cart:before {
+  color: #733ac8 !important;
+}
+
+.pi-shield:before {
+  color: #733ac8 !important;
+}
+
+.pi-car:before {
+  color: #733ac8 !important;
+} */
 
 .p-datatable .p-datatable-tbody > tr > td {
   background: #3b3b3b !important;
@@ -109,8 +192,8 @@ a {
 }
 
 .p-datatable .p-paginator .p-button.p-button-icon-only {
-  color: #9c27b0 !important;
-  border: 1px solid #9c27b0 !important;
+  color: #733ac8 !important;
+  border: 1px solid #733ac8 !important;
 }
 
 .p-datatable .p-sortable-column .p-sortable-column-icon {
@@ -118,16 +201,16 @@ a {
 }
 
 .p-datatable .p-paginator .p-dropdown .p-dropdown-label {
-  background: #9c27b0 !important;
+  background: #733ac8 !important;
 }
 
 .p-autocomplete-dd .p-autocomplete-dropdown {
-  background: #9c27b0 !important;
+  background: #733ac8 !important;
   color: white !important;
 }
 
 .p-calendar-w-btn-right .p-datepicker-trigger {
-  background: #9c27b0 !important;
+  background: #733ac8 !important;
   color: white !important;
 }
 
@@ -138,7 +221,7 @@ a {
 
 /* Dropdown */
 .p-dropdown .p-dropdown-trigger {
-  background: #9c27b0 !important;
+  background: #733ac8 !important;
   color: white !important;
 }
 
@@ -200,7 +283,7 @@ a {
 
 .p-column-filter-buttonbar .p-button:not(.p-button-icon-only) {
   background: #3b3b3b !important;
-  border: 1px solid #9c27b0 !important;
+  border: 1px solid #733ac8 !important;
   color: white;
 }
 
@@ -210,8 +293,8 @@ a {
 }
 
 .p-column-filter-buttonbar .p-button:not(.p-button-icon-only):hover {
-  background: #9c27b0 !important;
-  border: 1px solid #9c27b0 !important;
+  background: #733ac8 !important;
+  border: 1px solid #733ac8 !important;
   color: white;
 }
 
@@ -221,7 +304,7 @@ a {
 }
 
 .pi-plus:before {
-  color: #9c27b0;
+  color: #733ac8;
 }
 
 /* Excluir Dialog */
@@ -259,4 +342,32 @@ a {
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-year,
 .p-datepicker .p-datepicker-header .p-datepicker-title .p-datepicker-month {
   color: white !important;
+}
+
+.p-password-panel {
+  background: #3b3b3b !important;
+  color: white !important;
+}
+
+.p-password-meter {
+  background: #545760 !important;
+}
+
+.p-menubar .p-menuitem.p-menuitem-active > .p-menuitem-link {
+  background: #3b3b3b !important;
+}
+
+.p-menubar .p-menuitem-link .p-menuitem-text {
+  color: white !important;
+}
+
+.p-menubar .p-submenu-list {
+  background: #545760 !important;
+}
+
+.p-menubar
+  .p-menubar-root-list
+  > .p-menuitem
+  > .p-menuitem-link:not(.p-disabled):hover {
+  background: #3b3b3b !important;
 }

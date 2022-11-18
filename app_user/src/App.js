@@ -1,4 +1,4 @@
-import React, { Suspense, lazy, useEffect, useState } from "react";
+import React, { Suspense, lazy } from "react";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
@@ -8,6 +8,9 @@ import Erro404 from "./pages/erro/Erro404";
 import Sobre from "./pages/sobre/Sobre";
 import "./css/body.css";
 import "./App.css";
+const PromocaoAtivaCon = lazy(() =>
+  import("./pages/promocaoAtiva/PromocaoAtivaCon")
+);
 
 function App() {
   return (
@@ -17,6 +20,7 @@ function App() {
         <Routes>
           <Route exact path="/" element={<h1>Teste</h1>} />
           <Route path="/sobre" element={<Sobre />} />
+          <Route path="/promocaos" element={<PromocaoAtivaCon />} />
           <Route path="*" element={<Erro404 />} />
         </Routes>
       </Suspense>
@@ -35,42 +39,84 @@ function Menu() {
       },
     },
     {
-      label: "Cadastros",
-      icon: "pi pi-fw pi-inbox",
+      label: "Promoções",
+      icon: "pi pi-fw pi-wallet",
+      command: () => {
+        navigate("/promocaos");
+      },
+    },
+    {
+      label: "Categorias",
+      icon: "pi pi-fw pi-list",
       items: [
         {
-          label: "Usuários",
-          icon: "pi pi-fw pi-user",
+          label: "Destaques",
+          icon: "pi pi-fw pi-star",
           command: () => {
-            navigate("/usuarios");
+            navigate("/promocaos/categoria/Destaques");
           },
         },
         {
-          label: "Lojas",
-          icon: "pi pi-fw pi-shopping-bag",
+          label: "Eletrônicos",
+          icon: "pi pi-fw pi-bolt",
           command: () => {
-            navigate("/lojas");
+            navigate("/promocaos/categoria/Eletronicos");
           },
         },
         {
-          label: "Promoções",
-          icon: "pi pi-fw pi-wallet",
+          label: "Casa",
+          icon: "pi pi-fw pi-building",
           command: () => {
-            navigate("/promocaos");
+            navigate("/promocaos/categoria/Casa");
           },
         },
         {
-          label: "Denúncias",
-          icon: "pi pi-fw pi-exclamation-triangle",
+          label: "Moda",
+          icon: "pi pi-fw pi-tags",
           command: () => {
-            navigate("/denuncias");
+            navigate("/promocaos/categoria/Moda");
           },
         },
         {
-          label: "Comentários",
-          icon: "pi pi-fw pi-comments",
+          label: "Cosméticos",
+          icon: "pi pi-fw pi-ticket",
           command: () => {
-            navigate("/comentarios");
+            navigate("/promocaos/categoria/Cosmeticos");
+          },
+        },
+        {
+          label: "Supermercado",
+          icon: "pi pi-fw pi-shopping-cart",
+          command: () => {
+            navigate("/promocaos/categoria/Supermercado");
+          },
+        },
+        {
+          label: "Mídias",
+          icon: "pi pi-fw pi-book",
+          command: () => {
+            navigate("/promocaos/categoria/Midias");
+          },
+        },
+        {
+          label: "Esportes",
+          icon: "pi pi-fw pi-ticket",
+          command: () => {
+            navigate("/promocaos/categoria/Esportes");
+          },
+        },
+        {
+          label: "Infantil",
+          icon: "pi pi-fw pi-shield",
+          command: () => {
+            navigate("/promocaos/categoria/Infantil");
+          },
+        },
+        {
+          label: "Automotivo",
+          icon: "pi pi-fw pi-car",
+          command: () => {
+            navigate("/promocaos/categoria/Automotivo");
           },
         },
       ],

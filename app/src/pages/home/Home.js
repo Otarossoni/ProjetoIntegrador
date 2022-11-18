@@ -44,6 +44,7 @@ function Home() {
             type="button"
             className="p-button-rounded p-button-help"
             label="Leia mais"
+            style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
           ></Button>
         </Link>
       </div>

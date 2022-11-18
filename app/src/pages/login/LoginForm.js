@@ -139,7 +139,11 @@ const LoginForm = (props) => {
             type="submit"
             label="Entrar"
             className="p-button-rounded p-button-help p-button-icon"
-            style={{ width: "50%" }}
+            style={{
+              width: "50%",
+              backgroundColor: "#733AC8",
+              borderColor: "#733AC8",
+            }}
           >
             <i className="pi pi-fw pi-arrow-up-right"></i>
           </Button>

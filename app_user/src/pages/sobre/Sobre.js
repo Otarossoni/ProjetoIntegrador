@@ -47,8 +47,12 @@ const Sobre = () => {
           >
             <Button
               type="button"
-              className="p-button-rounded p-button-help"
+              className="p-button-rounded"
               label="Para o Pelando!"
+              style={{
+                backgroundColor: "#733AC8",
+                borderColor: "#733AC8",
+              }}
             ></Button>
           </a>
           <a
@@ -59,8 +63,12 @@ const Sobre = () => {
           >
             <Button
               type="button"
-              className="p-button-rounded p-button-help"
+              className="p-button-rounded"
               label="Para o Promobit!"
+              style={{
+                backgroundColor: "#733AC8",
+                borderColor: "#733AC8",
+              }}
             ></Button>
           </a>
         </div>
@@ -89,8 +97,12 @@ const Sobre = () => {
           <Link to={"/"} style={{ color: "#9c27b0" }}>
             <Button
               type="button"
-              className="p-button-rounded p-button-help"
+              className="p-button-rounded"
               label="De volta para casa!"
+              style={{
+                backgroundColor: "#733AC8",
+                borderColor: "#733AC8",
+              }}
             ></Button>
           </Link>
           <a
@@ -101,8 +113,12 @@ const Sobre = () => {
           >
             <Button
               type="button"
-              className="p-button-rounded p-button-help"
+              className="p-button-rounded"
               label="Para o GitHub"
+              style={{
+                backgroundColor: "#733AC8",
+                borderColor: "#733AC8",
+              }}
             ></Button>
           </a>
         </div>

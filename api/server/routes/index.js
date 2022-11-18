@@ -9,6 +9,12 @@ routes.use(cors({ origin: "*" }));
 const loginRout = require("./LoginRout");
 routes.use("/api", loginRout);
 
+const promocaoRout = require("./PromocaoRout");
+routes.use("/api", promocaoRout);
+
+const denunciaRout = require("./DenunciaRout");
+routes.use("/api", denunciaRout);
+
 const jwt = require("jsonwebtoken");
 routes.use(function (req, res, next) {
   // interceptar as requisições a validar o token
@@ -39,11 +45,7 @@ const usuarioRout = require("./UsuarioRout");
 routes.use("/api", usuarioRout);
 const lojaRout = require("./LojaRout");
 routes.use("/api", lojaRout);
-const promocaoRout = require("./PromocaoRout");
-routes.use("/api", promocaoRout);
 const comentarioRout = require("./ComentarioRout");
 routes.use("/api", comentarioRout);
-const denunciaRout = require("./DenunciaRout");
-routes.use("/api", denunciaRout);
 
 module.exports = routes;
