@@ -324,7 +324,6 @@ const PromocaoForm = (props) => {
                   completeMethod={buscarUsuario}
                   field="nome"
                   onChange={handleInputChange}
-                  disabled
                 />
                 <label htmlFor="usuario">Usuário</label>
               </span>

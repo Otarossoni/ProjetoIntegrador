@@ -1,20 +1,27 @@
 const { Router } = require("express");
 const routes = Router();
-
-// Liberar origens para requisições
 var cors = require("cors");
-routes.use(cors({ origin: "*" }));
-// routes.use(cors({ origin: "http://localhost:3001" }));
 
+// Liberar todas as origens para requisições
+// routes.use(cors({ origin: "*" }));
+
+// Libera apenas as origens especificadas - AppAdmin e AppUser, respectivamente
+const origins = ["http://localhost:3001", "http://localhost:3002"];
+routes.use(cors({ origin: origins }));
+
+// Rotas públicas para cada módulo
 const loginRout = require("./LoginRout");
 routes.use("/api", loginRout);
+const promocaoPublicRout = require("./PromocaoPublicRout");
+routes.use("/api", promocaoPublicRout);
+const denunciaPublicRout = require("./DenunciaPublicRout");
+routes.use("/api", denunciaPublicRout);
+const lojaPublicRout = require("./LojaPublicRout");
+routes.use("/api", lojaPublicRout);
+const usuarioPublicRout = require("./UsuarioPublicRout");
+routes.use("/api", usuarioPublicRout);
 
-const promocaoRout = require("./PromocaoRout");
-routes.use("/api", promocaoRout);
-
-const denunciaRout = require("./DenunciaRout");
-routes.use("/api", denunciaRout);
-
+// Método que exige token para acesso das rotas privadas abaixo dele
 const jwt = require("jsonwebtoken");
 routes.use(function (req, res, next) {
   // interceptar as requisições a validar o token
@@ -40,11 +47,15 @@ routes.use(function (req, res, next) {
   }
 });
 
-//Rotas para cada módulo
+//Rotas privadas para cada módulo
 const usuarioRout = require("./UsuarioRout");
 routes.use("/api", usuarioRout);
 const lojaRout = require("./LojaRout");
 routes.use("/api", lojaRout);
+const promocaoRout = require("./PromocaoRout");
+routes.use("/api", promocaoRout);
+const denunciaRout = require("./DenunciaRout");
+routes.use("/api", denunciaRout);
 const comentarioRout = require("./ComentarioRout");
 routes.use("/api", comentarioRout);
 

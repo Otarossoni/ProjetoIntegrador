@@ -18,7 +18,7 @@ const Sobre = () => {
             paddingLeft: "5%",
           }}
         >
-          <img src={sobre1} alt="sobre1" />
+          <img src={sobre2} alt="sobre2" />
         </div>
         <div
           style={{
@@ -37,8 +37,8 @@ const Sobre = () => {
           <p>
             O PromoCão nada mais é do que o projeto final do curso de Análise e
             Desenvolvimento de Sistemas do aluno Otávio Monteiro Rossoni, que
-            usou de ideia base para o projeto a plataforma de promoções Pelando
-            e Promobit.
+            usou de ideia base para o projeto as plataformas de promoções
+            Pelando e Promobit.
           </p>
           <a
             href="https://www.pelando.com.br/"
@@ -83,12 +83,10 @@ const Sobre = () => {
         >
           <h2 style={{ fontSize: "40px" }}>Como funciona?</h2>
           <p>
-            Ele possui duas frentes, essa que você está acessando, que é a área
-            de administração, e no botão abaixo, você pode acessar a área de
-            usuários, onde você pode ver as promoções cadastradas para o
-            cliente.
+            Nele você pode encontrar e compartilhar promoções com outros
+            usuários, a fim de buscar bons preços em produtos
           </p>
-          <Link to={"/"} style={{ color: "#9c27b0" }}>
+          <Link to={"/"}>
             <Button
               type="button"
               className="p-button-rounded p-button-help"
@@ -97,7 +95,7 @@ const Sobre = () => {
             ></Button>
           </Link>
           <a
-            href="http://localhost:3002/"
+            href="https://github.com/Otarossoni/ProjetoIntegrador"
             target="_blank"
             rel="noreferrer"
             style={{ margin: "2%" }}
@@ -105,7 +103,7 @@ const Sobre = () => {
             <Button
               type="button"
               className="p-button-rounded p-button-help"
-              label="Em frente!"
+              label="GitHub"
               style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
             ></Button>
           </a>
@@ -119,7 +117,7 @@ const Sobre = () => {
             paddingLeft: "5%",
           }}
         >
-          <img src={sobre2} alt="sobre2" />
+          <img src={sobre1} alt="sobre1" />
         </div>
       </div>
     </div>

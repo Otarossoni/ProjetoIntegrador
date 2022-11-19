@@ -29,7 +29,7 @@ const PromocaoAtivaList = (props) => {
           icon="pi pi-refresh"
           className="p-button-rounded"
           onClick={props.onClickAtualizar}
-          label="Denunciar Promoção"
+          label="Atualizar"
           style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
         ></Button>
         <span> </span>
@@ -39,6 +39,14 @@ const PromocaoAtivaList = (props) => {
           className="p-button-rounded p-button-success"
           onClick={props.inserir}
           label="Sugerir Promoção"
+        ></Button>
+        <span> </span>
+        <Button
+          type="button"
+          icon="pi pi-exclamation-triangle"
+          className="p-button-rounded p-button-danger"
+          onClick={props.onClickAtualizar}
+          label="Denunciar Promoção"
         ></Button>
       </div>
       <div

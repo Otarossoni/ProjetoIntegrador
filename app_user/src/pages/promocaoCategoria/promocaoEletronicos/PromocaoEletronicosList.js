@@ -1,7 +1,6 @@
 import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { Button } from "primereact/button";
 import "../../../css/body.css";
 const PromocaoEletronicosList = (props) => {
   const semCupomBodyTemplate = (rowData) => {
@@ -23,25 +22,7 @@ const PromocaoEletronicosList = (props) => {
   return (
     <div className="App">
       <br></br>
-      <h2 className="title">Listagem de Promoções - Eletrônicos</h2>
-      <div style={{ margin: "10px" }}>
-        <Button
-          type="button"
-          icon="pi pi-refresh"
-          className="p-button-rounded"
-          onClick={props.onClickAtualizar}
-          label="Atualizar"
-          style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
-        ></Button>
-        <span> </span>
-        <Button
-          type="button"
-          icon="pi pi-plus-circle"
-          className="p-button-rounded p-button-success"
-          onClick={props.inserir}
-          label="Novo"
-        ></Button>
-      </div>
+      <h2 className="title">Categoria: Eletrônicos</h2>
       <div
         className="card"
         style={{
@@ -72,50 +53,11 @@ const PromocaoEletronicosList = (props) => {
             filter
             body={semCupomBodyTemplate}
           ></Column>
-          <Column field="status" header="Status" sortable filter></Column>
-          <Column field="categoria" header="Categoria" sortable filter></Column>
-          {/* <Column
-            field="dataHoraCriado"
-            header="Data de Criação"
-            body={dateBodyTemplate}
-            sortable
-          ></Column> */}
           <Column
             field="loja_id.nomeFantasia"
             header="Loja"
             sortable
             filter
-          ></Column>
-          {/* <Column
-            reorderable
-            field="usuario_id.nome"
-            header="Usuário"
-            sortable
-            filter
-          ></Column> */}
-
-          <Column
-            style={{ width: "120px" }}
-            header="Ações"
-            body={(row) => {
-              return (
-                <>
-                  <Button
-                    type="button"
-                    icon="pi pi-pencil"
-                    className="p-button-rounded p-button-warning"
-                    onClick={() => props.editar(row._id)}
-                  ></Button>
-                  <span> </span>
-                  <Button
-                    type="button"
-                    icon="pi pi-trash"
-                    className="p-button-rounded p-button-danger"
-                    onClick={() => props.excluir(row._id)}
-                  ></Button>
-                </>
-              );
-            }}
           ></Column>
         </DataTable>
       </div>

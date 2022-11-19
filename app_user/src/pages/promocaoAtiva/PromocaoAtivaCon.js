@@ -21,7 +21,7 @@ function PromocaoCon() {
     status: "",
     categoria: "",
     loja_id: "",
-    usuario_id: "",
+    usuario_id: null,
   };
   const [promocao, setPromocao] = useState(initialState);
   const [editando, setEditando] = useState(false);
@@ -45,7 +45,7 @@ function PromocaoCon() {
         setPromocaos(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Promoções ativas atualizadas!",
+          summary: "Promoções atualizadas!",
           life: 3000,
         });
       })

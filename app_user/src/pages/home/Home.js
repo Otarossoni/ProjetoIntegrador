@@ -1,5 +1,5 @@
 import React from "react";
-import img1 from "./home01.svg";
+import img2 from "./home02.svg";
 import "../../css/body.css";
 import { Link } from "react-router-dom";
 import { Button } from "primereact/button";
@@ -17,14 +17,14 @@ function Home() {
           paddingLeft: "5%",
         }}
       >
-        <img src={img1} alt="img1" />
+        <img src={img2} alt="img1" />
       </div>
       <div
         style={{
           width: "50%",
           height: "85%",
           textAlign: "center",
-          marginTop: "2%",
+          marginTop: "-1%",
           marginRight: "5%",
           marginLeft: "5%",
           paddingTop: "9%",
@@ -35,11 +35,12 @@ function Home() {
       >
         <h2 style={{ fontSize: "40px" }}>Bem-vindo(a) ao PromoCão!</h2>
         <p>
-          É aqui é onde você poderá administrar todos os cadastros da plataforma
-          PromoCão, desde a criação de novos usuários até a criação de novas
-          lojas e administração de promoções e denúncias.
+          É aqui é o lugar para você encontrar as melhores promoções pela
+          internet a fora, onde você pode encontrar produtos eletrodomésticos,
+          eletrônicos, roupas, comida, entre outros. Basta navegar pelas abas e
+          aproveitar!
         </p>
-        <Link to={"/sobre"} style={{ color: "#9c27b0" }}>
+        <Link to={"/sobre"}>
           <Button
             type="button"
             className="p-button-rounded p-button-help"

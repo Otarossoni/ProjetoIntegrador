@@ -37,8 +37,8 @@ const Sobre = () => {
           <p>
             O PromoCão nada mais é do que o projeto final do curso de Análise e
             Desenvolvimento de Sistemas do aluno Otávio Monteiro Rossoni, que
-            usou de ideia base para o projeto a plataforma de promoções Pelando
-            e Promobit.
+            usou de ideia base para o projeto as plataformas de promoções
+            Pelando e Promobit.
           </p>
           <a
             href="https://www.pelando.com.br/"

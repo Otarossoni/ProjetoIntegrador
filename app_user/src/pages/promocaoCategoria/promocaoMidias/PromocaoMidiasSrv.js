@@ -1,6 +1,6 @@
 import axios from "../../../services/axios-common";
 class PromocaoMidiasSrv {
-  url = "/promocaos";
+  url = "/promocaosPublic";
   async listar() {
     return await axios.get(`${this.url}/categoria/Mídias`).catch((err) => {
       throw err;
