@@ -21,6 +21,11 @@ Entre nas pastas a seguir e siga os passos contidos no README de cada uma:
 - app
 - app_user
 
+### Acesso para o Ambiente de Administração
+
+- E-mail: admin@admin.com
+- Senha: admin123
+
 ## Diagramas
 
 ### Diagrama de Classes:
