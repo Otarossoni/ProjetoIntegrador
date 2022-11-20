@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjcxNzg2NTEsImV4cCI6MTY2NzE4MjI1MX0.gl-0snBhfB1LowLsHYUabZ62E1WGthA2m8WyChFRzD0
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg5NzgyNDAsImV4cCI6MTY3MjU3ODI0MH0.SZbj1Nb95EfRtDqVBFJWkpzJux1yVzmAVkvGalzuqc8
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de comentários
 GET http://localhost:3000/api/comentarios
