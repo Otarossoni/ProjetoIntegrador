@@ -6,7 +6,7 @@ const PromocaoSchema = new mongoose.Schema({
   preco: { type: String, required: true },
   url: { type: String, required: true },
   cupom: { type: String },
-  status: { type: String, required: true, default: "Aguardando" },
+  status: { type: String, default: "Aguardando" },
   categoria: { type: String, required: true, default: "Destaques" },
   dataHoraCriado: { type: Date, default: Date.now },
   loja_id: {

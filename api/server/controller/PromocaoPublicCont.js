@@ -1,7 +1,7 @@
 const PromocaoPublic = require("../model/PromocaoSchema");
 module.exports = {
   listar: async (req, res) => {
-    Promocao.find((err, objetos) => {
+    PromocaoPublic.find((err, objetos) => {
       err ? res.status(400).send(err) : res.status(200).json(objetos);
     })
       .populate("loja_id")

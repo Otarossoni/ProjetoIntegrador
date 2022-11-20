@@ -1,6 +1,7 @@
 import React from "react";
 import img1 from "./home01.svg";
 import "../../css/body.css";
+import "../../css/form.css";
 import { Link } from "react-router-dom";
 import { Button } from "primereact/button";
 
@@ -24,7 +25,6 @@ function Home() {
           width: "50%",
           height: "85%",
           textAlign: "center",
-          marginTop: "2%",
           marginRight: "5%",
           marginLeft: "5%",
           paddingTop: "9%",
@@ -33,9 +33,11 @@ function Home() {
           fontSize: "1.5rem",
         }}
       >
-        <h2 style={{ fontSize: "40px" }}>Bem-vindo(a) ao PromoCão!</h2>
-        <p>
-          É aqui é onde você poderá administrar todos os cadastros da plataforma
+        <h2 className="genericText" style={{ fontSize: "40px" }}>
+          Bem-vindo(a) ao PromoCão!
+        </h2>
+        <p className="genericText">
+          É aqui onde você poderá administrar todos os cadastros da plataforma
           PromoCão, desde a criação de novos usuários até a criação de novas
           lojas e administração de promoções e denúncias.
         </p>

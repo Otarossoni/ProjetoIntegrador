@@ -1,0 +1,47 @@
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de denuncias
+GET http://localhost:3000/api/denuncias
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir nova denuncia
+POST http://localhost:3000/api/denuncias
+Content-Type: application/json
+
+{
+    "titulo": "Golpe", 
+    "descricao": "Golpe na Amazon",
+    "usuario_id": "63474bd2936c605afd965db2",
+    "promocao_id": "6347544395606fff46b1f871"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar denuncia
+PUT http://localhost:3000/api/denuncias
+Content-Type: application/json
+
+{
+    "_id": "63475733ae3451b27836bbdf",
+    "titulo": "Golpe", 
+    "descricao": "Golpe na Amazon. O vendedor é um golpista",
+    "usuario_id": "63474bd2936c605afd965db2",
+    "promocao_id": "6347544395606fff46b1f871"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir uma denuncia
+DELETE http://localhost:3000/api/denuncias/63475733ae3451b27836bbdf
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id da denuncia
+GET http://localhost:3000/api/denuncias/63475759ae3451b27836bbe8
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter denuncias filtrando
+GET http://localhost:3000/api/denuncias/filtro/gol
+
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////

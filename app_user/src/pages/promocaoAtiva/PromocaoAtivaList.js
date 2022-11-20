@@ -45,7 +45,7 @@ const PromocaoAtivaList = (props) => {
           type="button"
           icon="pi pi-exclamation-triangle"
           className="p-button-rounded p-button-danger"
-          onClick={props.onClickAtualizar}
+          onClick={props.inserirDenuncia}
           label="Denunciar Promoção"
         ></Button>
       </div>
@@ -79,7 +79,6 @@ const PromocaoAtivaList = (props) => {
             filter
             body={semCupomBodyTemplate}
           ></Column>
-          <Column field="categoria" header="Categoria" sortable filter></Column>
           <Column
             field="loja_id.nomeFantasia"
             header="Loja"

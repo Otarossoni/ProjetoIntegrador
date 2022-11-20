@@ -1,0 +1,65 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg4MDQ5NTksImV4cCI6MTY2ODgwODU1OX0.91gTEMGcIBWWaz7gpt9rCcUBVeQ4nB1hjrd2uXfsVYA
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de usuários
+GET http://localhost:3000/api/usuarios
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir novo usuário
+POST http://localhost:3000/api/usuarios
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "nome": "Adm", 
+    "cpf": "0101010101",
+    "dataNascimento": "12/05/2002",
+    "email": "123@123",
+    "senha": "0123456789"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar usuário
+PUT http://localhost:3000/api/usuarios
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "_id": "634885b4c82069ea703e2253",
+    "nome": "Administrador Banco", 
+    "cpf": "01010101010",
+    "dataNascimento": "12/05/2002",
+    "email": "adm@adm",
+    "senha": "admin"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir um usuário
+DELETE http://localhost:3000/api/usuarios/63485679f3c28497a0b31810
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id de usuário
+GET http://localhost:3000/api/usuarios/63474acabf2d6fa6e50b08b0
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter usuários filtrando
+GET http://localhost:3000/api/usuarios/filtro/admin
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+
+# Autenticação de usuário
+POST http://localhost:3000/api/login
+Content-Type: application/json
+
+{
+ "email": "admin@admin",
+ "senha": "admin"
+}
+###

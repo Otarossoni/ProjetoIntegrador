@@ -3,18 +3,18 @@ import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
 import { useForm } from "react-hook-form";
 import LojaSrv from "../loja/LojaSrv";
-import UsuarioSrv from "../usuario/UsuarioSrv";
+// import UsuarioSrv from "../usuario/UsuarioSrv";
 import { AutoComplete } from "primereact/autocomplete";
 import { Dropdown } from "primereact/dropdown";
+import cachorro from "./favicon.svg";
 
 const PromocaoForm = (props) => {
   const [lojas, setLojas] = useState([]);
-  const [usuarios, setUsuarios] = useState([]);
+  // const [usuarios, setUsuarios] = useState([]);
   const [lojasFiltradas, setLojasFiltradas] = useState(null);
-  const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
-  const statusOptions = ["Aguardando", "Ativa", "Expirada", "Rejeitada"];
+  // const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
+  // const statusOptions = ["Aguardando", "Ativa", "Expirada", "Rejeitada"];
   const categoriasOptions = [
-    "Destaques",
     "Eletrônicos",
     "Casa",
     "Moda",
@@ -33,7 +33,7 @@ const PromocaoForm = (props) => {
 
   useEffect(() => {
     onClickAtualizarLoja();
-    onClickAtualizarUsuario();
+    // onClickAtualizarUsuario();
   }, []);
 
   const onClickAtualizarLoja = () => {
@@ -44,13 +44,13 @@ const PromocaoForm = (props) => {
       .catch((e) => {});
   };
 
-  const onClickAtualizarUsuario = () => {
-    UsuarioSrv.listar()
-      .then((response) => {
-        setUsuarios(response.data);
-      })
-      .catch((e) => {});
-  };
+  // const onClickAtualizarUsuario = () => {
+  //   UsuarioSrv.listar()
+  //     .then((response) => {
+  //       setUsuarios(response.data);
+  //     })
+  //     .catch((e) => {});
+  // };
 
   const {
     register,
@@ -59,7 +59,7 @@ const PromocaoForm = (props) => {
   } = useForm();
 
   const onSubmit = (data) => {
-    props.salvar();
+    props.salvarPromocao();
   };
 
   const buscarLoja = (event) => {
@@ -79,32 +79,45 @@ const PromocaoForm = (props) => {
     }, 250);
   };
 
-  const buscarUsuario = (event) => {
-    setTimeout(() => {
-      let _usuariosFiltrados;
-      if (!event.query.trim().length) {
-        _usuariosFiltrados = [...usuarios];
-      } else {
-        _usuariosFiltrados = usuarios.filter((country) => {
-          return country.nomeFantasia
-            .toLowerCase()
-            .startsWith(event.query.toLowerCase());
-        });
-      }
+  // const buscarUsuario = (event) => {
+  //   setTimeout(() => {
+  //     let _usuariosFiltrados;
+  //     if (!event.query.trim().length) {
+  //       _usuariosFiltrados = [...usuarios];
+  //     } else {
+  //       _usuariosFiltrados = usuarios.filter((country) => {
+  //         return country.nomeFantasia
+  //           .toLowerCase()
+  //           .startsWith(event.query.toLowerCase());
+  //       });
+  //     }
 
-      setUsuariosFiltrados(_usuariosFiltrados);
-    }, 250);
-  };
+  //     setUsuariosFiltrados(_usuariosFiltrados);
+  //   }, 250);
+  // };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div style={{ padding: 15 }}>
         <div>
           <h2 className="title" style={{ textAlign: "center" }}>
-            Cadastro de Promoções
+            Sugestão de Promoção
           </h2>
+
+          <p className="genericParagraph">
+            Envie os dados da promoção que deseja sugerir, nossa equipe irá
+            analisar ela, e caso ela se encaixe como válida, estará disponível
+            aos usuários.
+          </p>
+          <p className="genericParagraph" style={{ marginTop: "-1%" }}>
+            O PromoCão agradece sua contribuição para o crescimento do site.{" "}
+            <img src={cachorro} alt="cachorro" style={{ width: "1%" }} />
+          </p>
           <p />
-          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+          <div
+            className="p-fluid grid formgrid"
+            style={{ marginLeft: "33%", marginTop: "2%" }}
+          >
             <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <InputText
@@ -112,7 +125,7 @@ const PromocaoForm = (props) => {
                   {...register("titulo", {
                     required: {
                       value: true,
-                      message: "O campo título é obrigatório!",
+                      message: "O título é obrigatório!",
                     },
                     maxLength: {
                       value: 50,
@@ -264,7 +277,7 @@ const PromocaoForm = (props) => {
             </div>
           </div>
           <br />
-
+          {/* 
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="field col-6 md:col-6">
               <span className="p-float-label">
@@ -278,7 +291,7 @@ const PromocaoForm = (props) => {
               </span>
             </div>
           </div>
-          <br />
+          <br /> */}
 
           <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="field col-6 md:col-6">
@@ -313,7 +326,7 @@ const PromocaoForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+          {/* <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <AutoComplete
@@ -329,7 +342,7 @@ const PromocaoForm = (props) => {
               </span>
             </div>
           </div>
-          <br />
+          <br /> */}
 
           <div style={{ textAlign: "center" }}>
             <Button

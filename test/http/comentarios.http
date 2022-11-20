@@ -1,0 +1,50 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2NjcxNzg2NTEsImV4cCI6MTY2NzE4MjI1MX0.gl-0snBhfB1LowLsHYUabZ62E1WGthA2m8WyChFRzD0
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de comentários
+GET http://localhost:3000/api/comentarios
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir novo comentário
+POST http://localhost:3000/api/comentarios
+Content-Type: application/json
+
+{
+    "titulo": "Celular Bom demais", 
+    "descricao": "Bom custo benfício",
+    "promocao_id": "6347544395606fff46b1f871",
+    "usuario_id": "63474bd2936c605afd965db2"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar comentário
+PUT http://localhost:3000/api/comentarios
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "_id": "634759165635cf91ebd6b64c",
+    "titulo": "Celular Bom demais, gostei!", 
+    "descricao": "Bom custo benfício",
+    "promocao_id": "6347544395606fff46b1f871",
+    "usuario_id": "63474bd2936c605afd965db2"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir um comentário
+DELETE http://localhost:3000/api/comentarios/634759375635cf91ebd6b65c
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id do comentário
+GET http://localhost:3000/api/comentarios/634759165635cf91ebd6b64c
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////
+# Obter comentários filtrando
+GET http://localhost:3000/api/comentarios/filtro/gostei
+
+Content-Type: application/json
+###
+//////////////////////////////////////////////////////////////////////

@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Menubar } from "primereact/menubar";
 import LoginForm from "./pages/login/LoginForm";
 import Erro404 from "./pages/erro/Erro404";
+import EmBreve from "./pages/emBreve/EmBreve";
 import Sobre from "./pages/sobre/Sobre";
 import "./css/body.css";
 
@@ -63,6 +64,15 @@ const PromocaoInfantilCon = lazy(() =>
 );
 const PromocaoAutomotivoCon = lazy(() =>
   import("./pages/promocaoCategoria/promocaoAutomotivo/PromocaoAutomotivoCon")
+);
+const PromocaoAmazonCon = lazy(() =>
+  import("./pages/promocaoLoja/promocaoAmazon/PromocaoAmazonCon")
+);
+const PromocaoAmericanasCon = lazy(() =>
+  import("./pages/promocaoLoja/promocaoAmericanas/PromocaoAmericanasCon")
+);
+const PromocaoMercadoLivreCon = lazy(() =>
+  import("./pages/promocaoLoja/promocaoMercadoLivre/PromocaoMercadoLivreCon")
 );
 
 function App() {
@@ -145,6 +155,19 @@ function App() {
             path="/promocaos/categoria/Automotivo"
             element={<PromocaoAutomotivoCon />}
           />
+          <Route
+            path="/promocaos/loja/Amazon"
+            element={<PromocaoAmazonCon />}
+          />
+          <Route
+            path="/promocaos/loja/MercadoLivre"
+            element={<PromocaoMercadoLivreCon />}
+          />
+          <Route
+            path="/promocaos/loja/Americanas"
+            element={<PromocaoAmericanasCon />}
+          />
+          <Route path="/promocaos/loja/EmBreve" element={<EmBreve />} />
           <Route path="*" element={<Erro404 />} />
         </Routes>
       </Suspense>
@@ -322,6 +345,36 @@ function Menu() {
           icon: "pi pi-fw pi-car",
           command: () => {
             navigate("/promocaos/categoria/Automotivo");
+          },
+        },
+      ],
+    },
+    {
+      label: "Lojas",
+      icon: "pi pi-fw pi-globe",
+      items: [
+        {
+          label: "Amazon",
+          command: () => {
+            navigate("/promocaos/loja/Amazon");
+          },
+        },
+        {
+          label: "Americanas",
+          command: () => {
+            navigate("/promocaos/loja/Americanas");
+          },
+        },
+        {
+          label: "Mercado Livre",
+          command: () => {
+            navigate("/promocaos/loja/MercadoLivre");
+          },
+        },
+        {
+          label: "Em breve...",
+          command: () => {
+            navigate("/promocaos/loja/EmBreve");
           },
         },
       ],

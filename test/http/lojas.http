@@ -1,0 +1,49 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg4ODQ0NjMsImV4cCI6MTY2ODg4ODA2M30.0X2NFBH39b6RlHdoD7JKHh-mMDf47sCgnvTrOqmDZVI
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de lojas
+GET http://localhost:3000/api/lojas
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir nova loja
+POST http://localhost:3000/api/lojas
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "nomeFantasia": "Magasdsazine Luiza", 
+    "url": "https://www.magaziasdasneluiza.com.br/"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar loja
+PUT http://localhost:3000/api/lojas
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "_id": "63474c47936c605afd965dbf",
+    "loja_nomeFantasia": "Amazon Brasil", 
+    "loja_url": "https://www.amazon.com.br/amazon-brasil"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir um usuário
+DELETE http://localhost:3000/api/lojas/6347531e936c605afd965dd2
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id da loja
+GET http://localhost:3000/api/lojas/6347531e936c605afd965dd2
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter lojas filtrando
+GET http://localhost:3000/api/lojas/filtro/amazon
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////

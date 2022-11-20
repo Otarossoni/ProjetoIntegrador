@@ -4,11 +4,17 @@
 }
 
 .menuBarTitle {
-  margin-top: 5%;
+  margin-top: 7%;
   color: white;
 }
 
 .genericFormImput {
   color: white;
   background-color: #3e4045;
+}
+
+.genericParagraph {
+  color: white;
+  font-family: "Inter", sans-serif;
+  text-align: center;
 }

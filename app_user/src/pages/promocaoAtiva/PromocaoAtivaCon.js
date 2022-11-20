@@ -8,23 +8,34 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import { Toast } from "primereact/toast";
 import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
+import DenunciaSrv from "./DenunciaSrv";
+import DenunciaForm from "./DenunciaForm";
 
 function PromocaoCon() {
   const [promocaos, setPromocaos] = useState([]);
-  const initialState = {
+  const initialStatePromocao = {
     id: null,
     titulo: "",
     descricao: "",
     preco: "",
     url: "",
     cupom: "",
-    status: "",
+    status: "Aguardando",
     categoria: "",
     loja_id: "",
     usuario_id: null,
   };
-  const [promocao, setPromocao] = useState(initialState);
+  const initialStateDenuncia = {
+    id: null,
+    titulo: "",
+    descricao: "",
+    usuario_id: null,
+    promocao_id: "",
+  };
+  const [promocao, setPromocao] = useState(initialStatePromocao);
+  const [denuncia, setDenuncia] = useState(initialStateDenuncia);
   const [editando, setEditando] = useState(false);
+  const [editandoDenuncia, setEditandoDenuncia] = useState(false);
   const toastRef = useRef();
 
   const [lojas, setLojas] = useState([]);
@@ -43,11 +54,11 @@ function PromocaoCon() {
     PromocaoAtivaSrv.listar()
       .then((response) => {
         setPromocaos(response.data);
-        toastRef.current.show({
-          severity: "success",
-          summary: "Promoções atualizadas!",
-          life: 3000,
-        });
+        // toastRef.current.show({
+        //   severity: "success",
+        //   summary: "Promoções atualizadas!",
+        //   life: 3000,
+        // });
       })
       .catch((e) => {
         toastRef.current.show({
@@ -59,11 +70,17 @@ function PromocaoCon() {
   };
 
   const inserir = () => {
-    setPromocao(initialState);
+    setPromocao(initialStatePromocao);
     setEditando(true);
   };
 
-  const salvar = () => {
+  const inserirDenuncia = () => {
+    setDenuncia(initialStateDenuncia);
+    setEditandoDenuncia(true);
+    setEditando(true);
+  };
+
+  const salvarPromocao = () => {
     //inclusão
     if (promocao._id == null) {
       PromocaoAtivaSrv.incluir(promocao)
@@ -72,14 +89,14 @@ function PromocaoCon() {
           onClickAtualizar();
           toastRef.current.show({
             severity: "success",
-            summary: "Salvou!",
+            summary: "Promoção sugerida com sucesso!",
             life: 2000,
           });
         })
         .catch((e) => {
           toastRef.current.show({
             severity: "error",
-            summary: e.message,
+            summary: "Campo obrigatório não informado!",
             life: 4000,
           });
         });
@@ -105,8 +122,54 @@ function PromocaoCon() {
     }
   };
 
+  const salvarDenuncia = () => {
+    //inclusão
+    if (denuncia._id == null) {
+      DenunciaSrv.incluir(denuncia)
+        .then((response) => {
+          setEditando(false);
+          setEditandoDenuncia(false);
+          onClickAtualizar();
+          toastRef.current.show({
+            severity: "info",
+            summary: "Denúncia realizada com sucesso!",
+            icon: "pi-exclamation-triangle",
+            life: 2000,
+          });
+        })
+        .catch((e) => {
+          toastRef.current.show({
+            severity: "error",
+            summary: e.message,
+            life: 4000,
+          });
+        });
+    } else {
+      // alteração
+      DenunciaSrv.alterar(denuncia)
+        .then((response) => {
+          setEditando(false);
+          setEditandoDenuncia(false);
+          onClickAtualizar();
+          toastRef.current.show({
+            severity: "success",
+            summary: "Alterada!",
+            life: 2000,
+          });
+        })
+        .catch((e) => {
+          toastRef.current.show({
+            severity: "error",
+            summary: e.message,
+            life: 4000,
+          });
+        });
+    }
+  };
+
   const cancelar = () => {
     setEditando(false);
+    setEditandoDenuncia(false);
   };
 
   const editar = (id) => {
@@ -158,6 +221,7 @@ function PromocaoCon() {
           promocaos={promocaos}
           onClickAtualizar={onClickAtualizar}
           inserir={inserir}
+          inserirDenuncia={inserirDenuncia}
           editar={editar}
           excluir={excluir}
         />
@@ -165,18 +229,31 @@ function PromocaoCon() {
       </div>
     );
   } else {
-    return (
-      <div>
-        <PromocaoAtivaForm
-          lojas={lojas}
-          promocao={promocao}
-          setPromocao={setPromocao}
-          salvar={salvar}
-          cancelar={cancelar}
-        />
-        <Toast ref={toastRef} />
-      </div>
-    );
+    if (!editandoDenuncia) {
+      return (
+        <div>
+          <PromocaoAtivaForm
+            lojas={lojas}
+            promocao={promocao}
+            setPromocao={setPromocao}
+            salvarPromocao={salvarPromocao}
+            cancelar={cancelar}
+          />
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <DenunciaForm
+            denuncia={denuncia}
+            setDenuncia={setDenuncia}
+            salvarDenuncia={salvarDenuncia}
+            cancelar={cancelar}
+          />
+          <Toast ref={toastRef} />
+        </div>
+      );
+    }
   }
 }
 

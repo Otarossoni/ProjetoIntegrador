@@ -1,0 +1,76 @@
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg4ODQ0NjMsImV4cCI6MTY2ODg4ODA2M30.0X2NFBH39b6RlHdoD7JKHh-mMDf47sCgnvTrOqmDZVI
+//////////////////////////////////////////////////////////////////////
+# Obter a lista de promoções
+GET http://localhost:3000/api/promocaos
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Inserir nova promoção
+POST http://localhost:3000/api/promocaos
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "titulo": "Redmi Note 9", 
+    "descricao": "Cupom imperdível!",
+    "preco": "1.100",
+    "url": "https://www.amazon.com.br/redmi-note-9",
+    "cupom": "200ZON",
+    "loja_id": "6351d974dbecfd316398054d",
+    "usuario_id": "63495a5680812c8c22d7f22f"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Alterar promoção
+PUT http://localhost:3000/api/promocaos
+Content-Type: application/json
+x-auth-token: {{authToken}}
+
+{
+    "_id": "6347544395606fff46b1f871",
+    "titulo": "Redmi Note 9", 
+    "descricao": "Cupom imperdível! Para todos!",
+    "preco": "1.100",
+    "url": "https://www.amazon.com.br/redmi-note-9",
+    "cupom": "200ZON",
+    "loja_id": "6351d974dbecfd316398054d",
+    "usuario_id": "63495a5680812c8c22d7f22f"
+}
+###
+//////////////////////////////////////////////////////////////////////
+# Excluir uma promoção
+DELETE http://localhost:3000/api/promocaos/635f2475e168dc0f26554b4c
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter pelo id da promoção
+GET http://localhost:3000/api/promocaos/6347544395606fff46b1f871
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando
+GET http://localhost:3000/api/promocaos/filtro/Red
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando pela Loja
+GET http://localhost:3000/api/promocaos/loja/63474c38936c605afd965db9
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando pelo status Aguardando
+GET http://localhost:3000/api/promocaos/status/Aguardando
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###
+//////////////////////////////////////////////////////////////////////
+# Obter promoções filtrando pelo status Aguardando
+GET http://localhost:3000/api/promocaos/categoria/Eletrônicos
+Content-Type: application/json
+x-auth-token: {{authToken}}
+###

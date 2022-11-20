@@ -48,6 +48,7 @@ const UsuarioList = (props) => {
           className="p-button-rounded p-button-help"
           onClick={props.onClickAtualizar}
           label="Atualizar"
+          style={{ backgroundColor: "#733AC8", borderColor: "#733AC8" }}
         ></Button>
         <span> </span>
         <Button

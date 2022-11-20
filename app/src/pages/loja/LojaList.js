@@ -100,6 +100,7 @@ const LojaList = (props) => {
                     icon="pi pi-trash"
                     className="p-button-rounded p-button-danger"
                     onClick={() => props.excluir(row._id)}
+                    disabled
                   ></Button>
                 </>
               );
