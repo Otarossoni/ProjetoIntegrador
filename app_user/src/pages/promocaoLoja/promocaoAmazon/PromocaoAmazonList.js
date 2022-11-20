@@ -1,7 +1,6 @@
 import React from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { Button } from "primereact/button";
 import "../../../css/body.css";
 const PromocaoAmazonList = (props) => {
   const semCupomBodyTemplate = (rowData) => {
@@ -57,29 +56,6 @@ const PromocaoAmazonList = (props) => {
             body={semCupomBodyTemplate}
           ></Column>
           <Column field="categoria" header="Categoria" sortable filter></Column>
-          <Column
-            style={{ width: "120px" }}
-            header="Ações"
-            body={(row) => {
-              return (
-                <>
-                  <Button
-                    type="button"
-                    icon="pi pi-pencil"
-                    className="p-button-rounded p-button-warning"
-                    onClick={() => props.editar(row._id)}
-                  ></Button>
-                  <span> </span>
-                  <Button
-                    type="button"
-                    icon="pi pi-trash"
-                    className="p-button-rounded p-button-danger"
-                    onClick={() => props.excluir(row._id)}
-                  ></Button>
-                </>
-              );
-            }}
-          ></Column>
         </DataTable>
       </div>
     </div>

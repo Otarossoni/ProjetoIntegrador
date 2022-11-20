@@ -54,11 +54,11 @@ function PromocaoCon() {
     PromocaoAtivaSrv.listar()
       .then((response) => {
         setPromocaos(response.data);
-        // toastRef.current.show({
-        //   severity: "success",
-        //   summary: "Promoções atualizadas!",
-        //   life: 3000,
-        // });
+        toastRef.current.show({
+          severity: "success",
+          summary: "Promoções atualizadas!",
+          life: 3000,
+        });
       })
       .catch((e) => {
         toastRef.current.show({

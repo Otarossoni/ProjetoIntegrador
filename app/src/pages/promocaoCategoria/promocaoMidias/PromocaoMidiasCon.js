@@ -45,7 +45,7 @@ function PromocaoMidiasCon() {
         setPromocaos(response.data);
         toastRef.current.show({
           severity: "success",
-          summary: "Promoções da categoria de midia atualizadas!",
+          summary: "Promoções da categoria de mídia atualizadas!",
           life: 3000,
         });
       })
