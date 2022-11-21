@@ -28,7 +28,8 @@ Entre nas pastas a seguir e siga os passos contidos no README de cada uma:
 
 ## Testes
 
-- [Teste Login + Cadastro de Loja](https://youtu.be/4U8Eujxjiy4)
+- [Teste Login + Cadastro de Loja - Usuário ADM](https://youtu.be/4U8Eujxjiy4)
+- [Teste de Sugestão de Promoção - Usuário Comum](https://youtu.be/jk9bW7RTrOw)
 
 ## Diagramas
 
