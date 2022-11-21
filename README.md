@@ -26,6 +26,10 @@ Entre nas pastas a seguir e siga os passos contidos no README de cada uma:
 - E-mail: admin@admin.com
 - Senha: admin123
 
+## Testes
+
+- [Teste Login + Cadastro de Loja](https://youtu.be/4U8Eujxjiy4)
+
 ## Diagramas
 
 ### Diagrama de Classes:

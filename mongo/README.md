@@ -13,7 +13,7 @@ A tecnologia escolhida para ser o banco de dados do projeto foi o MongoDB, por f
 Inicie o banco de dados:
 
 ```bash
-  mongod --port 27018 --dbpath C:\projetoIntegrador\mongo --auth
+  mongod --port 27018 --dbpath /caminho da pasta mongo\ --auth
 ```
 
 ### Executar no Windows
