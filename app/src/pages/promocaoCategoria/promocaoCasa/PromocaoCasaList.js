@@ -3,7 +3,7 @@ import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
 import { Button } from "primereact/button";
 import "../../../css/body.css";
-const PromocaoCasaList = (props) => {
+const PromocaoCasasList = (props) => {
   const semCupomBodyTemplate = (rowData) => {
     const cupom = rowData.cupom;
     if (!cupom) {
@@ -20,6 +20,17 @@ const PromocaoCasaList = (props) => {
       );
     }
   };
+
+  const dateBodyTemplate2 = (rowData) => {
+    return new Intl.DateTimeFormat("pt-BR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(new Date(rowData.dataHoraCriado));
+  };
+
   return (
     <div className="App">
       <br></br>
@@ -61,6 +72,12 @@ const PromocaoCasaList = (props) => {
           onSelectionChange={(e) => props.setPromocao(e.value)}
           emptyMessage="Nenhum registro encontrado!"
         >
+          <Column
+            field="dataHoraCriado"
+            header="Data de Envio"
+            body={dateBodyTemplate2}
+            sortable
+          ></Column>
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="descricao" header="Descrição" sortable filter></Column>
           <Column field="preco" header="Preço" sortable filter></Column>
@@ -68,31 +85,17 @@ const PromocaoCasaList = (props) => {
           <Column
             field="cupom"
             header="Cupom"
+            emptyMessage="Sem cupom"
             sortable
             filter
             body={semCupomBodyTemplate}
           ></Column>
-          <Column field="status" header="Status" sortable filter></Column>
-          <Column field="categoria" header="Categoria" sortable filter></Column>
-          {/* <Column
-            field="dataHoraCriado"
-            header="Data de Criação"
-            body={dateBodyTemplate}
-            sortable
-          ></Column> */}
           <Column
             field="loja_id.nomeFantasia"
             header="Loja"
             sortable
             filter
           ></Column>
-          {/* <Column
-            reorderable
-            field="usuario_id.nome"
-            header="Usuário"
-            sortable
-            filter
-          ></Column> */}
 
           <Column
             style={{ width: "120px" }}
@@ -122,4 +125,4 @@ const PromocaoCasaList = (props) => {
     </div>
   );
 };
-export default PromocaoCasaList;
+export default PromocaoCasasList;

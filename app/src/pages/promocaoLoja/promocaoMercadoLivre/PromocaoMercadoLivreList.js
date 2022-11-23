@@ -21,6 +21,17 @@ const PromocaoMercadoLivreList = (props) => {
       );
     }
   };
+
+  const dateBodyTemplate2 = (rowData) => {
+    return new Intl.DateTimeFormat("pt-BR", {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    }).format(new Date(rowData.dataHoraCriado));
+  };
+
   return (
     <div className="App">
       <br></br>
@@ -45,6 +56,12 @@ const PromocaoMercadoLivreList = (props) => {
           onSelectionChange={(e) => props.setPromocao(e.value)}
           emptyMessage="Nenhum registro encontrado!"
         >
+          <Column
+            field="dataHoraCriado"
+            header="Data de Envio"
+            body={dateBodyTemplate2}
+            sortable
+          ></Column>
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="descricao" header="Descrição" sortable filter></Column>
           <Column field="preco" header="Preço" sortable filter></Column>

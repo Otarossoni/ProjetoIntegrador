@@ -12,6 +12,7 @@ import DenunciaSrv from "./DenunciaSrv";
 import DenunciaForm from "./DenunciaForm";
 
 function PromocaoCon() {
+  // let user = JSON.parse("6362bee0dbf8c03e6902f700");
   const [promocaos, setPromocaos] = useState([]);
   const initialStatePromocao = {
     id: null,
@@ -23,13 +24,13 @@ function PromocaoCon() {
     status: "Aguardando",
     categoria: "",
     loja_id: "",
-    usuario_id: null,
+    usuario_id: JSON.parse(sessionStorage.getItem("userId")),
   };
   const initialStateDenuncia = {
     id: null,
     titulo: "",
     descricao: "",
-    usuario_id: null,
+    usuario_id: JSON.parse(sessionStorage.getItem("userId")),
     promocao_id: "",
   };
   const [promocao, setPromocao] = useState(initialStatePromocao);

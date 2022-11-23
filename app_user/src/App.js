@@ -1,6 +1,6 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import React, { Suspense, lazy } from "react";
+import React, { Suspense, lazy, useState, useEffect } from "react";
 import "primereact/resources/themes/saga-blue/theme.css";
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
@@ -11,6 +11,7 @@ import EmBreve from "./pages/emBreve/EmBreve";
 import Sobre from "./pages/sobre/Sobre";
 import "./css/body.css";
 import "./css/form.css";
+import LoginCon from "./pages/login/LoginCon";
 
 const Home = lazy(() => import("./pages/home/Home"));
 const UsuarioCon = lazy(() => import("./pages/usuario/UsuarioCon"));
@@ -61,6 +62,13 @@ const PromocaoMercadoLivreCon = lazy(() =>
 );
 
 function App() {
+  const [token, setToken] = useState([]);
+  useEffect(() => {
+    setToken(sessionStorage.getItem("token"));
+  }, []);
+  if (!token || token <= "") {
+    return <LoginCon />;
+  }
   return (
     <BrowserRouter>
       <Menu />
@@ -261,9 +269,20 @@ function Menu() {
         navigate("/sobre");
       },
     },
+    {
+      label: "Sair",
+      icon: "pi pi-fw pi-power-off",
+      command: () => {
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("userId");
+        sessionStorage.removeItem("userNome");
+      },
+      url: "/",
+    },
   ];
 
-  const end = <h4 className="menuBarTitle">PromoCão</h4>;
+  const nome = sessionStorage.getItem("userNome").replace(/"/g, "");
+  const end = <h4 className="menuBarTitle">Bem-vindo(a) {nome}!</h4>;
 
   return <Menubar model={items} className="ui-menubar" end={end} />;
 }

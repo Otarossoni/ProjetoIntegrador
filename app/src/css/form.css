@@ -4,8 +4,9 @@
 }
 
 .menuBarTitle {
-  margin-top: 5%;
+  margin-top: 3%;
   color: white;
+  font-size: larger;
 }
 
 .genericFormImput {

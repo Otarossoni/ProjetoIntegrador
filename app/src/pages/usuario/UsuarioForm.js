@@ -235,7 +235,7 @@ const UsuarioForm = (props) => {
                 placeholder="Data de Nascimento..."
                 value={props.usuario.dataNascimento}
                 onChange={handleInputChange}
-                dateFormat="dd-mm-yy"
+                dateFormat="dd/mm/yy"
                 showIcon
                 locale="pt_BR"
               />

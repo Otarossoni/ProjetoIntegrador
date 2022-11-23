@@ -69,15 +69,14 @@ const DenunciaList = (props) => {
           onSelectionChange={(e) => props.setDenuncia(e.value)}
           emptyMessage="Nenhum registro encontrado!"
         >
-          <Column field="titulo" header="Título" sortable filter></Column>
-          <Column field="descricao" header="Descrição" sortable filter></Column>
           <Column
-            style={{ width: "180px" }}
             field="dataHoraCriado"
             header="Data de Criação"
             body={dateBodyTemplate}
             sortable
           ></Column>
+          <Column field="titulo" header="Título" sortable filter></Column>
+          <Column field="descricao" header="Descrição" sortable filter></Column>
           <Column field="status" header="Status" sortable></Column>
           <Column
             field="promocao_id.titulo"

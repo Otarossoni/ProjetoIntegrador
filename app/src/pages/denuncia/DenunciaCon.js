@@ -15,7 +15,7 @@ function DenunciaCon() {
     id: null,
     titulo: "",
     descricao: "",
-    usuario_id: "",
+    usuario_id: JSON.parse(sessionStorage.getItem("userId")),
     promocao_id: "",
   };
   const [denuncia, setDenuncia] = useState(initialState);

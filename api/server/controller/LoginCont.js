@@ -10,7 +10,7 @@ module.exports = {
       if (!senhaValidada)
         return res.status(400).send("Email ou senha inválidos!");
       const token = obj.generateAuthToken();
-      res.send(token);
+      res.send({ token, userId: obj._id, userNome: obj.nome });
     });
   },
 

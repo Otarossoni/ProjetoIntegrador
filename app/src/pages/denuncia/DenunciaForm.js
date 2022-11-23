@@ -9,9 +9,9 @@ import { Dropdown } from "primereact/dropdown";
 
 const DenunciaForm = (props) => {
   const [promocaos, setPromocaos] = useState([]);
-  const [usuarios, setUsuarios] = useState([]);
+  const [, /*usuarios*/ setUsuarios] = useState([]);
   const [promocaosFiltradas, setPromocaosFiltradas] = useState(null);
-  const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
+  // const [usuariosFiltrados, setUsuariosFiltrados] = useState(null);
   const statusOptions = ["Aguardando", "Avaliada", "Desconsiderada"];
 
   const handleInputChange = (event) => {
@@ -67,22 +67,22 @@ const DenunciaForm = (props) => {
     }, 250);
   };
 
-  const buscarUsuario = (event) => {
-    setTimeout(() => {
-      let _usuariosFiltrados;
-      if (!event.query.trim().length) {
-        _usuariosFiltrados = [...usuarios];
-      } else {
-        _usuariosFiltrados = usuarios.filter((usuario) => {
-          return usuario.nome
-            .toLowerCase()
-            .startsWith(event.query.toLowerCase());
-        });
-      }
+  // const buscarUsuario = (event) => {
+  //   setTimeout(() => {
+  //     let _usuariosFiltrados;
+  //     if (!event.query.trim().length) {
+  //       _usuariosFiltrados = [...usuarios];
+  //     } else {
+  //       _usuariosFiltrados = usuarios.filter((usuario) => {
+  //         return usuario.nome
+  //           .toLowerCase()
+  //           .startsWith(event.query.toLowerCase());
+  //       });
+  //     }
 
-      setUsuariosFiltrados(_usuariosFiltrados);
-    }, 250);
-  };
+  //     setUsuariosFiltrados(_usuariosFiltrados);
+  //   }, 250);
+  // };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -199,7 +199,7 @@ const DenunciaForm = (props) => {
           </div>
           <br />
 
-          <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
+          {/* <div className="p-fluid grid formgrid" style={{ marginLeft: "33%" }}>
             <div className="field col-6 md:col-6">
               <span className="p-float-label">
                 <AutoComplete
@@ -215,7 +215,7 @@ const DenunciaForm = (props) => {
               </span>
             </div>
           </div>
-          <br />
+          <br /> */}
 
           <div style={{ textAlign: "center" }}>
             <Button

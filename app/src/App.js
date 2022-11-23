@@ -390,13 +390,16 @@ function Menu() {
       label: "Sair",
       icon: "pi pi-fw pi-power-off",
       command: () => {
-        sessionStorage.setItem("token", "");
+        sessionStorage.removeItem("token");
+        sessionStorage.removeItem("userId");
+        sessionStorage.removeItem("userNome");
       },
       url: "/",
     },
   ];
 
-  const end = <h4 className="menuBarTitle">Administração</h4>;
+  const nome = sessionStorage.getItem("userNome").replace(/"/g, "");
+  const end = <h4 className="menuBarTitle">{nome}</h4>;
 
   return <Menubar model={items} className="ui-menubar" end={end} />;
 }

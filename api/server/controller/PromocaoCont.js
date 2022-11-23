@@ -6,7 +6,7 @@ module.exports = {
     })
       .populate("loja_id")
       .populate("usuario_id")
-      .sort({ nome: 1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 
   incluir: async (req, res) => {
@@ -50,7 +50,7 @@ module.exports = {
     )
       .populate("loja_id")
       .populate("usuario_id")
-      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 
   filtrarLoja: (req, res) => {
@@ -66,7 +66,7 @@ module.exports = {
     )
       .populate("loja_id")
       .populate("usuario_id")
-      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 
   filtrarStatus: (req, res) => {
@@ -80,7 +80,7 @@ module.exports = {
     )
       .populate("loja_id")
       .populate("usuario_id")
-      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 
   filtrarCategoria: (req, res) => {
@@ -95,6 +95,6 @@ module.exports = {
     )
       .populate("loja_id")
       .populate("usuario_id")
-      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 };

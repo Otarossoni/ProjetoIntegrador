@@ -6,7 +6,7 @@ module.exports = {
     })
       .populate("usuario_id")
       .populate("promocao_id")
-      .sort({ nome: 1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 
   incluir: async (req, res) => {
@@ -48,7 +48,7 @@ module.exports = {
     )
       .populate("usuario_id")
       .populate("promocao_id")
-      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 
   filtrarStatus: (req, res) => {
@@ -62,6 +62,6 @@ module.exports = {
     )
       .populate("usuario_id")
       .populate("promocao_id")
-      .sort({ nome: -1 }); // -1 decrescente 1 crescente
+      .sort({ dataHoraCriado: -1 }); // -1 decrescente 1 crescente
   },
 };
