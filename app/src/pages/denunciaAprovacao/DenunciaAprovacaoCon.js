@@ -39,7 +39,7 @@ function DenunciaAprovacaoCon() {
       .then((response) => {
         setDenuncias(response.data);
         toastRef.current.show({
-          severity: "success",
+          severity: "info",
           summary: "Denúncias pendentes atualizadas!",
           life: 3000,
         });
@@ -56,6 +56,52 @@ function DenunciaAprovacaoCon() {
   const inserir = () => {
     setDenuncia(initialState);
     setEditando(true);
+  };
+
+  const aprovaDenuncia = (id) => {
+    let denuncia = {
+      _id: id,
+      status: "Avaliada",
+    };
+    DenunciaAprovacaoSrv.alterar(denuncia)
+      .then((response) => {
+        onClickAtualizar();
+        toastRef.current.show({
+          severity: "success",
+          summary: "Denúncia avaliada!",
+          life: 2000,
+        });
+      })
+      .catch((e) => {
+        toastRef.current.show({
+          severity: "error",
+          summary: e.message,
+          life: 4000,
+        });
+      });
+  };
+
+  const rejeitaDenuncia = (id) => {
+    let denuncia = {
+      _id: id,
+      status: "Desconsiderada",
+    };
+    DenunciaAprovacaoSrv.alterar(denuncia)
+      .then((response) => {
+        onClickAtualizar();
+        toastRef.current.show({
+          severity: "error",
+          summary: "Denúncia desconsiderada!",
+          life: 2000,
+        });
+      })
+      .catch((e) => {
+        toastRef.current.show({
+          severity: "error",
+          summary: e.message,
+          life: 4000,
+        });
+      });
   };
 
   const salvar = () => {
@@ -155,6 +201,8 @@ function DenunciaAprovacaoCon() {
           inserir={inserir}
           editar={editar}
           excluir={excluir}
+          aprovaDenuncia={aprovaDenuncia}
+          rejeitaDenuncia={rejeitaDenuncia}
         />
         <Toast ref={toastRef} />
       </div>

@@ -109,9 +109,9 @@ const UsuarioList = (props) => {
                   <span> </span>
                   <Button
                     type="button"
-                    icon="pi pi-trash"
-                    className="p-button-rounded p-button-danger"
-                    onClick={() => props.excluir(row._id)}
+                    icon="pi pi-eye-slash"
+                    className="p-button-rounded p-button-info"
+                    onClick={() => props.anonimizar(row._id)}
                   ></Button>
                 </>
               );

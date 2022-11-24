@@ -44,7 +44,7 @@ function PromocaoCon() {
       .then((response) => {
         setPromocaos(response.data);
         toastRef.current.show({
-          severity: "success",
+          severity: "info",
           summary: "Promoções pendentes atualizadas!",
           life: 3000,
         });
@@ -54,6 +54,52 @@ function PromocaoCon() {
           severity: "error",
           summary: e.message,
           life: 3000,
+        });
+      });
+  };
+
+  const aprovaPromocao = (id) => {
+    let promocao = {
+      _id: id,
+      status: "Ativa",
+    };
+    PromocaoAprovacaoSrv.alterar(promocao)
+      .then((response) => {
+        onClickAtualizar();
+        toastRef.current.show({
+          severity: "success",
+          summary: "Promoção aceita!",
+          life: 2000,
+        });
+      })
+      .catch((e) => {
+        toastRef.current.show({
+          severity: "error",
+          summary: e.message,
+          life: 4000,
+        });
+      });
+  };
+
+  const rejeitaPromocao = (id) => {
+    let promocao = {
+      _id: id,
+      status: "Rejeitada",
+    };
+    PromocaoAprovacaoSrv.alterar(promocao)
+      .then((response) => {
+        onClickAtualizar();
+        toastRef.current.show({
+          severity: "error",
+          summary: "Promoção rejeitada!",
+          life: 2000,
+        });
+      })
+      .catch((e) => {
+        toastRef.current.show({
+          severity: "error",
+          summary: e.message,
+          life: 4000,
         });
       });
   };
@@ -160,6 +206,8 @@ function PromocaoCon() {
           inserir={inserir}
           editar={editar}
           excluir={excluir}
+          aprovaPromocao={aprovaPromocao}
+          rejeitaPromocao={rejeitaPromocao}
         />
         <Toast ref={toastRef} />
       </div>

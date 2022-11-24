@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg5NzgyNDAsImV4cCI6MTY3MjU3ODI0MH0.SZbj1Nb95EfRtDqVBFJWkpzJux1yVzmAVkvGalzuqc8
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiQWRtaW5zdHJhZG9yIE9yaWdpbmFsIiwiaWF0IjoxNjY5MjUzNDEzLCJleHAiOjE2NzI4NTM0MTN9.v-0n_Xd5Cvmt-uWqb6tY120gu6Pm2J_OjVWXrVqvmtI
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de promoções
 GET http://localhost:3000/api/promocaos
@@ -28,14 +28,8 @@ Content-Type: application/json
 x-auth-token: {{authToken}}
 
 {
-    "_id": "6347544395606fff46b1f871",
-    "titulo": "Redmi Note 9", 
-    "descricao": "Cupom imperdível! Para todos!",
-    "preco": "1.100",
-    "url": "https://www.amazon.com.br/redmi-note-9",
-    "cupom": "200ZON",
-    "loja_id": "6351d974dbecfd316398054d",
-    "usuario_id": "63495a5680812c8c22d7f22f"
+    "_id": "637d7e4c9683e8fe613d139b",
+    "status": "Ativa"
 }
 ###
 //////////////////////////////////////////////////////////////////////

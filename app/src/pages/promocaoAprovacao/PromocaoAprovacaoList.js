@@ -120,8 +120,24 @@ const PromocaoAprovacaoList = (props) => {
                   <Button
                     type="button"
                     icon="pi pi-trash"
-                    className="p-button-rounded p-button-danger"
+                    className="p-button-rounded p-button-info"
                     onClick={() => props.excluir(row._id)}
+                  ></Button>
+                  <span> </span>
+                  <br />
+                  <Button
+                    type="button"
+                    icon="pi pi-thumbs-up"
+                    className="p-button-rounded p-button-success"
+                    style={{ marginTop: "5px" }}
+                    onClick={() => props.aprovaPromocao(row._id)}
+                  ></Button>
+                  <span> </span>
+                  <Button
+                    type="button"
+                    icon="pi pi-thumbs-down"
+                    className="p-button-rounded p-button-danger"
+                    onClick={() => props.rejeitaPromocao(row._id)}
                   ></Button>
                 </>
               );

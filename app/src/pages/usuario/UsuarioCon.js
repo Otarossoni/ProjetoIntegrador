@@ -93,6 +93,33 @@ function UsuarioCon() {
     }
   };
 
+  const anonimizar = (id) => {
+    let usuario = {
+      _id: id,
+      nome: "Usuário anonimizado",
+      cpf: "01111011110",
+      dataNascimento: "2000-01-01T03:00:00.000Z",
+      email: "usuario@anonimizado.com",
+      senha: id,
+    };
+    UsuarioSrv.alterar(usuario)
+      .then((response) => {
+        onClickAtualizar();
+        toastRef.current.show({
+          severity: "info",
+          summary: "Usuário anonimizado!",
+          life: 2000,
+        });
+      })
+      .catch((e) => {
+        toastRef.current.show({
+          severity: "error",
+          summary: e.message,
+          life: 4000,
+        });
+      });
+  };
+
   const cancelar = () => {
     setEditando(false);
   };
@@ -148,6 +175,7 @@ function UsuarioCon() {
           inserir={inserir}
           editar={editar}
           excluir={excluir}
+          anonimizar={anonimizar}
         />
         <Toast ref={toastRef} />
       </div>
