@@ -174,12 +174,12 @@ const RegisterForm = (props) => {
                       message: "O campo cpf é obrigatório!",
                     },
                     maxLength: {
-                      value: 50,
-                      message: "O cpf pode ter no máximo 50 caracteres!",
+                      value: 11,
+                      message: "O CPF pode ter no máximo 11 caracteres!",
                     },
                     minLength: {
-                      value: 6,
-                      message: "O cpf deve possuir no mínimo 6 caracteres!",
+                      value: 11,
+                      message: "O CPF deve possuir no mínimo 11 caracteres!",
                     },
                   })}
                   defaultValue={props.usuario.cpf}

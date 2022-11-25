@@ -37,6 +37,23 @@ const UsuarioList = (props) => {
     }).format(new Date(rowData.dataHoraCriado));
   };
 
+  const nomeBodyTemplate = (rowData) => {
+    const nome = rowData.nome;
+    if (nome.includes("ZZZ")) {
+      return (
+        <>
+          <div style={{ color: "red" }}>Usuário Anonimizado</div>
+        </>
+      );
+    } else {
+      return (
+        <>
+          <div>{nome}</div>
+        </>
+      );
+    }
+  };
+
   return (
     <div className="App">
       <br></br>
@@ -79,7 +96,13 @@ const UsuarioList = (props) => {
           selection={props.usuario}
           onSelectionChange={(e) => props.setUsuario(e.value)}
         >
-          <Column field="nome" header="Nome" sortable filter></Column>
+          <Column
+            field="nome"
+            header="Nome"
+            sortable
+            filter
+            body={nomeBodyTemplate}
+          ></Column>
           <Column field="email" header="E-mail" sortable filter></Column>
           <Column field="cpf" header="CPF" sortable filter></Column>
           <Column

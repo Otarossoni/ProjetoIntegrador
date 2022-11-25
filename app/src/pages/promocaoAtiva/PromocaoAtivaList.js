@@ -130,6 +130,12 @@ const PromocaoAtivaList = (props) => {
                     className="p-button-rounded p-button-danger"
                     onClick={() => props.excluir(row._id)}
                   ></Button>
+                  <Button
+                    type="button"
+                    icon="pi pi-clock"
+                    className="p-button-rounded p-button-help"
+                    onClick={() => props.expiraPromocao(row._id)}
+                  ></Button>
                 </>
               );
             }}

@@ -46,6 +46,26 @@ function UsuarioCon() {
       });
   };
 
+  function makeid(length) {
+    var result = "";
+    var characters = "0123456789";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
+  function makeName(length) {
+    var result = "";
+    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+    var charactersLength = characters.length;
+    for (var i = 0; i < length; i++) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    }
+    return result;
+  }
+
   const inserir = () => {
     setUsuario(initialState);
     setEditando(true);
@@ -94,12 +114,15 @@ function UsuarioCon() {
   };
 
   const anonimizar = (id) => {
+    let idAnonimo = makeid(11);
+    let nomeAnonimo = makeName(10);
     let usuario = {
       _id: id,
-      nome: "Usuário anonimizado",
-      cpf: "01111011110",
+      nome: `ZZZ${nomeAnonimo}`,
+      cpf: idAnonimo,
       dataNascimento: "2000-01-01T03:00:00.000Z",
-      email: "usuario@anonimizado.com",
+      dataHoraCriado: "1800-01-01T03:00:00.000Z",
+      email: `${nomeAnonimo}@anonimizado.com`,
       senha: id,
     };
     UsuarioSrv.alterar(usuario)

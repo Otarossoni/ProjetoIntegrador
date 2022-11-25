@@ -105,6 +105,29 @@ function PromocaoCon() {
     }
   };
 
+  const expiraPromocao = (id) => {
+    let promocao = {
+      _id: id,
+      status: "Expirada",
+    };
+    PromocaoAtivaSrv.alterar(promocao)
+      .then((response) => {
+        onClickAtualizar();
+        toastRef.current.show({
+          severity: "info",
+          summary: "Promoção expirada!",
+          life: 2000,
+        });
+      })
+      .catch((e) => {
+        toastRef.current.show({
+          severity: "error",
+          summary: e.message,
+          life: 4000,
+        });
+      });
+  };
+
   const cancelar = () => {
     setEditando(false);
   };
@@ -160,6 +183,7 @@ function PromocaoCon() {
           inserir={inserir}
           editar={editar}
           excluir={excluir}
+          expiraPromocao={expiraPromocao}
         />
         <Toast ref={toastRef} />
       </div>

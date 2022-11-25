@@ -20,6 +20,28 @@ const PromocaoAtivaList = (props) => {
     }
   };
 
+  const urlBodyTemplate = (rowData) => {
+    let url = rowData.url;
+    if (!url) {
+      return (
+        <>
+          <div>Sem URL</div>
+        </>
+      );
+    } else {
+      if (!url.includes("http")) {
+        url = "https://" + url;
+      }
+      return (
+        <>
+          <a href={url} target="_blank" rel="noreferrer">
+            <div>{url}</div>
+          </a>
+        </>
+      );
+    }
+  };
+
   const dateBodyTemplate2 = (rowData) => {
     return new Intl.DateTimeFormat("pt-BR", {
       year: "numeric",
@@ -88,7 +110,13 @@ const PromocaoAtivaList = (props) => {
           <Column field="titulo" header="Título" sortable filter></Column>
           <Column field="descricao" header="Descrição" sortable filter></Column>
           <Column field="preco" header="Preço" sortable filter></Column>
-          <Column field="url" header="URL" sortable filter></Column>
+          <Column
+            field="url"
+            header="URL"
+            sortable
+            filter
+            body={urlBodyTemplate}
+          ></Column>
           <Column
             field="cupom"
             header="Cupom"

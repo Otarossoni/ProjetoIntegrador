@@ -30,6 +30,8 @@ Entre nas pastas a seguir e siga os passos contidos no README de cada uma:
 
 - [Teste Login + Cadastro de Loja - Usuário ADM](https://youtu.be/4U8Eujxjiy4)
 - [Teste de Sugestão de Promoção - Usuário Comum](https://youtu.be/jk9bW7RTrOw)
+- [Teste de Autocadastro - Usuário Comum](https://youtu.be/snmVLZ4Ze3k)
+- [Teste de Aprovação e Rejeição - Usuário Comum](https://youtu.be/_y3DvypFgpE)
 
 ## Diagramas
 

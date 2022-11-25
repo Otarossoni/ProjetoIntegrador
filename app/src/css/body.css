@@ -162,6 +162,7 @@ input:-webkit-autofill {
   background: #3b3b3b !important;
   color: white !important;
   border: 1px solid #3b3b3b !important;
+  text-align: center;
 }
 
 .p-datatable .p-datatable-thead > tr > th {

@@ -28,20 +28,21 @@ function LoginCon() {
 
   const salvar = () => {
     //inclusão
+    console.log(usuario);
     if (usuario._id == null) {
       UsuarioSrv.incluir(usuario)
         .then((response) => {
           setCriando(false);
           toastRef.current.show({
             severity: "success",
-            summary: "Salvou!",
+            summary: "Cadastro realizado! Faça login.",
             life: 2000,
           });
         })
         .catch((e) => {
           toastRef.current.show({
             severity: "error",
-            summary: e.message,
+            summary: "E-mail ou senha inválidos!",
             life: 4000,
           });
         });
