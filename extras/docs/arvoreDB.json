@@ -41,34 +41,6 @@
       "status": "Ativa",
       "categoria": "Eletrônicos"
     },
-    "comentario": {
-      "_id": "634759165635cf91ebd6b64c",
-      "titulo": "Celular Bom demais, gostei!",
-      "descricao": "Bom custo benfício",
-      "promocao_id": {
-        "_id": "6347544395606fff46b1f871",
-        "titulo": "Redmi Note 9",
-        "descricao": "Cupom imperdível! Para todos!",
-        "preco": "1.100",
-        "url": "https://www.amazon.com.br/redmi-note-9",
-        "cupom": "200ZON",
-        "loja_id": "6351d974dbecfd316398054d",
-        "usuario_id": "6362bee0dbf8c03e6902f700",
-        "dataHoraCriado": "2022-10-12T01:39:50.643Z",
-        "status": "Ativa",
-        "categoria": "Eletrônicos"
-      },
-      "usuario_id": {
-        "_id": "634f4bdd413876564f33c9a7",
-        "nome": "Otávio Monteiro Rossoni",
-        "cpf": "04734147086",
-        "dataNascimento": "2002-05-12T03:00:00.000Z",
-        "email": "otarossoni@gmail.com",
-        "senha": "$2b$10$ExgyZSQUZ/p8iVGaVpj0deTIoOf6LtoKtfqRzqXgXZwmcc4LTFIFC",
-        "dataHoraCriado": "2022-10-19T00:59:09.351Z"
-      },
-      "dataHoraCriado": "2022-10-31T01:23:58.308Z"
-    },
     "denuncia": {
       "_id": "63475759ae3451b27836bbe8",
       "titulo": "Golpe de cupom",
