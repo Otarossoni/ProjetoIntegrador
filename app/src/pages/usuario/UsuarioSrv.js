@@ -16,6 +16,11 @@ class UsuarioSrv {
       throw err;
     });
   }
+  async anonimizar(id) {
+    return await axios.put(`${this.url}/${id}`).catch((err) => {
+      throw err;
+    });
+  }
   async excluir(id) {
     return await axios.delete(`${this.url}/${id}`).catch((err) => {
       throw err;

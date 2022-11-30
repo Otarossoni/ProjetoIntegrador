@@ -1,4 +1,4 @@
-@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiYWRtaW4iLCJpYXQiOjE2Njg5NzgyNDAsImV4cCI6MTY3MjU3ODI0MH0.SZbj1Nb95EfRtDqVBFJWkpzJux1yVzmAVkvGalzuqc8
+@authToken = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzQ4NmMzOTI5ZmJiNjEwNDk3Mzc4OWUiLCJub21lIjoiQWRtaW5zdHJhZG9yIE9yaWdpbmFsIiwiaWF0IjoxNjY5NzU5MTAxLCJleHAiOjE2NzMzNTkxMDF9.0lmzb0FtHGteR_J10Tx15b7KHLuRrjPROIx2m2Q4oeA
 //////////////////////////////////////////////////////////////////////
 # Obter a lista de denuncias
 GET http://localhost:3000/api/denuncias
@@ -9,6 +9,7 @@ x-auth-token: {{authToken}}
 # Inserir nova denuncia
 POST http://localhost:3000/api/denuncias
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
     "titulo": "Golpe", 
@@ -21,9 +22,10 @@ Content-Type: application/json
 # Alterar denuncia
 PUT http://localhost:3000/api/denuncias
 Content-Type: application/json
+x-auth-token: {{authToken}}
 
 {
-    "_id": "63475733ae3451b27836bbdf",
+    "_id": "638680979929107dfb0a0ee4",
     "titulo": "Golpe", 
     "descricao": "Golpe na Amazon. O vendedor é um golpista",
     "usuario_id": "63474bd2936c605afd965db2",
@@ -32,18 +34,20 @@ Content-Type: application/json
 ###
 //////////////////////////////////////////////////////////////////////
 # Excluir uma denuncia
-DELETE http://localhost:3000/api/denuncias/63475733ae3451b27836bbdf
+DELETE http://localhost:3000/api/denuncias/638680979929107dfb0a0ee4
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter pelo id da denuncia
 GET http://localhost:3000/api/denuncias/63475759ae3451b27836bbe8
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////
 # Obter denuncias filtrando
 GET http://localhost:3000/api/denuncias/filtro/gol
-
 Content-Type: application/json
+x-auth-token: {{authToken}}
 ###
 //////////////////////////////////////////////////////////////////////

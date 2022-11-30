@@ -23,6 +23,30 @@ module.exports = {
     });
   },
 
+  aprovarPromocao: async (req, res) => {
+    let obj = new Promocao(req.body);
+    obj.status = "Ativa";
+    Promocao.updateOne({ _id: obj._id }, obj, function (err) {
+      err ? res.status(400).send(err) : res.status(200).json(obj);
+    });
+  },
+
+  rejeitarPromocao: async (req, res) => {
+    let obj = new Promocao(req.body);
+    obj.status = "Rejeitada";
+    Promocao.updateOne({ _id: obj._id }, obj, function (err) {
+      err ? res.status(400).send(err) : res.status(200).json(obj);
+    });
+  },
+
+  expirarPromocao: async (req, res) => {
+    let obj = new Promocao(req.body);
+    obj.status = "Expirada";
+    Promocao.updateOne({ _id: obj._id }, obj, function (err) {
+      err ? res.status(400).send(err) : res.status(200).json(obj);
+    });
+  },
+
   excluir: async (req, res) => {
     Promocao.deleteOne({ _id: req.params.id }, function (err) {
       err ? res.status(400).send(err) : res.status(200).json("message:ok");

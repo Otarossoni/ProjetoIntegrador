@@ -105,12 +105,8 @@ function PromocaoCon() {
     }
   };
 
-  const expiraPromocao = (id) => {
-    let promocao = {
-      _id: id,
-      status: "Expirada",
-    };
-    PromocaoAtivaSrv.alterar(promocao)
+  const expiraPromocao = (promocao) => {
+    PromocaoAtivaSrv.expirarPromocao(promocao)
       .then((response) => {
         onClickAtualizar();
         toastRef.current.show({

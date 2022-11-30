@@ -12,7 +12,22 @@ class PromocaoAprovacaoSrv {
     });
   }
   async alterar(data) {
-    return await axios.put(this.url, data).catch((err) => {
+    return await axios.put(`${this.url}`, data).catch((err) => {
+      throw err;
+    });
+  }
+  async aprovarPromocao(data) {
+    return await axios.put(`${this.url}/aprovar`, data).catch((err) => {
+      throw err;
+    });
+  }
+  async rejeitarPromocao(data) {
+    return await axios.put(`${this.url}/rejeitar`, data).catch((err) => {
+      throw err;
+    });
+  }
+  async expirarPromocao(data) {
+    return await axios.put(`${this.url}/expirar`, data).catch((err) => {
       throw err;
     });
   }

@@ -46,26 +46,6 @@ function UsuarioCon() {
       });
   };
 
-  function makeid(length) {
-    var result = "";
-    var characters = "0123456789";
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
-
-  function makeName(length) {
-    var result = "";
-    var characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
-    var charactersLength = characters.length;
-    for (var i = 0; i < length; i++) {
-      result += characters.charAt(Math.floor(Math.random() * charactersLength));
-    }
-    return result;
-  }
-
   const inserir = () => {
     setUsuario(initialState);
     setEditando(true);
@@ -113,19 +93,25 @@ function UsuarioCon() {
     }
   };
 
-  const anonimizar = (id) => {
-    let idAnonimo = makeid(11);
-    let nomeAnonimo = makeName(10);
-    let usuario = {
-      _id: id,
-      nome: `ZZZ${nomeAnonimo}`,
-      cpf: idAnonimo,
-      dataNascimento: "2000-01-01T03:00:00.000Z",
-      dataHoraCriado: "1800-01-01T03:00:00.000Z",
-      email: `${nomeAnonimo}@anonimizado.com`,
-      senha: id,
-    };
-    UsuarioSrv.alterar(usuario)
+  const anonimizar = (_id) => {
+    confirmDialog({
+      className: "p-confirm-dialog",
+      message: "Confirma a anonimização do usuário?",
+      header: "Anonimizar?",
+      icon: "pi pi-spin pi-spinner",
+      acceptLabel: "Sim, anonimizar!",
+      rejectLabel: "Não, voltar!",
+      acceptClassName: "p-button-danger",
+      rejectClassName: "p-button-primary",
+      acceptIcon: "pi pi-check",
+      rejectIcon: "pi pi-times",
+      style: { width: "35vw" },
+      accept: () => anonimizarConfirm(_id),
+    });
+  };
+
+  const anonimizarConfirm = (id) => {
+    UsuarioSrv.anonimizar(id)
       .then((response) => {
         onClickAtualizar();
         toastRef.current.show({

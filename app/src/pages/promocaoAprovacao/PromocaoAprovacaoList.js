@@ -130,14 +130,14 @@ const PromocaoAprovacaoList = (props) => {
                     icon="pi pi-thumbs-up"
                     className="p-button-rounded p-button-success"
                     style={{ marginTop: "5px" }}
-                    onClick={() => props.aprovaPromocao(row._id)}
+                    onClick={() => props.aprovaPromocao(row)}
                   ></Button>
                   <span> </span>
                   <Button
                     type="button"
                     icon="pi pi-thumbs-down"
                     className="p-button-rounded p-button-danger"
-                    onClick={() => props.rejeitaPromocao(row._id)}
+                    onClick={() => props.rejeitaPromocao(row)}
                   ></Button>
                 </>
               );

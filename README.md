@@ -6,6 +6,8 @@ Projeto final do curso de Análise e Desenvolvimento de Sistemas, um sistema de 
 
 [Clique aqui para acessar a documentação atual do projeto](https://docs.google.com/document/d/1T5lEdS4kUNjKnftW05LDZtCfSuJucTEk9Gf2grP5Udo/edit?usp=sharing)
 
+[Clique aqui para acessar a apresentação do projeto](https://docs.google.com/presentation/d/1RtRZxSM6DpM1L4OT7lw0Z76aWI0XJqJwFIEPxpjVLKk/edit?usp=sharing)
+
 ## Execução
 
 Clone o projeto

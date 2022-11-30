@@ -20,7 +20,7 @@ const DenunciaCon = lazy(() => import("./pages/denuncia/DenunciaCon"));
 const DenunciaAprovacaoCon = lazy(() =>
   import("./pages/denunciaAprovacao/DenunciaAprovacaoCon")
 );
-const ComentarioCon = lazy(() => import("./pages/comentario/ComentarioCon"));
+// const ComentarioCon = lazy(() => import("./pages/comentario/ComentarioCon"));
 const PromocaoAprovacaoCon = lazy(() =>
   import("./pages/promocaoAprovacao/PromocaoAprovacaoCon")
 );
@@ -97,7 +97,7 @@ function App() {
             path="/denuncias/status/Aguardando"
             element={<DenunciaAprovacaoCon />}
           />
-          <Route path="/comentarios" element={<ComentarioCon />} />
+          {/* <Route path="/comentarios" element={<ComentarioCon />} /> */}
           <Route path="/sobre" element={<Sobre />} />
           <Route
             path="/promocaos/status/Aguardando"
@@ -217,13 +217,13 @@ function Menu() {
             navigate("/denuncias");
           },
         },
-        {
-          label: "Comentários",
-          icon: "pi pi-fw pi-comments",
-          command: () => {
-            navigate("/comentarios");
-          },
-        },
+        // {
+        //   label: "Comentários",
+        //   icon: "pi pi-fw pi-comments",
+        //   command: () => {
+        //     navigate("/comentarios");
+        //   },
+        // },
       ],
     },
     {

@@ -58,12 +58,8 @@ function PromocaoCon() {
       });
   };
 
-  const aprovaPromocao = (id) => {
-    let promocao = {
-      _id: id,
-      status: "Ativa",
-    };
-    PromocaoAprovacaoSrv.alterar(promocao)
+  const aprovaPromocao = (promocao) => {
+    PromocaoAprovacaoSrv.aprovarPromocao(promocao)
       .then((response) => {
         onClickAtualizar();
         toastRef.current.show({
@@ -81,12 +77,8 @@ function PromocaoCon() {
       });
   };
 
-  const rejeitaPromocao = (id) => {
-    let promocao = {
-      _id: id,
-      status: "Rejeitada",
-    };
-    PromocaoAprovacaoSrv.alterar(promocao)
+  const rejeitaPromocao = (promocao) => {
+    PromocaoAprovacaoSrv.rejeitarPromocao(promocao)
       .then((response) => {
         onClickAtualizar();
         toastRef.current.show({

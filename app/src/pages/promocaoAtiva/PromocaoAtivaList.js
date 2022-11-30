@@ -134,7 +134,7 @@ const PromocaoAtivaList = (props) => {
                     type="button"
                     icon="pi pi-clock"
                     className="p-button-rounded p-button-help"
-                    onClick={() => props.expiraPromocao(row._id)}
+                    onClick={() => props.expiraPromocao(row)}
                   ></Button>
                 </>
               );
