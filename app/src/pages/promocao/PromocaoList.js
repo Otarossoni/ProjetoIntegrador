@@ -140,7 +140,7 @@ const PromocaoList = (props) => {
             filter
             body={semCupomBodyTemplate}
           ></Column>
-          <Column field="status" header="Status" sortable filter></Column>
+          {/* <Column field="status" header="Status" sortable filter></Column> */}
           <Column field="categoria" header="Categoria" sortable filter></Column>
           <Column
             field="loja_id.nomeFantasia"
